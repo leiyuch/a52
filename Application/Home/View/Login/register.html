@@ -1,0 +1,208 @@
+
+<include file="Public:header" />
+		
+		<section class="login-content clearfix ">
+			<div class="form register">
+		        <div class="title">注册</div>
+		        <div class="input register_email">
+		            <!-- <form action="#" id="registerForm" method="post" novalidate="novalidate"> -->
+					<!-- <form role="form" id="registerForm" name="reg" method="post" action="#"> -->
+		                <input name="regType" type="hidden" value="1">
+		                <!-- <div class="tel-box">
+		                    <span class="tip" style="position: absolute; right: 0; margin-top: -20px;color: red"></span>
+		                    <div class="input-box">
+		                        <input type="text" autocomplete="off" value="" tabindex="1" placeholder="请输入邮箱" name="email" id="email">
+		                        <i class="icon email-icon"></i>
+		                    </div>
+						</div> -->
+						<div class="tel-box">
+								<span class="tip" style="position: absolute; right: 0; margin-top: -20px;color: red"></span>
+								<div class="input-box">
+									<input type="text" autocomplete="off" value="" tabindex="1" placeholder="请输入用户名" name="username" id="username">
+									<i class="icon email-icon"></i>
+								</div>
+							</div>
+		                <div class="msg-field">
+		                    <span class="tip" style="position: absolute; right: 0; margin-top: -20px;color: red"></span>
+		                    <div class="input-box">
+		                        <div class="input-wrapper">
+		                            <input type="text" maxlength="6" placeholder="验证码" id="code" name="code">
+		                            <i class="icon verify-icon"></i>
+		                        </div>
+		                        <div class="send-msg" id="e-msg" style="color: #1F212A;" onclick="getcode()">
+		                            获取验证码
+		                        </div>
+		                    </div>
+		                </div>
+		                <div class="password-box">
+		                    <span class="tip" style="position: absolute; right: 0; margin-top: -20px;color: red"></span>
+		                    <div class="input-box">
+		                        <input type="password" autocomplete="off" tabindex="2" placeholder="请输入密码" name="password" id="password">
+		                        <i class="icon password-icon"></i>
+		                    </div>
+						</div>
+						<div class="password-box">
+								<span class="tip" style="position: absolute; right: 0; margin-top: -20px;color: red"></span>
+								<div class="input-box">
+									<input type="password" autocomplete="off" tabindex="2" placeholder="重复密码" name="repassword" id="repassword">
+									<i class="icon password-icon"></i>
+								</div>
+							</div>
+
+		                <div class="invite-box">
+		                    <span class="tip" style="position: absolute; right: 0; margin-top: -20px;color: red"></span>
+		                    <div class="input-box">
+		                        <input type="text" autocomplete="off" tabindex="2" value="" name="invit" id="invit" placeholder="邀请码 (选填)">
+		                        <i class="icon invite-icon"></i>
+		                    </div>
+		                </div>
+		                <div class="protocol">
+		                    <input type="checkbox" checked="" style="margin-top: 0px;" id="agree"><a href="https://yex-help.zendesk.com/hc/zh-cn/articles/360000776414-YEX%E7%94%A8%E6%88%B7%E5%8D%8F%E8%AE%AE%E4%B8%8E%E7%89%B9%E5%88%AB%E5%A3%B0%E6%98%8E" target="_blank">阅读并同意《用户手册》</a>
+		                </div>
+		                <button class="button" id="saveBtn-e" onclick="add();">下一步</button>
+		                <div class="free-reg">
+		                    <a href="{:U('Login/index')}">已有账号，直接登录 &gt;</a>
+		                </div>
+		            <!-- </form> -->
+		        </div>
+		    </div>
+		    <div class="clearfix"></div>
+		</section>
+		
+
+		
+
+
+		<include file="Public:footer" />
+	<!-- include jQuery -->
+	<script src="__PUBLIC__/Home3/js/admin/jquery.min.js"></script>
+	<!-- bootstrap -->
+	<script src="__PUBLIC__/Home3/js/bootstrap.min.js"></script>
+	<!-- plugins.js -->
+	<script src="__PUBLIC__/Home3/js/plugins.js"></script>
+	<!-- all parallax -->
+	<script src="__PUBLIC__/Home3/js/parlx.js"></script>
+	<!-- nice-select -->
+	<script src="__PUBLIC__/Home3/js/jquery.nice-select.js"></script>
+	<!-- chart js -->
+	<script src="__PUBLIC__/Home3/js/raphael-min.js"></script>
+	<script src="__PUBLIC__/Home3/js/morris.min.js"></script>
+	 <!-- dscountdown -->
+	<script src="__PUBLIC__/Home3/js/dscountdown.min.js"></script>
+	<!-- custom js -->
+	<script src="__PUBLIC__/Home3/js/custom.js"></script>
+	<script src="__PUBLIC__/Home3/js/sidebar-menu.js"></script>
+	<script src="__PUBLIC__/Home3/layer/layer.js"></script>
+	<script>
+		$.sidebarMenu($('.sidebar-menu'))
+	</script>
+	<script>
+
+		function getcode() {
+			var email=$("#email").val();  
+			if (!f_email(email)) {
+				layer.alert("请输入正确的邮箱！", {
+                  icon: 2,
+                  skin: 'layer-ext-moon'
+				});
+				$("#email").focus();
+                return false;
+             }     
+	
+   
+		   $.post("/Verify/emailcode", { email: email }, function (data) {
+			   console.log(data);
+			   layer.alert("验证码为526314！", {
+			         icon: 1,
+                  skin: 'layer-ext-moon'
+				});
+			//    if (data.status == 1) {               
+			// 	   	layer.alert("邮箱验证码已发送到你的邮箱，请查收！", {
+			//          icon: 1,
+            //       skin: 'layer-ext-moon'
+			// 	});
+				  
+			//    } else {
+			// 		layer.alert("邮箱验证码发送失败，请重新点击发送！", {
+			// 			icon: 2,
+			// 		skin: 'layer-ext-moon'
+			// 		});
+			//    }
+		   }, "json");
+
+	   }
+	 function f_email(value){
+		   var re=/^(?:[a-z\d]+[_\-\+\.]?)*[a-z\d]+@(?:([a-z\d]+\-?)*[a-z\d]+\.)+([a-z]{2,})+$/i;
+	       return re.test(value);
+		}
+	   function add() {
+			// var email=$("#email").val();
+			var username = $("#username").val();
+			var code = $("#code").val();
+			var password = $("#password").val();
+			var invit = $("#invit").val();
+			var repassword = $("#repassword").val();
+			// if (!f_email(email)) {
+			// 	layer.alert("请输入正确的邮箱！", {
+            //       icon: 2,
+            //       skin: 'layer-ext-moon'
+			// 	});
+			// 	$("#email").focus();
+            //     return false;
+			//  }
+			
+			if(username=='' || username =="请输入用户名"){
+				layer.alert("请输入用户名", {
+                  icon: 2,
+                  skin: 'layer-ext-moon'
+				});
+				$("#username").focus();
+				return false;
+			}
+			if(code=='' || code =="验证码"){
+				layer.alert("请输入验证码！", {
+                  icon: 2,
+                  skin: 'layer-ext-moon'
+				});
+				$("#code").focus();
+				return false;
+			}
+			if(password=='' || password =="请输入密码"){
+				layer.alert("请输入密码", {
+                  icon: 2,
+                  skin: 'layer-ext-moon'
+				});
+				$("#password").focus();
+				return false;
+			}
+			if(repassword=='' || repassword =="重复密码"){
+				layer.alert("请输入重复密码", {
+                  icon: 2,
+                  skin: 'layer-ext-moon'
+				});
+				$("#repassword").focus();
+				return false;
+			}
+		
+		//	alert(code);
+		
+			$.post("{:U('Login/userRegister')}", {username:username, password: password,repassword:repassword,code:code, invit: invit}, function(data) {
+				if (data.status == 1) {
+					//layer.msg(data.info, { icon: 1 });
+				//	$.cookies.set('cookie_username', username);
+				// layer.alert("注册成功！", {
+                //   icon: 1,
+                //   skin: 'layer-ext-moon'
+				// });
+				 window.location = '/Login/register2';
+				} else {
+					layer.alert(data.info, {
+                  icon: 2,
+                  skin: 'layer-ext-moon'
+				});
+				}
+			}, "json");
+     }
+	</script>
+</body>
+</html>

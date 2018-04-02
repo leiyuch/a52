@@ -1,0 +1,133 @@
+﻿
+<include file="Public:header" />
+		
+		<section class="box-content">
+			
+			    <style>
+			            
+			    </style>
+			    <div class="main-content clearfix">
+				    <div class="now"> 
+					    <i class="fa fa-home fa-lg move mr5"></i>
+						<a href="/" class="movesay">{:L('home')}</a> &gt; 
+					    <a href="{:U('Finance/index')}" class="movesay">{:L('finance_center')}</a> &gt;{:L('finance_my_share')} 
+				    </div>
+				     
+					<include file="Finance:header_left" />
+					
+				    <div class="tag-list-content assets_content bg_w"> 
+				     <div class="safe_center clear"> 
+				      	<h1> <span> {:L('finance_my_share')} </span> <span> <a class="right" onclick="$('#hints').slideToggle();"> <i class="fa fa-hand-o-right move fz_14 mr5"></i> <span class="fz_12 move">帮助</span> </a> </span> </h1> 
+				     </div> 
+				     
+				     <div class="mytable-body"> 
+					        
+					       <div class="cnyin_record" > 
+						      <div class="f_body"> 
+						       <div class="f_body_main"> 
+						        <div class="f_tab_body"> 
+						         <div> 
+						          <table class="f_table" id="investLog_content"> 
+						           <thead>
+				                      <tr>
+										<th width="180" style="text-align: left; padding-left: 30px;">{:L('finance_lower_tpye')}</th>
+										<th id="">{:L('user_name')}</th>
+										<th id="">{:L('finance_register_time')}</th>
+										<th id="">{:L('finance_is_certified')}</th>
+				                      </tr>
+				                   </thead> 
+						           <tbody> 
+									    <volist name="list" id="v">
+                                                <tr>
+                                                    <td style="text-align: left; padding-left: 20px;">
+                                                        <a href="javascript:void(0)" onclick="Address({$v['id']})">
+                                                            <img class="invit_img_{$v['id']}" src="__PUBLIC__/Home/images/jia.png" style="width: 18px; vertical-align: middle; margin-top: -5px;">{:L('finance_one_level')}({$v.invitss})
+                                                        </a>
+                                                    </td>
+                                                    <td>{$v.username}</td>
+                                                    <td>{$v.addtime|addtime}</td>
+                                                    <td><empty name="v.moble"> <font class="buy">{:L('finance_not_certified')} </font> <else /> <font class="sell">{:L('finance_already_certified')} </font></empty></td>
+                                                </tr>
+                                                <notempty name="v['invits']">
+                                                    <volist name="v['invits']" id="vv">
+                                                        <tr class="invit_{$v['id']}" style="display: none;">
+                                                            <td style="text-align: left; padding-left: 40px;">
+                                                                <a href="javascript:void(0)" onclick="Address({$vv['id']})">
+                                                                    <img class="invita_img_{$v['id']} invit_img_{$vv['id']}" src="__PUBLIC__/Home/images/jia.png" style="width: 18px; vertical-align: middle; margin-top: -5px;">{:L('finance_two_level')}({$vv.invitss})
+                                                                </a>
+                                                            </td>
+                                                            <td>{$vv.username}</td>
+                                                            <td>{$vv.addtime|addtime}</td>
+                                                            <td><empty name="vv.moble"> <font class="buy">{:L('finance_not_certified')} </font> <else /> <font class="sell">{:L('finance_already_certified')} </font></empty></td>
+                                                        </tr>
+                                                        <notempty name="vv['invits']">
+                                                            <volist name="vv['invits']" id="vvv">
+                                                                <tr class="invita_{$v['id']} invit_{$vv['id']} " style="display: none;">
+                                                                    <td style="text-align: left; padding-left: 60px;">
+                                                                        <a href="javascript:void(0)" onclick="Address({$vvv['id']})">
+                                                                            <img class="invita_img_{$v['id']} invit_img_{$vvv['id']}" src="__PUBLIC__/Home/images/jian.png" style="width: 18px; vertical-align: middle; margin-top: -5px;">{:L('finance_three_level')}
+                                                                        </a>
+                                                                    </td>
+                                                                    <td>{$vvv.username}</td>
+                                                                    <td>{$vvv.addtime|addtime}</td>
+                                                                    <td><empty name="vvv.moble"> <font class="buy">{:L('finance_not_certified')} </font> <else /> <font class="sell">{:L('finance_already_certified')} </font></empty></td>
+                                                                </tr>
+                                                            </volist>
+                                                        </notempty>
+                                                    </volist>
+                                                </notempty>
+                                            </volist>
+						           </tbody> 
+						          </table> 
+						          <div class="pages">{$page}</div> 
+						         </div> 
+						        </div> 
+						       </div> 
+						      </div> 
+						   </div>  
+					      
+					      <!--转入记录--> 
+					      
+					 </div> 
+				     
+				     
+				     
+				    </div> 
+				</div>
+				<div class="clearfix"></div>
+		</section>
+		
+
+		
+
+
+		
+
+		
+
+
+		
+		<include file="Public:footer" />
+	<!-- include jQuery -->
+	<script src="__PUBLIC__/Home3/js/admin/jquery.min.js"></script>
+	<!-- bootstrap -->
+	<script src="__PUBLIC__/Home3/js/bootstrap.min.js"></script>
+	<!-- plugins.js -->
+	<script src="__PUBLIC__/Home3/js/plugins.js"></script>
+	<!-- all parallax -->
+	<script src="__PUBLIC__/Home3/js/parlx.js"></script>
+	<!-- nice-select -->
+	
+	<!-- chart js -->
+	<script src="__PUBLIC__/Home3/js/raphael-min.js"></script>
+	<script src="__PUBLIC__/Home3/js/morris.min.js"></script>
+	 <!-- dscountdown -->
+	<script src="__PUBLIC__/Home3/js/dscountdown.min.js"></script>
+	<!-- custom js -->
+	<script src="__PUBLIC__/Home3/js/custom.js"></script>
+	<script src="__PUBLIC__/Home3/js/sidebar-menu.js"></script>
+	<script>
+		$.sidebarMenu($('.sidebar-menu'))
+	</script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<include file="Trade:header" />
+<div class="wrapbody">
+	<div class="main">
+		<div class="myright" style="width: 1200px;padding: 0px;margin-top: 20px;">
+			<div class="wraphtml">
+
+			
+				<div class="autobox mt20 clear" style="padding-top: 0px;">
+    <div class="maintain-content">
+        <div class="coin-intro">
+            <h4 class="intro-title" style="margin-top:0;">{$C['market'][$market]['xnbtitle']}({$xnb|strtoupper}){:L('trade_info_introduce')}</h4>
+            <div class="left-icon-area">
+                <div style="width:80px;height:80px; border:1px solid #dcdcdc;"><img width="80" height="80" src="__UPLOAD__/coin/{$C['market'][$market]['xnbimg']}" alt=""></div>
+            </div>
+            <div class="right-detail-area">
+                <div style="border-bottom:1px dotted #dcdcdc;">
+                    <h4 class="coin-detail-title">{$market_list[$market]['xnbtitle']}({:L('trade_info_english')}：{$C['coin'][$xnb]['js_yw']} {:L('trade_info_abbreviate')}：{$xnb|strtoupper})</h4>
+                    <h5 style="padding:8px 0;font-weight:normal;color:#777;text-align: left;">{:L('trade_info_launch_date')}：{$C['coin'][$xnb]['cs_fb']}</h5>
+                </div>
+                <p>
+                <if condition="(LANG_SET eq 'en') && (!empty($C['coin'][$xnb]['js_sm_en']))">
+                {$C['coin'][$xnb]['js_sm_en']|htmlspecialchars_decode}
+                <else/>
+                {$C['coin'][$xnb]['js_sm']|htmlspecialchars_decode}
+                </if>
+                </p>
+            </div>
+        </div>
+        <div class="link-cc">
+            <h4 class="intro-title">{:L('trade_info_common_link')}</h4>
+            <ul>
+<li style="margin-left:0;"><a target="_blank" class="btn-usul" href="{$C['coin'][$xnb]['js_qb']}">{$C['coin'][$xnb]['title']}{:L('trade_info_wallet_download')}</a></li>
+<li><a target="_blank" class="btn-usul" href="{$C['coin'][$xnb]['js_ym']}">{$C['coin'][$xnb]['title']}{:L('trade_info_source_download')}</a></li>
+<li><a target="_blank" class="btn-usul" href="{$C['coin'][$xnb]['js_gw']}">{$C['coin'][$xnb]['title']}{:L('trade_info_website')}</a></li>
+<li><a target="_blank" class="btn-usul" href="{$C['coin'][$xnb]['js_lt']}">{$C['coin'][$xnb]['title']}{:L('trade_info_bbs')}</a></li>
+<li><a target="_blank" class="btn-usul" href="{$C['coin'][$xnb]['js_wk']}">{$C['coin'][$xnb]['title']}{:L('trade_info_mining')}</a></li>
+</ul>
+        </div>
+        <div class="detail-Parameter">
+            <h4 class="intro-title">{:L('trade_info_detailed_parameters')}</h4>
+            <table class="Parameter-table" >
+				<tbody><tr>
+					<td><span>{:L('trade_info_cn_name')}：</span>{$C['coin'][$xnb]['title']}</td>
+					<td><span>{:L('trade_info_en_name')}：</span>{$C['coin'][$xnb]['js_yw']}</td>
+					<td><span>{:L('trade_info_en_ab')}：</span>{$xnb|strtoupper}</td>
+				</tr>
+				<tr>
+					<td><span>{:L('trade_info_developer')}：</span>{$C['coin'][$xnb]['cs_yf']}</td>
+					<td><span>{:L('trade_info_core_algorithm')}：</span>{$C['coin'][$xnb]['cs_sf']}</td>
+					<td><span>{:L('trade_info_release_date')}：</span>{$C['coin'][$xnb]['cs_fb']}</td>
+				</tr>
+				<tr>
+					<td><span>{:L('trade_info_block_speed')}：</span>{$C['coin'][$xnb]['cs_qk']}</td>
+					<td><span>{:L('trade_info_total_issue')}：</span>{$C['coin'][$xnb]['cs_zl']}</td>
+					<td><span>{:L('trade_info_stock')}：</span>{$C['coin'][$xnb]['cs_cl']}</td>
+				</tr>
+				<tr>
+					<td><span>{:L('trade_info_proof_method')}：</span>{$C['coin'][$xnb]['cs_zm']}</td>
+					<td><span>{:L('trade_info_adjust_difficulty')}：</span>{$C['coin'][$xnb]['cs_nd']}</td>
+					<td><span>{:L('trade_info_block_bonus')}：</span>{$C['coin'][$xnb]['cs_jl']}</td>
+				</tr>
+				<tr>
+					<td colspan="3"><span>{:L('trade_info_feature')}：</span>{$C['coin'][$xnb]['cs_ts']}</td>
+				</tr>
+				<tr>
+					<td colspan="3"><span>{:L('trade_info_failings')}：</span>{$C['coin'][$xnb]['cs_bz']}</td>
+				</tr>
+			</tbody></table>
+        </div>
+    </div>
+
+</div>
+			</div>
+		</div>
+	</div>
+</div>
+<br>
+<br>
+
+<script>
+	//菜单高亮
+	$('#list-tab_info').addClass('on');
+</script>
+<include file="Public:footer" />

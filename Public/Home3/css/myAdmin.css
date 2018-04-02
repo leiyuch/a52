@@ -1,0 +1,24 @@
+.tag-list-content {
+    width: 970px;
+    float: right;
+}
+.assets_content {
+    border-left: 1px solid #D5D5D5;
+    height: 100%;
+    min-height: 610px;
+    position: relative;
+    border: none;
+}
+.safe_center {
+  border-bottom: 2px solid #4f94e7;
+  height: 60px;
+}
+.assets_content h1 {
+  font-size: 20px;
+  height: auto;
+  line-height: 15px;
+  color: #333;
+  padding-left: 28px;
+  padding-top: 20px;
+  width: 98%;
+}

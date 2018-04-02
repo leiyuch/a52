@@ -1,0 +1,5 @@
+<if condition="(LANG_SET eq 'en') && (!empty(C('web_reg_en')))">
+{:htmlspecialchars_decode(C('web_reg_en'))}
+<else/>
+{:htmlspecialchars_decode(C('web_reg'))}
+</if>

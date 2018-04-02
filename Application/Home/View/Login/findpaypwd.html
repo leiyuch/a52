@@ -1,0 +1,251 @@
+<include file="Public:header" />
+<style type="text/css">
+	/* 登陆注册*/
+.wrapper{
+    width:1200px;
+    margin:0 auto;
+    height:auto;
+    overflow:hidden;
+    clear:both;
+}
+
+.register{
+    border:#d5d5d5 solid 1px;
+    background:#ffffff;
+    border-radius:5px;
+    margin-top:20px;
+}
+
+.register table{
+    margin:40px auto 40px auto;
+    font-size:14px;
+}
+
+.register th{
+    font-size:12px;
+    color:#666666;
+}
+
+.register table td{
+    font-size:12px;
+    color:#666666;
+}
+
+.register .text{
+    font-size:12px;
+    width:277px;
+    padding:10px 8px;
+    margin-bottom:0px;
+}
+
+.register .submit{
+    width:295px;
+    font-size:16px;
+    font-weight:bold;
+    height:40px;
+}
+
+.register .gray{
+    color:#999999;
+}
+
+.register .red{
+    color:#ff0000;
+}
+
+.register .fs14{
+    font-size:14px;
+}
+
+.register .ts{
+    color:#ff0000;
+    font-size:14px;
+    padding-bottom:15px;
+}
+
+.register .ts a:hover{
+    text-decoration:underline;
+}
+
+.register .success{
+    font-size:14px;
+}
+
+.register .success td{
+    font-size:14px;
+    line-height:25px;
+    color:#333333;
+}
+
+.register .success h2{
+    font-size:22px;
+    color:#669900;
+    padding-bottom:10px;
+    padding-top:10px;
+}
+
+.register .success .submit{
+    width:100px;
+}
+
+.register .success .links{
+    color:#888888;
+    font-size:12px;
+}
+
+.register .success .links a{
+    margin:0 5px;
+}
+
+.register .success .links a.underline, .register .success .links a:hover{
+    text-decoration:underline;
+}
+
+</style>
+<div class="wrapper">
+	<div class="register" style="border-radius: 15px; margin-bottom: 20px;">
+		<table>
+			<tbody>
+				<tr>
+					<th align="right">{:L('user_name')}：</th>
+					<td><div class="formbody" style="width: 250px;">
+							<i class="icon_username"></i>
+							<input type="text" class="username" id="username" name="username" placeholder="{:L('enter_user_name')}">
+						</div></td>
+				</tr>
+				<tr>
+					<th align="right">{:L('secure_phone')}：</th>
+					<td><div class="formbody" style="width: 250px;">
+							<i class="icon_phone"></i>
+							<input type="text" class="username" id="moble" name="moble" placeholder="{:L('enter_binding_phone')}">
+						</div></td>
+				</tr>
+				<tr>
+					<th align="right">{:L('captcha')}：</th>
+					<td><div class="formbody">
+							<i class="icon_code"></i>
+							<input type="text" class="code" id="verify" name="code" placeholder="{:L('enter_captcha')}" style="width: 100px;"><img id="codeImg" src="{:U('Verify/code')}" width="145" height="42" onclick="this.src=this.src+'?t='+Math.random()" style="float: left; cursor: pointer;" title="换一张">
+						</div></td>
+				</tr>
+				<tr>
+					<th align="right">{:L('sms_code')}：</th>
+					<td><div class="formbody">
+							<i class="icon_code"></i>
+							<input type="text" class="code" id="moble_verify" name="code" placeholder="{:L('enter_sms_code')}" style="width: 100px;"><input id="regBtn" type="button" class="getyzm" value="{:L('get_sms_code')}" onclick="SendCode()" style="width: 145px; height: 42px;">
+						</div></td>
+				</tr>
+				<tr>
+					<th align="right">{:L('user_new_trade_password')}：</th>
+					<td><div class="formbody" style="width: 250px;">
+							<i class="icon_password"></i>
+							<input type="password" class="password" id="password" name="password" placeholder="{:L('login_password_format')}">
+						</div></td>
+				</tr>
+				<tr>
+					<th align="right">{:L('user_confirm_trade_password')}：</th>
+					<td><div class="formbody" style="width: 250px;">
+							<i class="icon_password"></i>
+							<input type="password" class="password" id="repassword" name="password" placeholder="{:L('user_enter_trade_password_again')}">
+						</div></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td><div class="formbody">
+							<input type="button" class="movesay_btn" name="index_submit" id="Submin" onclick="Update();" value="{:L('user_find_trade_password')}" title="{:L('user_find_trade_password')}" style="width: 320px;">
+						</div></td>
+					<td>&nbsp;</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+<script>
+	function SendCode(){
+		var username=$("#username").val();
+		var moble=$("#moble").val();
+		var verify=$("#verify").val();
+		if(username==""||username==null){
+			layer.tips('{:L('enter_user_name')}','#username',{tips:3});
+			return false;
+		}
+		if(moble==""||moble==null){
+			layer.tips('{:L('enter_binding_phone')}','#moble',{tips:3});
+			return false;
+		}
+		if(verify==""||verify==null){
+			layer.tips('{:L('enter_captcha')}','#verify',{tips:3});
+			return false;
+		}
+
+		$('#regBtn').attr("disabled","disabled");
+		$.post("{:U('Verify/findpaypwd')}",{username:username,moble:moble,verify:verify},function(data){
+			if(data.status==1){
+				layer.msg(data.info,{icon:1});
+				var obj=$('#regBtn');
+				var wait=120;
+				var interval=setInterval(function(){
+					obj.css('backgroundColor','#999B9C');
+					obj.val('（'+wait+'{:L('second_to_send_again')}');
+					wait--;
+					if(wait<0){
+						clearInterval(interval);
+						obj.val('{:L('get_sms_code')}');
+						obj.css('backgroundColor','#0096e0');
+					}
+					;
+				},1000);
+			}else{
+				layer.msg(data.info,{icon:2});
+			}
+		},"json");
+	}
+	function Update(){
+		var username=$("#username").val();
+		var moble=$("#moble").val();
+		var moble_verify=$("#moble_verify").val();
+		var verify=$("#verify").val();
+		var password=$("#password").val();
+		var repassword=$("#repassword").val();
+		if(username==""||username==null){
+			layer.tips('{:L('enter_user_name')}','#username',{tips:3});
+			return false;
+		}
+		if(moble==""||moble==null){
+			layer.tips('{:L('enter_binding_phone')}','#moble',{tips:3});
+			return false;
+		}
+		if(moble_verify==""||moble_verify==null){
+			layer.tips('{:L('enter_sms_code_1')}','#moble_verify',{tips:3});
+			return false;
+		}
+		if(verify==""||verify==null){
+			layer.tips('{:L('enter_captcha')}','#verify',{tips:3});
+			return false;
+		}
+		if(password==""||password==null){
+			layer.tips('{:L('enter_new_login_password')}','#password',{tips:3});
+			return false;
+		}
+		if(repassword==""||repassword==null){
+			layer.tips('{:L('enter_confirm_login_password')}','#repassword',{tips:3});
+			return false;
+		}
+		if(password!=repassword){
+			layer.tips('{:L('confirm_login_password')}','#repassword',{tips:3});
+			return false;
+		}
+		$.post("{:U('Login/findpaypwd')}",{username:username,moble:moble,moble_verify:moble_verify,verify:verify,password:password,repassword:repassword},function(data){
+			if(data.status==1){
+				layer.msg(data.info,{icon:1});
+				window.setTimeout("window.location='/'",1000);
+			}else{
+				layer.msg(data.info,{icon:2});
+			}
+		},"json");
+	}
+</script>
+<script>
+	//顶部菜单高亮
+	$('#menu_top_index').addClass('current');
+</script>
+<include file="Public:footer" />

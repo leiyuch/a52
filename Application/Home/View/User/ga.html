@@ -1,0 +1,316 @@
+<include file="Public:header"/>
+<div class="content clearfix" >
+    <!--左侧菜单-->
+    <include file="User:left" />
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // Store variables
+            var accordion_head = $('.accordion > li > a'),
+                accordion_body = $('.accordion li > .sub-menu');
+            // Open the first tab on load
+            //accordion_head.first().addClass('active').next().slideDown('normal');
+            //accordion_body.eq(2).find('a').eq(2).css('background', ' #efefef');
+            var found = false;
+            for (i = 0; i < accordion_body.length; i++) {
+                item = accordion_body.eq(i).find("[data-id='']");
+                if (item.length > 0) {
+                    accordion_head.eq(i).addClass('active').next().slideDown('normal');
+                    item.css({ 'color': ' #ff5e23', 'border-right-width': '3px', 'border-right-color': '#ff5e23' });
+                    found = true;
+                    break;
+                }
+            }
+            if (found == false)
+                accordion_head.eq(0).addClass('active').next().slideDown('normal');
+            // Click function
+            accordion_head.on('click', function (event) {
+                // Disable header links
+                event.preventDefault();
+                // Show and hide the tabs on click
+                if ($(this).attr('class') != 'active') {
+                    accordion_body.slideUp('normal');
+                    $(this).next().stop(true, true).slideToggle('normal');
+                    accordion_head.removeClass('active');
+                    $(this).addClass('active');
+                }
+            });
+
+            var icoType = '';
+            if (icoType == '') {
+                $("#buyIco").parent("li").remove()
+            }
+
+            $("input").focus(function () {
+                $(".failed").html("")
+            });
+
+            $(".files,.cloud,.mail").find("li").click(function () {
+                $.cookie('nav_index', 2, { path: '/' });
+            });
+            $(".sign").find("li").click(function () {
+                $.cookie('nav_index', 3, { path: '/' });
+            });
+        });
+    </script>
+    <!--右侧内容-->
+    <div class="main_content acc-m-con">
+        <div class="right_mcontent">
+            <div class="safe_center clear" style="padding-left: 0px; border-bottom: 2px solid #e55600;">
+                <h1 style="margin-top: 0px; margin-bottom: 15px; line-height: 15px;">{:L('user_set_dual_authentication')}</h1>
+            </div>
+
+            <notempty name="prompt_text">
+                <div class="mytips">
+                    <h6 style="color: #ff8000;">{:L('kindly_reminder')}</h6>
+                    {$prompt_text}
+                </div>
+            </notempty>
+
+            <br>
+
+            <eq name="is_ga" value="0">
+           <!--     <form id="form-gaa" class="assets_content w900 right bg_w">-->
+                    <div class="pb29">
+                        <div class="dv_info">
+                            <p>{:L('user_ga_desc_1')}</p>
+
+                            <p>{:L('user_ga_desc_2')}</p>
+                        </div>
+                        <div class="dv_title">
+                            <em class="dv_num_1"></em> {:L('user_ga_desc_3')}
+                        </div>
+                        <div class="dv_content">
+                            <div class="mbphone_btn" id="mbphone_btn">
+                                <dl>
+                                    <dt>{:L('user_ga_desc_4')}</dt>
+                                    <dd>
+                                        <a target="_blank"
+                                           href="http://itunes.apple.com/cn/app/google-authenticator/id388497605?mt=8">{:L('user_click_view')}</a>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>{:L('user_ga_desc_5')}</dt>
+                                    <dd>
+                                        <a target="_blank" href="http://apk.hiapk.com/html/2013/07/1643619.html">{:L('user_click_download')}</a>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>{:L('user_ga_desc_16')}</dt>
+                                    <dd>
+                                        <a target="_blank" href="http://code.google.com/p/lwuitgauthj2me/">{:L('user_click_download')}</a>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="dv_title">
+                            <em class="dv_num_2"></em> {:L('user_ga_desc_6')}
+                        </div>
+                        <div class="dv_content">
+                            <p>{:L('user_ga_desc_7')}</p>
+
+                            <div class="dv_ewm" id="qrcode"></div>
+                            <p>
+                                {:L('user_ga_desc_8')}<b>{$Asecret}</b>
+                            </p>
+                        </div>
+                        <div class="dv_title">
+                            <em class="dv_num_3"></em>{:L('user_configuration_complete')}
+                        </div>
+                        <div class="dv_content">
+                            <p>{:L('user_ga_desc_9')}</p>
+
+                            <p class="orange">{:L('user_ga_desc_10')}</p>
+
+                            <p class="orange">
+                                {:L('user_ga_desc_11')} :
+                                <b>{$Asecret}</b> {:L('user_ga_desc_12')}
+                            </p>
+
+                            <p>{:L('user_ga_desc_13')}</p>
+
+                            <div class="dv_input">
+                                <input type="hidden" name="secret" value="{$Asecret}"> {:L('user_dual_authentication_pwd')}：<input id="ga" type="text"
+                                                                                                                                   name="ga" />
+
+                                <div class="dv_ts">
+                                    <em></em>{:L('user_ga_desc_14')}
+                                </div>
+                            </div>
+                            <div class="dv_radio">
+                                {:L('user_ga_desc_15')}：
+                                <label for="ga-login">
+                                    <input type="checkbox" id="ga-login" name="login" checked="1">{:L('login')}
+                                </label>
+                                <label for="ga-transfer">
+                                    <input type="checkbox" id="ga-transfer" checked="1"
+                                           name="transfer">{:L('user_money_out')}
+                                </label>
+                            </div>
+                        </div>
+                        <div class="dv_title">
+                            <em class="dv_num_4"></em>
+
+                            <div class="dv_submit">
+                                <input type="button" onclick="goole_verify()" value="{:L('user_verify_and_enable')}">
+                            </div>
+                        </div>
+                    </div>
+                <!--</form>-->
+                <script type="text/javascript" src="__PUBLIC__/Home/js/jquery.qrcode.min.js"></script>
+                <script>
+                    $('#qrcode').qrcode({
+                        render: "table", //table方式
+                        size: 200,
+                        text: "{$qrCodeUrl}" //任意内容
+                    }); //任意字符串
+
+                    function goole_verify() {
+                        var ga = $('#ga').val();
+                        var ga_login = $('#ga-login').is(':checked') ? 1 : 0;
+                        var ga_transfer = $('#ga-transfer').is(':checked') ? 1 : 0;
+                        var ga = $('#ga').val();
+                        if (!ga) {
+                            layer.tips('{:L('enter_captcha')}', '#ga', {
+                            tips: [
+                                1,
+                                '#0FA6D8'
+                            ]
+                        });
+                        return;
+                    }
+                    $.post("{:U('user/ga')}", {
+                        ga: ga,
+                        ga_login: ga_login,
+                        ga_transfer: ga_transfer,
+                        type: 'add'
+                    }, function (ret) {
+                        if (ret.status) {
+                            layer.msg('{:L('user_operation_success_jump')}...', {icon: 16});
+                            setTimeout('flash()', 3000);
+                        } else {
+                            layer.msg(ret.info);
+                        }
+                    }, 'json');
+                    }
+                </script>
+                <else />
+                <!--<form id="form-ga" class="assets_content w900 right bg_w">-->
+                    <div class="set_verify">
+                        <ul>
+                            <li>{:L('user_ga_desc_15')}：</li>
+                            <li>
+                                <label for="ga-login">
+                                    <input type="checkbox" id="ga-login" name="login">
+                                    <eq name="ga_login" value="1">checked="1"</eq>
+                                    >
+                                    {:L('login')}
+                                </label>
+                                <span>({:L('user_login_ga_desc')})</span>
+                            </li>
+                            <li>
+                                <label for="ga-transfer">
+                                    <input type="checkbox" id="ga-transfer" name="transfer">
+                                    <eq name="ga_transfer" value="1">checked="1"</eq>
+                                    >
+                                    {:L('user_money_out')}
+                                </label>
+                                <span>({:L('user_money_out_ga_desc')})</span>
+                            </li>
+                            <li>
+                                <div class="sv_input">
+                                    <input id="ga" placeholder="{:L('user_enter_ga_pwd')}" type="text">
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="save_verify">
+                            <input value="{:L('save')}" type="button" onclick="google_set()">
+                        </div>
+                    </div>
+                    <div class="off_fn">
+                        <dl>
+                            <dt>{:L('user_open_or_close_ga')}：</dt>
+                            <dd>
+                                <div class="off_fn_input">
+                                    <input id="ga_delete" name="ga_delete" placeholder="{:L('user_enter_ga_pwd')}" type="text">
+                                </div>
+                            </dd>
+                            <dd class="clear">
+                                <a onclick="ga_cancel()">{:L('user_cancel_ga')}</a>
+                            </dd>
+                        </dl>
+                    </div>
+                <!--</form>-->
+                <script>
+                    function google_set() {
+                        var ga = $('#ga').val();
+                        var ga_login = $('#ga-login').is(':checked') ? 1 : 0;
+                        var ga_transfer = $('#ga-transfer').is(':checked') ? 1 : 0;
+                        var ga = $('#ga').val();
+                        if (!ga) {
+                            layer.tips('{:L('enter_captcha')}', '#ga', {
+                            tips: [
+                                1,
+                                '#0FA6D8'
+                            ]
+                        });
+                        return;
+                    }
+                    $.post("{:U('user/ga')}", {
+                        ga: ga,
+                        ga_login: ga_login,
+                        ga_transfer: ga_transfer,
+                        type: 'update'
+                    }, function (ret) {
+                        if (ret.status) {
+                            layer.msg('{:L('user_operation_success_jump')}...', {icon: 16});
+                            setTimeout('flash()', 3000);
+                        } else {
+                            layer.msg(ret.info);
+                        }
+                    }, 'json');
+                    }
+
+                    function ga_cancel() {
+                        var ga = $('#ga_delete').val();
+                        var ga = $('#ga_delete').val();
+                        if (!ga) {
+                            layer.tips('{:L('enter_captcha')}', '#ga_delete', {
+                            tips: [
+                                1,
+                                '#0FA6D8'
+                            ]
+                        });
+                        return;
+                    }
+                    $.post("{:U('user/ga')}", {
+                        ga: ga,
+                        type: 'delete'
+                    }, function (ret) {
+                        if (ret.status) {
+                            layer.msg('{:L('user_operation_success_jump')}...', {icon: 16});
+                            setTimeout('flash()', 3000);
+                        } else {
+                            layer.msg(ret.info);
+                        }
+                    }, 'json');
+                    }
+                </script>
+            </eq>
+        </div>
+    </div>
+
+</div>
+<br>
+<br>
+<script>
+
+    $('#user_box').addClass('active');
+    $('#user_ga').addClass('active');
+    $('#user_ga i').attr('class', 'coin_menu_op_11');
+
+    function flash() {
+
+        window.location = "{:U('user/ga')}"
+    }
+</script>
+<include file="Public:footer"/>

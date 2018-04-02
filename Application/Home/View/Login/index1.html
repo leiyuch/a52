@@ -1,0 +1,583 @@
+<include file="Public:header1" />
+<style>
+    *:before, *:after, .form-control {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    .glyphicon-ok:before {
+        content: "\221A";
+    }
+
+    .leftregi form, .rightlogin form {
+        width: 100%;
+        text-align: left;
+    }
+
+    .rightlogin {
+        display: flex;
+        align-items: center;
+    }
+
+    label {
+        float: left;
+        width: 30%;
+        font-weight: bold;
+        text-align: right;
+        padding: 15px 15px 0 0;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        font-family: "Microsoft YaHei";
+    }
+
+    .btn-block.sub-btn {
+        width: 40%;
+        margin: 10px auto;
+    }
+
+        .btn-block.sub-btn:focus {
+            background: #f60 !important;
+        }
+
+    p.red {
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    .form-group .red, p.red {
+        font-size: 13px;
+    }
+
+    .r-tip {
+        font-size: 13px;
+        font-weight: normal;
+        vertical-align: middle;
+        height: 48px;
+        display: table-cell;
+        padding-left: 5px;
+    }
+
+    .code-box {
+        position: relative;
+        width: 70%;
+        float: left;
+    }
+
+        .code-box .help-block {
+            margin-left: 0;
+            padding-top: 5px;
+        }
+
+    #code, #codeReg {
+        position: absolute;
+        left: 160px;
+        top: -5px;
+    }
+
+    .checkbox {
+        clear: both;
+        margin-left: 30%;
+    }
+
+        .checkbox a {
+            margin-top: 15px;
+        }
+
+    #agrCheckLabel {
+        width: auto;
+        user-select: none;
+    }
+
+    .m_title h4 {
+        text-align: center;
+        font-weight: normal;
+        font-size: 24px;
+    }
+    /*auto email*/
+    .auto-tip {
+        background: #fff;
+        color: #2c3e50;
+        border: 2px solid #dce4ec;
+        border-top: none;
+        border-radius: 4px;
+        z-index: 10000;
+        text-align: left;
+    }
+
+        .auto-tip li {
+            width: 100%;
+            height: 28px;
+            line-height: 28px;
+            padding: 0 15px;
+            font-size: 14px;
+        }
+
+            .auto-tip li.hoverBg {
+                background: #ecf0f1;
+                cursor: pointer;
+            }
+
+        .auto-tip em {
+            font-style: normal;
+        }
+
+    #signupForm .auto-tip {
+        top: 71px !important;
+    }
+
+    .completer-container, .pla {
+        position: absolute;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        font-family: inherit;
+        font-size: 14px;
+        line-height: normal;
+        list-style: none;
+        background-color: #fff;
+        border: 1px solid #eee;
+        border-radius: 3px;
+    }
+
+        .completer-container li, .pla li {
+            padding: .5em .8em;
+            margin: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            cursor: pointer;
+            background-color: #fff;
+            border-bottom: 1px solid #eee;
+        }
+
+            .completer-container .completer-selected, .completer-container li:hover, .pla .completer-selected {
+                margin-left: -1px;
+                background-color: #eee;
+                border-left: 1px solid #ff5e23;
+            }
+
+    /*bootstrap*/
+    .has-feedback {
+        position: relative;
+        clear: both;
+    }
+
+        .has-feedback .form-control {
+            float: left;
+            width: 40%;
+            padding-right: 42.5px;
+            font-size: 15px;
+            margin-bottom: 0;
+        }
+
+    .form-control-feedback {
+        position: absolute;
+        top: 0;
+        right: 30%;
+        z-index: 2;
+        display: block;
+        width: 34px;
+        height: 34px;
+        line-height: 34px;
+        text-align: center;
+        pointer-events: none;
+    }
+
+    .has-success .help-block, .has-success .control-label, .has-success .radio, .has-success .checkbox, .has-success .radio-inline, .has-success .checkbox-inline, .has-success.radio label, .has-success.checkbox label, .has-success.radio-inline label, .has-success.checkbox-inline label {
+        color: #3c763d;
+    }
+
+    .has-success .form-control {
+        border-color: #3c763d;
+    }
+
+        .has-success .form-control:focus {
+            border-color: #2b542c;
+        }
+
+    .has-success .input-group-addon {
+        color: #3c763d;
+        border-color: #3c763d;
+        background-color: #dff0d8;
+    }
+
+    .has-success .form-control-feedback {
+        color: #0da77d;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .has-error .help-block, .has-error .control-label, .has-error .radio, .has-error .checkbox, .has-error .radio-inline, .has-error .checkbox-inline, .has-error.radio label, .has-error.checkbox label, .has-error.radio-inline label, .has-error.checkbox-inline label {
+        color: #a94442;
+    }
+
+    .has-error .form-control {
+        border-color: #a94442;
+    }
+
+        .has-error .form-control:focus {
+            border-color: #843534;
+        }
+
+    .has-error .input-group-addon {
+        color: #a94442;
+        border-color: #a94442;
+        background-color: #f2dede;
+    }
+
+    .has-error .form-control-feedback {
+        color: #a94442;
+    }
+
+    .has-feedback label ~ .form-control-feedback {
+        top: 8px;
+    }
+
+    .has-feedback label.sr-only ~ .form-control-feedback {
+        top: 0;
+    }
+
+    .help-block {
+        display: block;
+        clear: both;
+        width: 40%;
+        margin-left: 30%;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        color: #737373;
+    }
+
+    .has-feedback .form-control.code-input {
+        width: 152px;
+    }
+
+    #codeGroup .form-control-feedback {
+        left: 114px;
+        top: 8px;
+    }
+    /*loading*/
+    .spinner {
+        display: none;
+        margin: 0 auto;
+        width: 50px;
+        text-align: center;
+    }
+
+        .spinner > div {
+            width: 10px;
+            height: 10px;
+            background-color: #ffad69;
+            border-radius: 100%;
+            display: inline-block;
+            -webkit-animation: bouncedelay 1.4s infinite ease-in-out;
+            animation: bouncedelay 1.4s infinite ease-in-out;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+        }
+
+        .spinner .bounce1 {
+            -webkit-animation-delay: -0.32s;
+            animation-delay: -0.32s;
+        }
+
+        .spinner .bounce2 {
+            -webkit-animation-delay: -0.16s;
+            animation-delay: -0.16s;
+        }
+
+    @-webkit-keyframes bouncedelay {
+        0%, 80%, 100% {
+            -webkit-transform: scale(0.0);
+        }
+
+        40% {
+            -webkit-transform: scale(1.0);
+        }
+    }
+
+    @keyframes bouncedelay {
+        0%, 80%, 100% {
+            transform: scale(0.0);
+            -webkit-transform: scale(0.0);
+        }
+
+        40% {
+            transform: scale(1.0);
+            -webkit-transform: scale(1.0);
+        }
+    }
+
+    .form-control-feedback {
+        margin-right: 0;
+        display: none;
+    }
+
+    .has-success .form-control-feedback {
+        display: block;
+    }
+
+    .has-feedback #captcha_code {
+        padding-right: 40px;
+    }
+
+    #loginSub:focus {
+        background-color: #18bc9c;
+        border-color: #18bc9c;
+    }
+
+    legend {
+        text-align: center;
+        color: #fff;
+    }
+
+    /*注册*/
+    #agreeCheck {
+        margin-top: 2px;
+    }
+
+    .password-level {
+        clear: both;
+        width: 40%;
+        margin: 0 auto;
+    }
+
+        .password-level .col-md-11 {
+            padding-left: 0;
+        }
+
+        .password-level .col-md-4 {
+            width: 33.33%;
+            float: left;
+        }
+
+        .password-level span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            text-align: center;
+            line-height: 0;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+    #signPswLevel.password-level span, #fundPswLevel.password-level span {
+        height: 16px;
+        line-height: 16px;
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+    .discount {
+        color: #ff5e23;
+        margin: 10px 0 18px;
+        font-weight: bold;
+    }
+
+    #signupSub {
+        margin: 0 auto;
+    }
+
+    .input-item-info {
+        width: 30%;
+        float: left;
+    }
+
+    .code-box .form-control-feedback {
+        right: auto;
+        left: 114px;
+        top: 8px;
+    }
+</style>
+<div class="left_con_login">
+    <div class="login_incontent login-con">
+
+        <div class="right_mcontent clearfix">
+            <style type="text/css">
+                .maichu {
+                    width: 100%;
+                    float: right;
+                }
+
+                .login-con .maichu {
+                    border-left: none;
+                }
+            </style>
+            <div class="maichu">
+                <!--<div class="m_title"><h4>登录Bter</h4></div>-->
+                <div class="m_con rightlogin">
+                    <form role="form" id="loginForm" name="login" method="post" action="#">
+
+                        <div class="form-group parentCls has-feedback" id="emailGroup">
+                            <label for="email">用户名/邮箱</label>
+                            <div class="automail-list"></div>
+                            <input type="text" class="form-control inputElem" name="username" id="username" value="">
+                            <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <span class="help-block"></span>
+                        </div>
+
+                        <div class="form-group has-feedback" id="pswGroup">
+                            <label for="password">登录密码</label>
+                            <input type="password" class="form-control" name="password" id="password">
+                            <div class="input-item-info"><a href="{:U('Login/findpwd')}" style="line-height: 48px;margin-left: 5px;">忘记密码？</a></div>
+                            <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <span class="help-block"></span>
+                        </div>
+
+                     
+                      
+
+                        <div class="form-group has-feedback clearfix" id="codeGroup">
+                            <label for="captcha_code">图片验证码</label>
+                            <!--<div class="clearfix code-box">-->
+                            <input type="text" class="form-control code-input" name="verify" id="verify" maxlength="4" autocomplete="off">
+                            &nbsp;<img id="codeImg" src="{:U('Verify/code')}" width="145" height="42"
+                                       onclick="this.src=this.src+'?t='+Math.random()" style="float: left; cursor: pointer;" title="换一张" />
+                            <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <span class="help-block"></span>
+                            <!--</div>-->
+                        </div>
+                           <div class="form-group has-feedback clearfix" id="codeGroup">
+                            <label for="captcha_code">手机验证码</label>
+                            <!--<div class="clearfix code-box">-->
+                            <input type="text" class="form-control code-input" name="mverify" id="mverify" maxlength="4" autocomplete="off">
+                         
+                                <div class="input-item-info">   <input id="regBtn" type="button"  style="background-color: rgb(255, 87, 34);width:130px" value="获取验证码" onclick="SendCode()" style="width: 145px; height: 42px;"></div>
+                            <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <span class="help-block"></span>
+                            <!--</div>-->
+                           </div>
+                        <!--<tr>
+                            <th align="right">验证码：</th>
+                            <td>
+                                <div class="formbody">
+                                    <i class="icon_code"></i>
+                                    <input type="text" class="code" id="verify" name="code" placeholder="请输入验证码" style="width: 100px;">
+                                    <img id="codeImg" src="{:U('Verify/code')}" width="145" height="42"
+                                          onclick="this.src=this.src+'?t='+Math.random()" style="float: left; cursor: pointer;" title="换一张">
+                                </div>
+                            </td>
+                        </tr>-->
+
+                        <div class="form-group" id="ipGroup">
+                            <label for="iprestriction" style="user-select: none;">安全选项</label>
+                            <div class="pull-left" style="margin-top: 10px">
+                                <input class="form-control" type="checkbox" name="iprestriction" id="iprestriction" value='1' checked> 绑定到IP地址 <span class=red>（为保证账号安全如非动态IP切勿去选！）</span>
+                            </div>
+                            <span class="help-block"></span>
+                        </div>
+
+                        <button type="button" class="btn btn-success btn-block sub-btn" id="loginSub" onclick="Update()">
+                            <span>登录</span>
+                            <div class="spinner">
+                                <div class="bounce1"></div>
+                                <div class="bounce2"></div>
+                                <div class="bounce3"></div>
+                            </div>
+                        </button>
+                        <a href="{:U('Login/register')}">
+                            <button type="button" class="btn btn-secondary btn-block sub-btn" id="loginSub">
+                                <span>注册</span>
+                                <div class="spinner">
+                                    <div class="bounce1"></div>
+                                    <div class="bounce2"></div>
+                                    <div class="bounce3"></div>
+                                </div>
+                            </button>
+                        </a>
+                        <p class="red"><i id="dpIcon">!</i>提醒：谨防骗子，切勿泄露密码给任何人，官方从不会向用户询问密码。</p>
+                        <span class="errmsg" id='errmsg'></span>
+                    </form>
+                </div> <!-- login -->
+            </div>
+
+
+
+
+        </div>
+    </div>
+</div>
+
+<script>
+
+
+ function SendCode() {
+        var username = $("#username").val();     
+        var verify = $("#verify").val();
+        if (username == "" || username == null) {
+            layer.tips('请输入用户名', '#username', { tips: 3 });
+            return false;
+        }       
+        if (verify == "" || verify == null) {
+            layer.tips('请输入验证码', '#verify', { tips: 3 });
+            return false;
+        }
+
+
+        $.post("/Login/sendcode", { username: username, verify: verify }, function (data) {
+            if (data.status == 1) {               
+                layer.msg(data.info,{icon:1});
+               
+            } else {
+                layer.msg(data.info,{icon:2});
+               
+            }
+        }, "json");
+    }
+    //记住账号
+    var cookieValue = $.cookies.get('cookie_username');
+    if (cookieValue != '' && cookieValue != null) {
+        $("#username").val(cookieValue);
+        $("#autoLogin").attr("checked", true);
+    }
+
+
+    function Update() {
+        var username = $("#username").val();
+        var password = $("#password").val();
+        var verify = $("#verify").val();
+         var mverify = $("#mverify").val();
+        if (username == "" || username == null) {
+            layer.tips('请输入用户名', '#username', { tips: 3 });
+            return false;
+        }
+        if (password == "" || password == null) {
+            layer.tips('请输入登录密码', '#password', { tips: 3 });
+            return false;
+        }
+        if (verify == "" || verify == null) {
+            layer.tips('请输入验证码', '#verify', { tips: 3 });
+            return false;
+        }
+         if (mverify == "" || mverify == null) {
+            layer.tips('请输入短信验证码', '#mverify', { tips: 3 });
+            return false;
+        }
+
+
+        $.post("/Login/submit", { username: username, password: password, verify: verify, mverify: mverify }, function (data) {
+            if (data.status == 1) {
+                if($("#autologin").attr("checked")=='checked'){
+                	$.cookies.set('cookie_username',username);
+                }else{
+                	$.cookies.set('cookie_username',null);
+                }
+                layer.msg(data.info,{icon:1});
+                window.setTimeout("window.location='/Finance'", 1000);
+            } else {
+                layer.msg(data.info,{icon:2});
+                if (data.url) {
+                    window.setTimeout("window.location=" + data.url, 1000);
+                }
+            }
+        }, "json");
+    }
+</script>
+<script>
+    //顶部菜单高亮
+    $('#menu_top_index').addClass('current');
+</script>
+<include file="Public:footer" />

@@ -1,0 +1,1055 @@
+[ 2018-03-27T12:23:44+08:00 ] 127.0.0.1 /Public/Admin/i1mages/bg_2.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004994s ]
+
+[ 2018-03-27T12:23:52+08:00 ] 127.0.0.1 /Public/Admin/ima1ges/bg_2.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004415s ]
+
+[ 2018-03-27T15:33:23+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005422s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001490s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.009377s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011141s ]
+SQL: SHOW COLUMNS FROM `movesay_config` [ RunTime:0.0369s ]
+SQL: SELECT * FROM `movesay_config` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0021s ]
+NOTIC: [8] Undefined index: movesay E:\data\a52jiaoyi\Application\Home\Controller\HomeController.class.php 第 72 行.
+SQL: SHOW COLUMNS FROM `movesay_coin` [ RunTime:0.0237s ]
+SQL: SELECT * FROM `movesay_coin` WHERE `status` = 1  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `movesay_market` [ RunTime:0.0256s ]
+SQL: SELECT * FROM `movesay_market` WHERE `status` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `movesay_article_type` [ RunTime:0.0294s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `status` = 1 AND `footer` = 1 AND `shang` = '' ORDER BY sort asc ,id desc LIMIT 3   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'aboutus' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'help' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'xiazai' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `movesay_adver` [ RunTime:0.0422s ]
+SQL: SELECT * FROM `movesay_adver` WHERE `status` = 1 ORDER BY id asc  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `status` = 1 AND `index` = 1 ORDER BY sort asc ,id desc LIMIT 3   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `movesay_article` [ RunTime:0.0348s ]
+SQL: SELECT * FROM `movesay_article` WHERE `type` = 'aaa' AND `status` = 1 AND `index` = 1 ORDER BY id desc LIMIT 6   [ RunTime:0.0109s ]
+SQL: SELECT * FROM `movesay_article` WHERE `type` = 'bbb' AND `status` = 1 AND `index` = 1 ORDER BY id desc LIMIT 6   [ RunTime:0.0016s ]
+SQL: SELECT * FROM `movesay_article` WHERE `type` = 'ccc' AND `status` = 1 AND `index` = 1 ORDER BY id desc LIMIT 6   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_link` [ RunTime:0.0270s ]
+SQL: SELECT * FROM `movesay_link` WHERE `status` = 1 ORDER BY sort asc ,id desc  [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000356s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000475s ]
+NOTIC: [8] Undefined variable: market E:\data\a52jiaoyi\Runtime\Cache\Home\de5cbf627ab6e43830fd1b850225ec9e.php 第 214 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.077775s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.077924s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000997s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001074s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001204s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001300s ]
+
+[ 2018-03-27T15:33:23+08:00 ] 127.0.0.1 /Public/Home1/index/fonts/css/font.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004251s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001265s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002573s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004105s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-27T15:33:23+08:00 ] 127.0.0.1 /Public/Home1/index/css/8f9d0d2997bd496d8a3ac6e93d704e45.css)
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004800s ]
+NOTIC: [2] preg_replace(): Compilation failed: unmatched parentheses at offset 5 E:\data\a52jiaoyi\ThinkPHP\Library\Think\Dispatcher.class.php 第 127 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001520s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004128s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005950s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-27T15:33:23+08:00 ] 127.0.0.1 /Public/Home1/index/css/71a94fb1317a4ed9ab70b52f771d36cf.css)
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005932s ]
+NOTIC: [2] preg_replace(): Compilation failed: unmatched parentheses at offset 5 E:\data\a52jiaoyi\ThinkPHP\Library\Think\Dispatcher.class.php 第 127 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003082s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002923s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006328s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-27T15:33:23+08:00 ] 127.0.0.1 /Public/Home1/index/css/18569789989844928e9cc00805ac3eed.css)
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005891s ]
+NOTIC: [2] preg_replace(): Compilation failed: unmatched parentheses at offset 5 E:\data\a52jiaoyi\ThinkPHP\Library\Think\Dispatcher.class.php 第 127 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004750s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003069s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008133s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-27T15:33:25+08:00 ] 127.0.0.1 /Trade/ordinary?market=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004104s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001846s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.016473s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.018565s ]
+NOTIC: [2048] Declaration of Home\Controller\TradeController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') E:\data\a52jiaoyi\Application\Home\Controller\TradeController.class.php 第 5 行.
+SQL: SHOW COLUMNS FROM `movesay_config` [ RunTime:0.0143s ]
+SQL: SELECT * FROM `movesay_config` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: movesay E:\data\a52jiaoyi\Application\Home\Controller\HomeController.class.php 第 72 行.
+SQL: SHOW COLUMNS FROM `movesay_coin` [ RunTime:0.0103s ]
+SQL: SELECT * FROM `movesay_coin` WHERE `status` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `movesay_market` [ RunTime:0.0068s ]
+SQL: SELECT * FROM `movesay_market` WHERE `status` = 1  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `movesay_article_type` [ RunTime:0.0084s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `status` = 1 AND `footer` = 1 AND `shang` = '' ORDER BY sort asc ,id desc LIMIT 3   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'aboutus' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0018s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'help' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0017s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'xiazai' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000126s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000237s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029909s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030061s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001749s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001883s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001880s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002037s ]
+
+[ 2018-03-27T15:33:27+08:00 ] 127.0.0.1 /Chart/getMarketOrdinaryJson?market=sgc_cny&time=5&t=1522136005891
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005315s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002343s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003519s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006178s ]
+SQL: SHOW COLUMNS FROM `movesay_config` [ RunTime:0.0114s ]
+SQL: SELECT * FROM `movesay_config` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0032s ]
+NOTIC: [8] Undefined index: movesay E:\data\a52jiaoyi\Application\Home\Controller\HomeController.class.php 第 72 行.
+SQL: SHOW COLUMNS FROM `movesay_coin` [ RunTime:0.0092s ]
+SQL: SELECT * FROM `movesay_coin` WHERE `status` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `movesay_market` [ RunTime:0.0170s ]
+SQL: SELECT * FROM `movesay_market` WHERE `status` = 1  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `movesay_article_type` [ RunTime:0.0156s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `status` = 1 AND `footer` = 1 AND `shang` = '' ORDER BY sort asc ,id desc LIMIT 3   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'aboutus' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'help' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'xiazai' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `movesay_trade_json` [ RunTime:0.0427s ]
+SQL: SELECT * FROM `movesay_trade_json` WHERE `market` = 'sgc_cny' AND `type` = '5' AND `data` <> '' ORDER BY id desc LIMIT 100   [ RunTime:0.0007s ]
+
+[ 2018-03-27T15:33:30+08:00 ] 127.0.0.1 /Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005820s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002070s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003580s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005985s ]
+SQL: SHOW COLUMNS FROM `movesay_config` [ RunTime:0.0130s ]
+SQL: SELECT * FROM `movesay_config` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0013s ]
+NOTIC: [8] Undefined index: movesay E:\data\a52jiaoyi\Application\Home\Controller\HomeController.class.php 第 72 行.
+SQL: SHOW COLUMNS FROM `movesay_coin` [ RunTime:0.0075s ]
+SQL: SELECT * FROM `movesay_coin` WHERE `status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_market` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `movesay_market` WHERE `status` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `movesay_article_type` [ RunTime:0.0098s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `status` = 1 AND `footer` = 1 AND `shang` = '' ORDER BY sort asc ,id desc LIMIT 3   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'aboutus' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'help' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'xiazai' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000114s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000291s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.049304s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.049645s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001567s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001810s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003053s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003728s ]
+
+[ 2018-03-27T15:33:31+08:00 ] 127.0.0.1 /Public/fonts.googleapis.com/css-family=Work+Sans-100,200,300,400,500,600,700,800,900.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003829s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001020s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002094s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003321s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-27T15:33:31+08:00 ] 127.0.0.1 /Public/fonts.googleapis.com/css-family=Montserrat-100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i-Roboto-100i,300,300i,400,400i,500,500i,700,700i,900,900i.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004874s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001512s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002901s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004645s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-27T15:33:31+08:00 ] 127.0.0.1 /Public/Home3/images/fav.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004731s ]
+
+[ 2018-03-27T15:33:34+08:00 ] 127.0.0.1 /Login/register.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000950s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002022s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003170s ]
+SQL: SHOW COLUMNS FROM `movesay_config` [ RunTime:0.0092s ]
+SQL: SELECT * FROM `movesay_config` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+NOTIC: [8] Undefined index: movesay E:\data\a52jiaoyi\Application\Home\Controller\HomeController.class.php 第 72 行.
+SQL: SHOW COLUMNS FROM `movesay_coin` [ RunTime:0.0118s ]
+SQL: SELECT * FROM `movesay_coin` WHERE `status` = 1  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `movesay_market` [ RunTime:0.0086s ]
+SQL: SELECT * FROM `movesay_market` WHERE `status` = 1  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `movesay_article_type` [ RunTime:0.0091s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `status` = 1 AND `footer` = 1 AND `shang` = '' ORDER BY sort asc ,id desc LIMIT 3   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'aboutus' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0011s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'help' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'xiazai' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000119s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000239s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020638s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020871s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001029s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001115s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002470s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002639s ]
+
+[ 2018-03-27T15:33:34+08:00 ] 127.0.0.1 /Public/fonts.googleapis.com/css-family=Montserrat-100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i-Roboto-100i,300,300i,400,400i,500,500i,700,700i,900,900i.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004070s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001073s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001956s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003270s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-27T15:33:34+08:00 ] 127.0.0.1 /Public/fonts.googleapis.com/css-family=Work+Sans-100,200,300,400,500,600,700,800,900.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005294s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002582s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003271s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006243s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-27T15:33:56+08:00 ] 127.0.0.1 /Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000123s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009995s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000873s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001746s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002794s ]
+SQL: SHOW COLUMNS FROM `movesay_config` [ RunTime:0.0118s ]
+SQL: SELECT * FROM `movesay_config` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0009s ]
+NOTIC: [8] Undefined index: movesay E:\data\a52jiaoyi\Application\Home\Controller\HomeController.class.php 第 72 行.
+SQL: SHOW COLUMNS FROM `movesay_coin` [ RunTime:0.0106s ]
+SQL: SELECT * FROM `movesay_coin` WHERE `status` = 1  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `movesay_market` [ RunTime:0.0089s ]
+SQL: SELECT * FROM `movesay_market` WHERE `status` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `movesay_article_type` [ RunTime:0.0085s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `status` = 1 AND `footer` = 1 AND `shang` = '' ORDER BY sort asc ,id desc LIMIT 3   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'aboutus' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'help' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'xiazai' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000142s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000356s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017402s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017640s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001140s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001245s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001590s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001731s ]
+
+[ 2018-03-27T15:33:56+08:00 ] 127.0.0.1 /Public/fonts.googleapis.com/css-family=Montserrat-100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i-Roboto-100i,300,300i,400,400i,500,500i,700,700i,900,900i.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005295s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000925s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001922s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003093s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-27T15:33:56+08:00 ] 127.0.0.1 /Public/fonts.googleapis.com/css-family=Work+Sans-100,200,300,400,500,600,700,800,900.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004619s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003287s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.008453s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.012280s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-27T15:34:12+08:00 ] 127.0.0.1 /Login/submit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005183s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001574s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002632s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004433s ]
+SQL: SHOW COLUMNS FROM `movesay_config` [ RunTime:0.0118s ]
+SQL: SELECT * FROM `movesay_config` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0009s ]
+NOTIC: [8] Undefined index: movesay E:\data\a52jiaoyi\Application\Home\Controller\HomeController.class.php 第 72 行.
+SQL: SHOW COLUMNS FROM `movesay_coin` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `movesay_coin` WHERE `status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_market` [ RunTime:0.0087s ]
+SQL: SELECT * FROM `movesay_market` WHERE `status` = 1  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `movesay_article_type` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `status` = 1 AND `footer` = 1 AND `shang` = '' ORDER BY sort asc ,id desc LIMIT 3   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'aboutus' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'help' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'xiazai' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: user E:\data\a52jiaoyi\Application\Home\Controller\LoginController.class.php 第 312 行.
+NOTIC: [8] Undefined variable: user E:\data\a52jiaoyi\Application\Home\Controller\LoginController.class.php 第 318 行.
+SQL: SHOW COLUMNS FROM `movesay_user` [ RunTime:0.0377s ]
+SQL: SELECT * FROM `movesay_user` WHERE `username` = 'myworld' LIMIT 1   [ RunTime:0.0061s ]
+NOTIC: [2] fopen(E:\data\a52jiaoyi\ThinkPHP\Library\Org\Net/UTFWry.dat): failed to open stream: No such file or directory E:\data\a52jiaoyi\ThinkPHP\Library\Org\Net\IpLocation.class.php 第 54 行.
+SQL: set autocommit=0 [ RunTime:0.0102s ]
+SQL: lock tables movesay_user write , movesay_user_log write  [ RunTime:0.0128s ]
+SQL: SHOW COLUMNS FROM `movesay_user` [ RunTime:0.0082s ]
+SQL: UPDATE `movesay_user` SET `logins`=logins+1 WHERE `id` = '5058' [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `movesay_user_log` [ RunTime:0.0124s ]
+SQL: INSERT INTO `movesay_user_log` (`userid`,`type`,`remark`,`addtime`,`addip`,`addr`,`status`,`en_type`,`en_remark`,`en_addr`) VALUES ('5058','登录','通过用户名登录','1522136052','127.0.0.1','未分配或者内网IP','1','Login','Login by account','Not assigned or within the network IP') [ RunTime:0.0015s ]
+SQL: commit [ RunTime:0.0002s ]
+SQL: unlock tables [ RunTime:0.0003s ]
+
+[ 2018-03-27T15:34:14+08:00 ] 127.0.0.1 /Finance
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006384s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001310s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.012096s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.013637s ]
+SQL: SHOW COLUMNS FROM `movesay_user` [ RunTime:0.0089s ]
+SQL: SELECT * FROM `movesay_user` WHERE ( id = 5058 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_user_coin` [ RunTime:0.0464s ]
+SQL: SELECT * FROM `movesay_user_coin` WHERE `userid` = 5058 LIMIT 1   [ RunTime:0.0096s ]
+SQL: SHOW COLUMNS FROM `movesay_config` [ RunTime:0.0118s ]
+SQL: SELECT * FROM `movesay_config` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0011s ]
+NOTIC: [8] Undefined index: movesay E:\data\a52jiaoyi\Application\Home\Controller\HomeController.class.php 第 72 行.
+SQL: SHOW COLUMNS FROM `movesay_coin` [ RunTime:0.0087s ]
+SQL: SELECT * FROM `movesay_coin` WHERE `status` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `movesay_market` [ RunTime:0.0106s ]
+SQL: SELECT * FROM `movesay_market` WHERE `status` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `movesay_article_type` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `status` = 1 AND `footer` = 1 AND `shang` = '' ORDER BY sort asc ,id desc LIMIT 3   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'aboutus' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'help' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'xiazai' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `movesay_coin` WHERE `status` = 1  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `movesay_user_coin` WHERE `userid` = 5058 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `movesay_market` WHERE `status` = 1  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `movesay_text` [ RunTime:0.0311s ]
+SQL: SHOW COLUMNS FROM `movesay_text` [ RunTime:0.0078s ]
+SQL: SELECT * FROM `movesay_text` WHERE `name` = 'finance_index' LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT `content` FROM `movesay_text` WHERE `name` = 'finance_index' AND `status` = 1 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [2] unlink(./Runtime/Temp/0d094b549cb0f0815514516d9cee7a0a.php): No such file or directory E:\data\a52jiaoyi\ThinkPHP\Library\Think\Cache\Driver\File.class.php 第 157 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000282s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000460s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.061180s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.061372s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001570s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001649s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001371s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001490s ]
+
+[ 2018-03-27T15:34:14+08:00 ] 127.0.0.1 /js/jquery.cookie.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007564s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002728s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003325s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006568s ]
+ERR: 无法加载控制器:Js
+
+[ 2018-03-27T15:34:14+08:00 ] 127.0.0.1 /Public/fonts.googleapis.com/css-family=Montserrat-100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i-Roboto-100i,300,300i,400,400i,500,500i,700,700i,900,900i.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008193s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000878s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003074s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-27T15:34:14+08:00 ] 127.0.0.1 /Public/fonts.googleapis.com/css-family=Work+Sans-100,200,300,400,500,600,700,800,900.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006022s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001218s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002345s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003745s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-27T15:34:14+08:00 ] 127.0.0.1 /js/jquery.cookie.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004628s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001375s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003986s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005789s ]
+ERR: 无法加载控制器:Js
+
+[ 2018-03-27T15:34:18+08:00 ] 127.0.0.1 /Finance/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004469s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.015769s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.020660s ]
+SQL: SHOW COLUMNS FROM `movesay_user` [ RunTime:0.0067s ]
+SQL: SELECT * FROM `movesay_user` WHERE ( id = 5058 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `movesay_user_coin` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `movesay_user_coin` WHERE `userid` = 5058 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_config` [ RunTime:0.0082s ]
+SQL: SELECT * FROM `movesay_config` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0011s ]
+NOTIC: [8] Undefined index: movesay E:\data\a52jiaoyi\Application\Home\Controller\HomeController.class.php 第 72 行.
+SQL: SHOW COLUMNS FROM `movesay_coin` [ RunTime:0.0074s ]
+SQL: SELECT * FROM `movesay_coin` WHERE `status` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `movesay_market` [ RunTime:0.0112s ]
+SQL: SELECT * FROM `movesay_market` WHERE `status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_article_type` [ RunTime:0.0089s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `status` = 1 AND `footer` = 1 AND `shang` = '' ORDER BY sort asc ,id desc LIMIT 3   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'aboutus' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'help' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'xiazai' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `movesay_coin` WHERE `status` = 1  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `movesay_user_coin` WHERE `userid` = 5058 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `movesay_market` WHERE `status` = 1  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `movesay_text` [ RunTime:0.0085s ]
+SQL: SHOW COLUMNS FROM `movesay_text` [ RunTime:0.0093s ]
+SQL: SELECT * FROM `movesay_text` WHERE `name` = 'finance_index' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `content` FROM `movesay_text` WHERE `name` = 'finance_index' AND `status` = 1 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] unlink(./Runtime/Temp/0d094b549cb0f0815514516d9cee7a0a.php): No such file or directory E:\data\a52jiaoyi\ThinkPHP\Library\Think\Cache\Driver\File.class.php 第 157 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000346s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000587s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025242s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025366s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000909s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000988s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001509s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001640s ]
+
+[ 2018-03-27T15:34:18+08:00 ] 127.0.0.1 /js/jquery.cookie.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004664s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001662s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003051s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005081s ]
+ERR: 无法加载控制器:Js
+
+[ 2018-03-27T15:34:18+08:00 ] 127.0.0.1 /Public/fonts.googleapis.com/css-family=Montserrat-100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i-Roboto-100i,300,300i,400,400i,500,500i,700,700i,900,900i.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005539s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001198s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002143s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003626s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-27T15:34:18+08:00 ] 127.0.0.1 /Public/fonts.googleapis.com/css-family=Work+Sans-100,200,300,400,500,600,700,800,900.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004088s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004292s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003797s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008696s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-27T15:34:18+08:00 ] 127.0.0.1 /js/jquery.cookie.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004208s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001213s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002421s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003808s ]
+ERR: 无法加载控制器:Js
+
+[ 2018-03-27T15:34:21+08:00 ] 127.0.0.1 /User/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010828s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003184s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.009903s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.013802s ]
+SQL: SHOW COLUMNS FROM `movesay_user` [ RunTime:0.0072s ]
+SQL: SELECT * FROM `movesay_user` WHERE ( id = 5058 ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `movesay_user_coin` [ RunTime:0.0071s ]
+SQL: SELECT * FROM `movesay_user_coin` WHERE `userid` = 5058 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_config` [ RunTime:0.0072s ]
+SQL: SELECT * FROM `movesay_config` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0015s ]
+NOTIC: [8] Undefined index: movesay E:\data\a52jiaoyi\Application\Home\Controller\HomeController.class.php 第 72 行.
+SQL: SHOW COLUMNS FROM `movesay_coin` [ RunTime:0.0078s ]
+SQL: SELECT * FROM `movesay_coin` WHERE `status` = 1  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `movesay_market` [ RunTime:0.0081s ]
+SQL: SELECT * FROM `movesay_market` WHERE `status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_article_type` [ RunTime:0.0072s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `status` = 1 AND `footer` = 1 AND `shang` = '' ORDER BY sort asc ,id desc LIMIT 3   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'aboutus' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'help' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'xiazai' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `movesay_user` [ RunTime:0.0077s ]
+SQL: SELECT * FROM `movesay_user` WHERE `id` = 5058 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_text` [ RunTime:0.0069s ]
+SQL: SHOW COLUMNS FROM `movesay_text` [ RunTime:0.0089s ]
+SQL: SELECT * FROM `movesay_text` WHERE `name` = 'user_index' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `content` FROM `movesay_text` WHERE `name` = 'user_index' AND `status` = 1 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [2] unlink(./Runtime/Temp/5f0b0c9c2f2db3dd00e7a8f8c61c0e43.php): No such file or directory E:\data\a52jiaoyi\ThinkPHP\Library\Think\Cache\Driver\File.class.php 第 157 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000164s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000274s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.037061s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.037157s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001083s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001195s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001601s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001728s ]
+
+[ 2018-03-27T15:34:21+08:00 ] 127.0.0.1 /Public/fonts.googleapis.com/css-family=Work+Sans-100,200,300,400,500,600,700,800,900.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004020s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000939s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001828s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002976s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-27T15:34:21+08:00 ] 127.0.0.1 /Public/fonts.googleapis.com/css-family=Montserrat-100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i-Roboto-100i,300,300i,400,400i,500,500i,700,700i,900,900i.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007034s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001558s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004495s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006324s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-27T15:34:36+08:00 ] 127.0.0.1 /User/password.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.016041s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002557s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003399s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007053s ]
+SQL: SHOW COLUMNS FROM `movesay_user` [ RunTime:0.0098s ]
+SQL: SELECT * FROM `movesay_user` WHERE ( id = 5058 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `movesay_user_coin` [ RunTime:0.0073s ]
+SQL: SELECT * FROM `movesay_user_coin` WHERE `userid` = 5058 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_config` [ RunTime:0.0077s ]
+SQL: SELECT * FROM `movesay_config` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0012s ]
+NOTIC: [8] Undefined index: movesay E:\data\a52jiaoyi\Application\Home\Controller\HomeController.class.php 第 72 行.
+SQL: SHOW COLUMNS FROM `movesay_coin` [ RunTime:0.0085s ]
+SQL: SELECT * FROM `movesay_coin` WHERE `status` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `movesay_market` [ RunTime:0.0096s ]
+SQL: SELECT * FROM `movesay_market` WHERE `status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_article_type` [ RunTime:0.0094s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `status` = 1 AND `footer` = 1 AND `shang` = '' ORDER BY sort asc ,id desc LIMIT 3   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'aboutus' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'help' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'xiazai' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `movesay_text` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `movesay_text` [ RunTime:0.0075s ]
+SQL: SELECT * FROM `movesay_text` WHERE `name` = 'user_password' LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT `content` FROM `movesay_text` WHERE `name` = 'user_password' AND `status` = 1 LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [2] unlink(./Runtime/Temp/f956f35bb435563c20dee8941b4831d0.php): No such file or directory E:\data\a52jiaoyi\ThinkPHP\Library\Think\Cache\Driver\File.class.php 第 157 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000128s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000321s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.054532s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.054743s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001189s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001275s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001595s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001714s ]
+
+[ 2018-03-27T15:34:36+08:00 ] 127.0.0.1 /Public/fonts.googleapis.com/css-family=Montserrat-100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i-Roboto-100i,300,300i,400,400i,500,500i,700,700i,900,900i.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003606s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003009s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003186s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006742s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-27T15:34:36+08:00 ] 127.0.0.1 /Public/fonts.googleapis.com/css-family=Work+Sans-100,200,300,400,500,600,700,800,900.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007615s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001184s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002451s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003809s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-27T15:34:40+08:00 ] 127.0.0.1 /User/nameauth.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000051s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005427s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001270s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.008868s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010599s ]
+SQL: SHOW COLUMNS FROM `movesay_user` [ RunTime:0.0087s ]
+SQL: SELECT * FROM `movesay_user` WHERE ( id = 5058 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `movesay_user_coin` [ RunTime:0.0062s ]
+SQL: SELECT * FROM `movesay_user_coin` WHERE `userid` = 5058 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `movesay_config` [ RunTime:0.0074s ]
+SQL: SELECT * FROM `movesay_config` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+NOTIC: [8] Undefined index: movesay E:\data\a52jiaoyi\Application\Home\Controller\HomeController.class.php 第 72 行.
+SQL: SHOW COLUMNS FROM `movesay_coin` [ RunTime:0.0093s ]
+SQL: SELECT * FROM `movesay_coin` WHERE `status` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `movesay_market` [ RunTime:0.0077s ]
+SQL: SELECT * FROM `movesay_market` WHERE `status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_article_type` [ RunTime:0.0087s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `status` = 1 AND `footer` = 1 AND `shang` = '' ORDER BY sort asc ,id desc LIMIT 3   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'aboutus' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'help' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'xiazai' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_user` [ RunTime:0.0072s ]
+SQL: SELECT * FROM `movesay_user` WHERE `id` = 5058 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_text` [ RunTime:0.0077s ]
+SQL: SHOW COLUMNS FROM `movesay_text` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `movesay_text` WHERE `name` = 'user_nameauth' LIMIT 1   [ RunTime:0.0180s ]
+SQL: SELECT `content` FROM `movesay_text` WHERE `name` = 'user_nameauth' AND `status` = 1 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [2] unlink(./Runtime/Temp/7e78f34d1da7675f11888f3dd8db7322.php): No such file or directory E:\data\a52jiaoyi\ThinkPHP\Library\Think\Cache\Driver\File.class.php 第 157 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000127s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000234s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.039917s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.040071s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002504s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002704s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001981s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002211s ]
+
+[ 2018-03-27T15:34:40+08:00 ] 127.0.0.1 /Public/fonts.googleapis.com/css-family=Work+Sans-100,200,300,400,500,600,700,800,900.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005088s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001052s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001776s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003078s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-27T15:34:40+08:00 ] 127.0.0.1 /Public/fonts.googleapis.com/css-family=Montserrat-100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i-Roboto-100i,300,300i,400,400i,500,500i,700,700i,900,900i.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004285s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001217s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003415s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004857s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-27T15:34:50+08:00 ] 127.0.0.1 /User/paypassword.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004313s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002946s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.007422s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011014s ]
+SQL: SHOW COLUMNS FROM `movesay_user` [ RunTime:0.0076s ]
+SQL: SELECT * FROM `movesay_user` WHERE ( id = 5058 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_user_coin` [ RunTime:0.0076s ]
+SQL: SELECT * FROM `movesay_user_coin` WHERE `userid` = 5058 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `movesay_config` [ RunTime:0.0098s ]
+SQL: SELECT * FROM `movesay_config` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+NOTIC: [8] Undefined index: movesay E:\data\a52jiaoyi\Application\Home\Controller\HomeController.class.php 第 72 行.
+SQL: SHOW COLUMNS FROM `movesay_coin` [ RunTime:0.0084s ]
+SQL: SELECT * FROM `movesay_coin` WHERE `status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_market` [ RunTime:0.0087s ]
+SQL: SELECT * FROM `movesay_market` WHERE `status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_article_type` [ RunTime:0.0074s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `status` = 1 AND `footer` = 1 AND `shang` = '' ORDER BY sort asc ,id desc LIMIT 3   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'aboutus' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'help' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'xiazai' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `movesay_text` [ RunTime:0.0066s ]
+SQL: SHOW COLUMNS FROM `movesay_text` [ RunTime:0.0105s ]
+SQL: SELECT * FROM `movesay_text` WHERE `name` = 'user_paypassword' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `content` FROM `movesay_text` WHERE `name` = 'user_paypassword' AND `status` = 1 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] unlink(./Runtime/Temp/92e5129aa3c00f51203c59ae3abca084.php): No such file or directory E:\data\a52jiaoyi\ThinkPHP\Library\Think\Cache\Driver\File.class.php 第 157 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000119s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000226s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.053904s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.054026s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001032s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001109s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001539s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001648s ]
+
+[ 2018-03-27T15:34:50+08:00 ] 127.0.0.1 /Public/fonts.googleapis.com/css-family=Work+Sans-100,200,300,400,500,600,700,800,900.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004615s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001213s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002398s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004222s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-27T15:34:50+08:00 ] 127.0.0.1 /Public/fonts.googleapis.com/css-family=Montserrat-100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i-Roboto-100i,300,300i,400,400i,500,500i,700,700i,900,900i.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005461s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001419s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002693s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004384s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-27T15:34:54+08:00 ] 127.0.0.1 /User/tpwdset.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005478s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001732s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.005625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007674s ]
+SQL: SHOW COLUMNS FROM `movesay_user` [ RunTime:0.0077s ]
+SQL: SELECT * FROM `movesay_user` WHERE ( id = 5058 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `movesay_user_coin` [ RunTime:0.0073s ]
+SQL: SELECT * FROM `movesay_user_coin` WHERE `userid` = 5058 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_config` [ RunTime:0.0075s ]
+SQL: SELECT * FROM `movesay_config` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0011s ]
+NOTIC: [8] Undefined index: movesay E:\data\a52jiaoyi\Application\Home\Controller\HomeController.class.php 第 72 行.
+SQL: SHOW COLUMNS FROM `movesay_coin` [ RunTime:0.0078s ]
+SQL: SELECT * FROM `movesay_coin` WHERE `status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_market` [ RunTime:0.0073s ]
+SQL: SELECT * FROM `movesay_market` WHERE `status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_article_type` [ RunTime:0.0078s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `status` = 1 AND `footer` = 1 AND `shang` = '' ORDER BY sort asc ,id desc LIMIT 3   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'aboutus' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'help' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'xiazai' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `movesay_user` [ RunTime:0.0068s ]
+SQL: SELECT * FROM `movesay_user` WHERE `id` = 5058 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_text` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `movesay_text` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `movesay_text` WHERE `name` = 'user_tpwdset' LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `content` FROM `movesay_text` WHERE `name` = 'user_tpwdset' AND `status` = 1 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] unlink(./Runtime/Temp/d8ddfb5429622c5de80fcd2657282ef9.php): No such file or directory E:\data\a52jiaoyi\ThinkPHP\Library\Think\Cache\Driver\File.class.php 第 157 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000128s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000237s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017445s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017545s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000993s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001068s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001581s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001707s ]
+
+[ 2018-03-27T15:34:54+08:00 ] 127.0.0.1 /Public/fonts.googleapis.com/css-family=Work+Sans-100,200,300,400,500,600,700,800,900.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003659s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000988s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001797s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003043s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-27T15:34:54+08:00 ] 127.0.0.1 /Public/fonts.googleapis.com/css-family=Montserrat-100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i-Roboto-100i,300,300i,400,400i,500,500i,700,700i,900,900i.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005555s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001257s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002536s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003985s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-27T15:35:00+08:00 ] 127.0.0.1 /User/goods.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005463s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004953s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.009006s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.014584s ]
+SQL: SHOW COLUMNS FROM `movesay_user` [ RunTime:0.0083s ]
+SQL: SELECT * FROM `movesay_user` WHERE ( id = 5058 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `movesay_user_coin` [ RunTime:0.0087s ]
+SQL: SELECT * FROM `movesay_user_coin` WHERE `userid` = 5058 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `movesay_config` [ RunTime:0.0101s ]
+SQL: SELECT * FROM `movesay_config` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+NOTIC: [8] Undefined index: movesay E:\data\a52jiaoyi\Application\Home\Controller\HomeController.class.php 第 72 行.
+SQL: SHOW COLUMNS FROM `movesay_coin` [ RunTime:0.0073s ]
+SQL: SELECT * FROM `movesay_coin` WHERE `status` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `movesay_market` [ RunTime:0.0097s ]
+SQL: SELECT * FROM `movesay_market` WHERE `status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_article_type` [ RunTime:0.0076s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `status` = 1 AND `footer` = 1 AND `shang` = '' ORDER BY sort asc ,id desc LIMIT 3   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'aboutus' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'help' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'xiazai' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_user_goods` [ RunTime:0.0410s ]
+SQL: SELECT * FROM `movesay_user_goods` WHERE `userid` = 5058 AND `status` = 1 ORDER BY id desc  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `movesay_text` [ RunTime:0.0084s ]
+SQL: SHOW COLUMNS FROM `movesay_text` [ RunTime:0.0079s ]
+SQL: SELECT * FROM `movesay_text` WHERE `name` = 'user_goods' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `content` FROM `movesay_text` WHERE `name` = 'user_goods' AND `status` = 1 LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [2] unlink(./Runtime/Temp/fd9901451106658bbdb58642fd7ee5e7.php): No such file or directory E:\data\a52jiaoyi\ThinkPHP\Library\Think\Cache\Driver\File.class.php 第 157 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000164s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000281s ]
+NOTIC: [8] Undefined variable: xnb E:\data\a52jiaoyi\Runtime\Cache\Home\6bddf3de0f6fd96380fb9d6ebc9de1b3.php 第 394 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.053140s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.053236s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001177s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001281s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002559s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002774s ]
+
+[ 2018-03-27T15:35:00+08:00 ] 127.0.0.1 /Public/fonts.googleapis.com/css-family=Work+Sans-100,200,300,400,500,600,700,800,900.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005924s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000901s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001853s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002957s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-27T15:35:00+08:00 ] 127.0.0.1 /Public/fonts.googleapis.com/css-family=Montserrat-100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i-Roboto-100i,300,300i,400,400i,500,500i,700,700i,900,900i.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005450s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002443s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002919s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005861s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-27T15:39:36+08:00 ] 127.0.0.1 /User/upgoods.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004891s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.009774s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004212s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.014221s ]
+SQL: SHOW COLUMNS FROM `movesay_user` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `movesay_user` WHERE ( id = 5058 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_user_coin` [ RunTime:0.0077s ]
+SQL: SELECT * FROM `movesay_user_coin` WHERE `userid` = 5058 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_config` [ RunTime:0.0069s ]
+SQL: SELECT * FROM `movesay_config` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+NOTIC: [8] Undefined index: movesay E:\data\a52jiaoyi\Application\Home\Controller\HomeController.class.php 第 72 行.
+SQL: SHOW COLUMNS FROM `movesay_coin` [ RunTime:0.0092s ]
+SQL: SELECT * FROM `movesay_coin` WHERE `status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_market` [ RunTime:0.0078s ]
+SQL: SELECT * FROM `movesay_market` WHERE `status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_article_type` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `status` = 1 AND `footer` = 1 AND `shang` = '' ORDER BY sort asc ,id desc LIMIT 3   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'aboutus' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'help' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'xiazai' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0006s ]
+
+[ 2018-03-27T15:39:40+08:00 ] 127.0.0.1 /User/upgoods.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004598s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001164s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004011s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005343s ]
+SQL: SHOW COLUMNS FROM `movesay_user` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `movesay_user` WHERE ( id = 5058 ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `movesay_user_coin` [ RunTime:0.0067s ]
+SQL: SELECT * FROM `movesay_user_coin` WHERE `userid` = 5058 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_config` [ RunTime:0.0101s ]
+SQL: SELECT * FROM `movesay_config` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0017s ]
+NOTIC: [8] Undefined index: movesay E:\data\a52jiaoyi\Application\Home\Controller\HomeController.class.php 第 72 行.
+SQL: SHOW COLUMNS FROM `movesay_coin` [ RunTime:0.0076s ]
+SQL: SELECT * FROM `movesay_coin` WHERE `status` = 1  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `movesay_market` [ RunTime:0.0077s ]
+SQL: SELECT * FROM `movesay_market` WHERE `status` = 1  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `movesay_article_type` [ RunTime:0.0077s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `status` = 1 AND `footer` = 1 AND `shang` = '' ORDER BY sort asc ,id desc LIMIT 3   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'aboutus' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'help' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'xiazai' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0003s ]
+
+[ 2018-03-27T15:39:54+08:00 ] 127.0.0.1 /User/upgoods.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000078s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006203s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001671s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004221s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006151s ]
+SQL: SHOW COLUMNS FROM `movesay_user` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `movesay_user` WHERE ( id = 5058 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `movesay_user_coin` [ RunTime:0.0073s ]
+SQL: SELECT * FROM `movesay_user_coin` WHERE `userid` = 5058 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `movesay_config` [ RunTime:0.0091s ]
+SQL: SELECT * FROM `movesay_config` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0009s ]
+NOTIC: [8] Undefined index: movesay E:\data\a52jiaoyi\Application\Home\Controller\HomeController.class.php 第 72 行.
+SQL: SHOW COLUMNS FROM `movesay_coin` [ RunTime:0.0085s ]
+SQL: SELECT * FROM `movesay_coin` WHERE `status` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `movesay_market` [ RunTime:0.0084s ]
+SQL: SELECT * FROM `movesay_market` WHERE `status` = 1  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `movesay_article_type` [ RunTime:0.0068s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `status` = 1 AND `footer` = 1 AND `shang` = '' ORDER BY sort asc ,id desc LIMIT 3   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'aboutus' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'help' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'xiazai' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0005s ]
+
+[ 2018-03-27T15:40:34+08:00 ] 127.0.0.1 /User/upgoods.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005884s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002413s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004571s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007532s ]
+SQL: SHOW COLUMNS FROM `movesay_user` [ RunTime:0.0072s ]
+SQL: SELECT * FROM `movesay_user` WHERE ( id = 5058 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `movesay_user_coin` [ RunTime:0.0064s ]
+SQL: SELECT * FROM `movesay_user_coin` WHERE `userid` = 5058 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `movesay_config` [ RunTime:0.0072s ]
+SQL: SELECT * FROM `movesay_config` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+NOTIC: [8] Undefined index: movesay E:\data\a52jiaoyi\Application\Home\Controller\HomeController.class.php 第 72 行.
+SQL: SHOW COLUMNS FROM `movesay_coin` [ RunTime:0.0087s ]
+SQL: SELECT * FROM `movesay_coin` WHERE `status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_market` [ RunTime:0.0072s ]
+SQL: SELECT * FROM `movesay_market` WHERE `status` = 1  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `movesay_article_type` [ RunTime:0.0062s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `status` = 1 AND `footer` = 1 AND `shang` = '' ORDER BY sort asc ,id desc LIMIT 3   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'aboutus' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'help' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'xiazai' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0007s ]
+
+[ 2018-03-27T17:12:44+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.012752s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.011522s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.012540s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.024299s ]
+SQL: SHOW COLUMNS FROM `movesay_config` [ RunTime:0.0402s ]
+SQL: SELECT * FROM `movesay_config` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0122s ]
+NOTIC: [8] Undefined index: movesay E:\data\a52jiaoyi\Application\Home\Controller\HomeController.class.php 第 72 行.
+SQL: SHOW COLUMNS FROM `movesay_coin` [ RunTime:0.0341s ]
+SQL: SELECT * FROM `movesay_coin` WHERE `status` = 1  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `movesay_market` [ RunTime:0.0219s ]
+SQL: SELECT * FROM `movesay_market` WHERE `status` = 1  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `movesay_article_type` [ RunTime:0.0260s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `status` = 1 AND `footer` = 1 AND `shang` = '' ORDER BY sort asc ,id desc LIMIT 3   [ RunTime:0.0135s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'aboutus' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0014s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'help' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0011s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `shang` = 'xiazai' AND `footer` = 1 AND `status` = 1 ORDER BY id asc LIMIT 4   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `movesay_adver` [ RunTime:0.0380s ]
+SQL: SELECT * FROM `movesay_adver` WHERE `status` = 1 ORDER BY id asc  [ RunTime:0.0011s ]
+SQL: SELECT * FROM `movesay_article_type` WHERE `status` = 1 AND `index` = 1 ORDER BY sort asc ,id desc LIMIT 3   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `movesay_article` [ RunTime:0.0327s ]
+SQL: SELECT * FROM `movesay_article` WHERE `type` = 'aaa' AND `status` = 1 AND `index` = 1 ORDER BY id desc LIMIT 6   [ RunTime:0.0068s ]
+SQL: SELECT * FROM `movesay_article` WHERE `type` = 'bbb' AND `status` = 1 AND `index` = 1 ORDER BY id desc LIMIT 6   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `movesay_article` WHERE `type` = 'ccc' AND `status` = 1 AND `index` = 1 ORDER BY id desc LIMIT 6   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `movesay_link` [ RunTime:0.0242s ]
+SQL: SELECT * FROM `movesay_link` WHERE `status` = 1 ORDER BY sort asc ,id desc  [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000264s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000374s ]
+NOTIC: [8] Undefined variable: market E:\data\a52jiaoyi\Runtime\Cache\Home\de5cbf627ab6e43830fd1b850225ec9e.php 第 214 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.055767s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.055910s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001382s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001481s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.006728s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006871s ]
+
+[ 2018-03-27T17:12:45+08:00 ] 127.0.0.1 /Public/Home1/index/fonts/css/font.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005062s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001260s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002464s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003935s ]
+ERR: 无法加载控制器:Public
+

@@ -1,0 +1,167 @@
+﻿<include file="Public:header" />
+
+		
+		<section class="box-content">
+			
+			    <style>
+			            
+			    </style>
+			    <div class="main-content clearfix">
+				    <div class="now"> 
+					    <i class="fa fa-home fa-lg move mr5"></i>
+					    <a href="/" class="movesay">{:L('home')}</a> &gt; 
+					    <a href="{:U('User/index')}" class="movesay">{:L('security')} </a> &gt; {:L('security')} 
+				    </div>
+				     
+					<include file="User:header_left" />  
+					
+
+				    <div class="tag-list-content assets_content bg_w"> 
+				     <div class="safe_center clear"> 
+				      	<h1> <span> {:L('security')} </span> <span> <a class="right" onclick="$('#hints').slideToggle();"> <i class="fa fa-hand-o-right move fz_14 mr5"></i> <span class="fz_12 move">帮助</span> </a> </span> </h1> 
+				     </div> 
+				     
+				     
+				     <div id="hints" class="mytips"> 
+      
+					      <p><span><span style="background-color:#FFFFFF;font-size:14px;color:#666666;"> {:L('user_index')} </span></span></p> 
+					     </div> 
+					     <ul class="sc_statu"> 
+					        <li> 
+					         <dl> 
+							
+										<dt>{:L('real_name')}：{$user.truename}</dt>
+										<dt>{:L('user_name')}：{$user.username}</dt>
+					         </dl> </li> 
+					       <li> 
+							    <empty name="user['moble']">
+										<em class="sc_statu_type_2"></em>
+										<dl>
+											<dt>{:L('bound_phone')}</dt>
+											<dd class="nopass">
+												{:L('user_not_bound')} <a href="/user/moble.html">{:L('view')}</a>
+											</dd>
+										</dl>
+										<else /> <em class="sc_statu_type_2"></em>
+										<dl>
+											<dt>{:L('bound_phone')}</dt>
+											<dd class="alpass">
+												{:L('user_bound')} <a href="/user/moble.html">{:L('view')}</a>
+											</dd>
+										</dl>
+									</empty>
+							
+							</li> 
+							 <li> 
+									<em class="sc_statu_type_2"></em>
+											<dl>
+												<dt>{:L('certification')}</dt>
+												<dd class="alpass">
+													{:L('user_bound')} <a href="/user/nameauth.html">{:L('view')}</a>
+												</dd>
+											</dl>
+								</li> 
+					        <!-- <li>
+								 <em class="sc_statu_type_2"></em> 
+					         <dl> 
+					          <dt>
+					           绑定邮箱
+					          </dt> 
+					          <dd class="alpass">
+					           已绑定 
+					           <a href="/user/email.html">查看</a> 
+					          </dd> 
+					         </dl> </li>  -->
+					     </ul> 
+					     <div class="sc_info_list" id="sc_info_list"> 
+								<dl>
+										<dt>{:L('login_password')}</dt>
+										<dd>
+											<p>{:L('user_login_password_desc')}</p>
+										</dd>
+										<dd>
+											<div class="changepw">
+												<a href="/user/password.html">{:L('user_modify_login_password')}</a>
+											</div>
+										</dd>
+									</dl>
+									<dl>
+										<dt>{:L('trade_password')}</dt>
+										<dd>
+											<p>{:L('user_trade_password_desc')}</p>
+										</dd>
+										<dd>
+											<div class="changepw">
+												<a href="/user/paypassword.html">{:L('user_modify_trade_password')}</a>
+											</div>
+										</dd>
+									</dl>
+					        <!-- <dl> 
+					         <dt>
+					          {:L('login_password')}
+					         </dt> 
+					         <dd> 
+					          <p> 登录账户时需要输入的密码 </p> 
+					         </dd> 
+					         <dd> 
+					          <div class="changepw"> 
+					           <a href="/user/password.html">修改密码</a> 
+					          </div> 
+					         </dd> 
+					        </dl> 
+					        <dl> 
+					         <dt>
+					          交易密码
+					         </dt> 
+					         <dd> 
+					          <p>在进行交易时需要输入的密码</p> 
+					         </dd> 
+					         <dd> 
+					          <div class="changepw"> 
+					           <a href="/user/paypassword.html"> 修改密码 </a> 
+					          </div> 
+					         </dd> 
+					        </dl>  -->
+					  </div> 
+				     
+				     
+				     
+				    </div> 
+				</div>
+				<div class="clearfix"></div>
+		</section>
+		
+
+		
+
+
+		
+
+		
+
+
+		
+		<include file="Public:footer" />
+	<!-- include jQuery -->
+	<script src="__PUBLIC__/Home3/js/admin/jquery.min.js"></script>
+	<!-- bootstrap -->
+	<script src="__PUBLIC__/Home3/js/bootstrap.min.js"></script>
+	<!-- plugins.js -->
+	<script src="__PUBLIC__/Home3/js/plugins.js"></script>
+	<!-- all parallax -->
+	<script src="__PUBLIC__/Home3/js/parlx.js"></script>
+	<!-- nice-select -->
+	
+	<!-- chart js -->
+	<script src="__PUBLIC__/Home3/js/raphael-min.js"></script>
+	<script src="__PUBLIC__/Home3/js/morris.min.js"></script>
+	 <!-- dscountdown -->
+	<script src="__PUBLIC__/Home3/js/dscountdown.min.js"></script>
+	<!-- custom js -->
+	<script src="__PUBLIC__/Home3/js/custom.js"></script>
+	<script src="__PUBLIC__/Home3/js/sidebar-menu.js"></script>
+	<script>
+		$.sidebarMenu($('.sidebar-menu'))
+	</script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+﻿<table class="leftbar" style="padding-top: 35px">
+    <tbody>
+        <tr>
+            <td style="border-bottom:0;" valign="top">
+                <div id="marketlist_wrapper" class="dataTables_wrapper" role="grid">
+                    <table class="marketlist dataTable" id="tradelist" cellspacing="0" cellpadding="0">
+                        <tbody role="alert" aria-live="polite" aria-relevant="all">
+                            <tr>
+                                <td class="no-wrap alignRight" style=" width:100%;border:none">
+                                    <div id="wrapper-250">
+                                        <ul class="accordion">
+                                            <li id="adn1" class="files">
+                                                <a href="#one" class="active">认证中心<span class="umicon"></span></a>
+                                                <ul class="sub-menu" style="display: block;">
+                                                    <li><a data-id="id_setup" href="{:U('User/nameauth')}"><em>07</em>{:L('certification')}</a></li>
+                                                    <li><a data-id="totp" href="{:U('User/ga')}"><em>10</em>{:L('user_set_dual_authentication')}</a></li>
+                                                    <li><a data-id="sms_setup" href="{:U('User/moble')}"><em>11</em>{:L('bound_phone')}</a></li>
+                                                    <li><a data-id="login2_setup" href="{:U('User/alipay')}"><em>12</em>{:L('user_bound_alipay')}</a></li>
+                                                    <li><a data-id="mylogs" href="{:U('User/bank')}"><em>14</em>{:L('user_bank_card_management')}</a></li>
+                                                </ul>
+                                            </li>
+                                            <li id="adn4" class="control">
+                                                <a href="#two" class="">{:L('user_modify_login_password')}<span class="umicon"></span></a>
+                                                <ul class="sub-menu" style="display: none;">
+                                                    <li><a data-id="resetpw" href="{:U('User/password')}"><em>08</em>{:L('user_modify_login_password')}</a></li>
+                                                    <li><a data-id="resetfpw" href="{:U('User/paypassword')}"><em>09</em>{:L('user_modify_trade_password')}</a></li>
+                                                    <li><a data-id="apikeys" href="{:U('User/tpwdset')}"><em>13</em>{:L('user_set_trade_password_enter')}</a></li>
+                                                    <li><a data-id="mylogs" href="{:U('User/goods')}"><em>14</em>{:L('user_contact_address_management')}</a></li>
+                                                </ul>
+                                            </li>
+                                            <li id="adn5" class="cloud">
+                                                <a href="#two" class="">{:L('user_wallet_address_management')}<span class="umicon"></span></a>
+                                                <ul class="sub-menu" style="display: none;">
+
+                                                    <li><a data-id="mylogs" href="{:U('User/qianbao')}"><em>14</em>{:L('user_wallet_address_management')}</a></li>
+                                                </ul>
+                                            </li>
+                                            <li id="adn6" class="sign">
+                                                <a href="#two" class="">{:L('user_login_log')}<span class="umicon"></span></a>
+                                                <ul class="sub-menu" style="display: none;">
+
+                                                    <li><a data-id="mylogs" href="{:U('User/log')}"><em>14</em>{:L('user_login_log')}</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+<!--<div class="coin_menu">
+    <div class="coin_menu_box">
+        <ul>
+            <li id="user_index">
+                <i class="coin_menu_op_14_1"></i><a href="{:U('User/index')}">{:L('security')}</a>
+            </li>
+            <li id="user_nameauth">
+                <i class="coin_menu_op_8_1"></i><a href="{:U('User/nameauth')}">{:L('certification')}</a>
+            </li>
+            <li id="user_password">
+                <i class="coin_menu_op_9_1"></i><a href="{:U('User/password')}">{:L('user_modify_login_password')}</a>
+            </li>
+            <li id="user_paypassword">
+                <i class="coin_menu_op_10_1"></i><a href="{:U('User/paypassword')}">{:L('user_modify_trade_password')}</a>
+            </li>
+            <li id="user_ga">
+                <i class="coin_menu_op_11_1"></i><a href="{:U('User/ga')}">{:L('user_set_dual_authentication')}</a>
+            </li>
+            <li id="user_moble">
+                <i class="coin_menu_op_12_1"></i><a href="{:U('User/moble')}">{:L('bound_phone')}</a>
+            </li>
+            <li id="user_alipay">
+                <i class="coin_menu_op_6_1"></i><a href="{:U('User/alipay')}">{:L('user_bound_alipay')}</a>
+            </li>
+            <li id="user_tpwdset">
+                <i class="coin_menu_op_15_1"></i><a href="{:U('User/tpwdset')}">{:L('user_set_trade_password_enter')}</a>
+            </li>
+            <li id="user_bank">
+                <i class="coin_menu_op_3_1"></i><a href=" {:U('User/bank')}">{:L('user_bank_card_management')}</a>
+            </li>
+            <li id="user_qianbao">
+                <i class="coin_menu_op_0_1"></i><a href=" {:U('User/qianbao')}">{:L('user_wallet_address_management')}</a>
+            </li>
+            <li id="user_goods">
+                <i class="coin_menu_op_13_1"></i><a href=" {:U('User/goods')}">{:L('user_contact_address_management')}</a>
+            </li>
+            <li id="user_log">
+                <i class="coin_menu_op_7_1"></i><a href=" {:U('User/log')}">{:L('user_login_log')}</a>
+            </li>
+        </ul>
+    </div>
+</div>-->

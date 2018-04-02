@@ -1,0 +1,70 @@
+<include file="Public:header" />
+<div class="content clearfix">
+        <!--左侧菜单-->
+        <table class="leftbar" style="padding-top: 35px; ">
+            <tbody>
+                <tr>
+                    <td style="border-bottom:0;" valign="top">
+                        <div id="marketlist_wrapper" class="dataTables_wrapper" role="grid">
+                            <table class="marketlist dataTable" id="tradelist" cellspacing="0" cellpadding="0">
+                                <tbody role="alert" aria-live="polite" aria-relevant="all">
+                                    <tr>
+                                        <td class="no-wrap alignRight" style=" width:100%;border:none">
+                                            <div id="wrapper-250">
+                                                <ul class="accordion">
+                                                    <li id="adn1" class="files">
+                                                        <a href="#one" class="active">帮助中心<span class="umicon"></span></a>
+                                                        <ul class="sub-menu" style="display: block;">
+                                                            <volist name="ArticleTypeList" id="vo">
+                                                                <li><a data-id="myfunds" href="{:U('Article/index',array('id'=>$vo['id'],'type'=>1))}"><em>01</em>{$vo.title}</a></li>
+                                                              
+                                                            </volist>
+                                                            </ul>    
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <!--右侧内容-->
+        <div class="main_content acc-m-con">
+            <div class="right_mcontent">
+                <div class="assets_content w900 bg_w mh1500">
+                    <h1>{$shang['title']}</h1>
+                    <div class="new_list">
+                        <ul>
+                            <volist name="list" id="vo">
+
+                                <li>
+                                    <a href="{:U('Article/detail','id='.$vo['id'])}" class="title">{$vo.title}</a>
+
+                                    <span class="list_time" style="float: right;">{$vo.addtime|addtime}</span>
+                                </li>
+
+
+                            </volist>
+
+
+
+
+
+                        </ul>
+                    </div>
+                    <div class="pages">{$page}</div>
+                </div>
+            </div>
+        </div>
+    
+</div>
+<br>
+<br>
+<script>
+    //菜单高亮
+    $('#article_box').addClass('active');
+</script>
+<include file="Public:footer" />

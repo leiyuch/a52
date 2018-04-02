@@ -1,0 +1,119 @@
+<include file="Public:header" />
+
+		
+		<section class="box-content">
+			
+			    <style>
+			            
+			    </style>
+			    <div class="main-content clearfix">
+				    <div class="now"> 
+					    <i class="fa fa-home fa-lg move mr5"></i>
+					    <a href="/" class="movesay">{:L('home')}</a> &gt; 
+					    <a href="{:U('User/index')}" class="movesay">{:L('security')} </a> &gt; {:L('user_set_trade_password_enter')} 
+				    </div>
+				     
+                    <include file="User:header_left" />  
+                    
+				    <div class="tag-list-content assets_content bg_w"> 
+				     <div class="safe_center clear"> 
+				      	<h1> <span> {:L('user_set_trade_password_enter')} </span> <span> <a class="right" onclick="$('#hints').slideToggle();"> <i class="fa fa-hand-o-right move fz_14 mr5"></i> <span class="fz_12 move">帮助</span> </a> </span> </h1> 
+				     </div> 
+				     
+				     <div id="hints" class="mytips"> 
+					      <p><span style="color:#0096E0;line-height:21px;background-color:#FFFFFF;"><span> </span></span></p>
+					      <h1 style="font-weight:normal;font-family:tahoma, 'Microsoft YaHei', Arial, Helvetica, sans-serif;font-size:20px;color:#333333;background-color:#FFFFFF;"> <span style="color:#9933E5;"><h1  style="white-space: normal; background-color: rgb(255, 255, 255); font-weight: normal;"><span style="font-size:14px;color:#666666;">{:L('user_tpwdset')}</span> </h1> </span> </h1> 
+					      <p></p> 
+					 </div> 
+					 <div class="mytable-body"> 
+					      
+					      <div class="step2 set_verify mt30" style=""> 
+						       <ul> 
+						        <li>{:L('user_tpwdset_cvm')}:</li> 
+						        <li> <label><input type="radio" name="tpwdsetting" value="1" style="vertical-align: -2px;" checked="checked" /> <eq name="user['tpwdsetting']" value="1"></eq>{:L('user_set_trade_password_op1')} </label></li> 
+						        <li> <label><input type="radio" name="tpwdsetting" value="2" style="vertical-align: -2px;" /> <eq name="user['tpwdsetting']" value="2">checked="checked"</eq> {:L('user_set_trade_password_op2')} </label></li> 
+						        <li> <label><input type="radio" name="tpwdsetting" value="3" style="vertical-align: -2px;" /> <eq name="user['tpwdsetting']" value="3">checked="checked"</eq> {:L('user_set_trade_password_op3')} </label></li> 
+						        <li> 
+						         <div class="mt5 mb5 "> 
+						          <input id="paypassword" value="{:L('enter_trade_password')}" placeholder="请输入交易密码" type="password" class="texts" />
+						          <!-- <a href="/Findpwd/findTradePwd" class="move ml5">忘记密码?</a>  -->
+						         </div> </li> 
+						        <li> 
+						         <div class="mt10 mb10 "> 
+						          <input class="btns2" value=" {:l('save')}" type="button"  onclick="Update()" /> 
+						         </div> </li> 
+						       </ul> 
+					      </div> 
+					 </div> 
+				    
+					      
+					    
+				     
+				     
+				     
+				    </div> 
+				</div>
+				<div class="clearfix"></div>
+		</section>
+		
+
+		
+
+
+		
+
+		
+
+
+		
+		<include file="Public:footer" />
+	<!-- include jQuery -->
+	<script src="__PUBLIC__/Home3/js/admin/jquery.min.js"></script>
+	<!-- bootstrap -->
+	<script src="__PUBLIC__/Home3/js/bootstrap.min.js"></script>
+	<!-- plugins.js -->
+	<script src="__PUBLIC__/Home3/js/plugins.js"></script>
+	<!-- all parallax -->
+	<script src="__PUBLIC__/Home3/js/parlx.js"></script>
+	<!-- nice-select -->
+	
+	<!-- chart js -->
+	<script src="__PUBLIC__/Home3/js/raphael-min.js"></script>
+	<script src="__PUBLIC__/Home3/js/morris.min.js"></script>
+	 <!-- dscountdown -->
+	<script src="__PUBLIC__/Home3/js/dscountdown.min.js"></script>
+	<!-- custom js -->
+	<script src="__PUBLIC__/Home3/js/custom.js"></script>
+	<script src="__PUBLIC__/Home3/js/sidebar-menu.js"></script>
+	<script src="__PUBLIC__/layer/layer.js"></script>
+	<script>
+		$.sidebarMenu($('.sidebar-menu'))
+	</script>
+	<script>
+	function Update(){
+		var paypassword=$("#paypassword").val();
+		var tpwdsetting=$("input[name='tpwdsetting']:checked").val();
+		if(paypassword==""||paypassword==null || paypassword=="请输入交易密码"){
+			layer.tips('{:L('enter_trade_password')}','#paypassword',{tips : 3 });
+			return false;
+		}
+		if(tpwdsetting==""||tpwdsetting==null){
+			layer.tips('{:L('user_please_select_one')}','#tpwdsetting',{tips : 3 });
+			return false;
+		}
+
+		$.post("{:U('User/uptpwdsetting')}",{paypassword : paypassword,tpwdsetting : tpwdsetting },function(data){
+			if(data.status==1){
+				layer.msg(data.info,{icon : 1 });
+				window.location="{:U('User/tpwdset')}";
+			}else{
+				layer.msg(data.info,{icon : 2 });
+				if(data.url){
+					window.location=data.url;
+				}
+			}
+		},"json");
+	}
+	</script>
+</body>
+</html>

@@ -1,0 +1,820 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>用户登录/注册 -- 优质区块链资产交易平台，支持比特币，莱特币，以太坊等交易</title>
+    <meta name="description" content="比特儿 的网址是 bter.com， 是一个中文比特币Bitcoin, 以太坊, Ethereum,莱特币, Litecoin，交易平台，其特点是快捷，安全。 ">
+    <meta name="keywords" content="比特币, bitcoin, BTC, Ethereum, 以太坊, litecoin, LTC, namecoin, ppcoin, ETC, ETH, FTC, NMC, PPC, 交易平台，交易网站，比特币交易，比特币兑换，比特币市场 ">
+    <link href="__PUBLIC__/Home1/Css/style.css" rel="stylesheet" type="text/css">
+    <link href="__PUBLIC__/Home1/Css/signUp.css" rel="stylesheet" type="text/css">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/apple-touch-icon-120x120.png" />
+    <script src="__PUBLIC__/Home1/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="__PUBLIC__/Home1/Scripts/jquery.common.tools.js"></script>
+
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="__PUBLIC__/Home1/css/gloab.css" />
+    <link rel="stylesheet" href="__PUBLIC__/Home1/css/index.css" />
+    <!--<script src="login/js/jquery-1.11.1.min.js"></script>-->
+    <script src="__PUBLIC__/Home1/Scripts//register.js"></script>
+    <script src="__PUBLIC__/Home1/Scripts//jquery.cookies.2.2.0.js"></script>
+    <link href="__PUBLIC__/Home1/css//mdi.min.css" rel="stylesheet">
+    <script src="__PUBLIC__/layer/layer.js"></script>
+    <!--[if IE]><script src="Scripts/html5.js"></script><![endif]-->
+    <script>
+        (function () {
+            if (! /*@cc_on!@*/ 0) return;
+            document.createElement("template");
+        })();
+    </script>
+</head>
+
+<body>
+    <div id="siteNoty" class="notification-box"></div>
+    <div class="site-header site-header-fixed-top" id="site_header">
+        <link href="head/app.css" rel="stylesheet" type="text/css">
+        <link href="head/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="head/app-theme-5.css" rel="stylesheet" type="text/css">
+        <nav class="navbar site-navbar navbar-lg navbar-primary navbar-bg-from-transparent navbar-fg-from-light" id="site_navbar" style="background:rgb(7, 105, 224);">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#site_navbar_collapse"><i class="navbar-toggle-icon mdi mdi-menu"></i></button>
+                    <div class="site-branding">
+                        <h1 class="site-branding-title sr-only"><a class="site-branding-title-link" href="#">Site title</a></h1>
+                        <div class="site-branding-media">
+                            <a class="site-branding-media-link" href="#">
+                                <img class="site-branding-media-img site-branding-media-img-light" src="images/site-branding-media-img-light.png" alt=""><img class="site-branding-media-img site-branding-media-img-dark" src="images/site-branding-media-img-dark.png"
+                                                                                                                                                              alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="collapse navbar-collapse" id="site_navbar_collapse">
+                    <div class="navbar-right">
+                        <ul class="nav navbar-nav menu primary-menu">
+                            <li class="menu-item active"><a href="index.html">首页</a></li>
+                            <li class="menu-item"><a href="btc_cny.html">交易中心</a></li>
+                            <li class="menu-item"><a href="myfunds.html">财富账单</a></li>
+                            <li class="menu-item"><a href="id_setup.html">安全中心</a></li>
+                            <li class="menu-item"><a href="news.html">服务中心</a></li>
+                        </ul>
+                        <a href="login.html"><button class="btn btn-secondary navbar-btn" type="button">登录</button></a>
+                    </div>
+                </div>
+                <!-- .navbar-collapse-->
+            </div>
+            <!-- .container-fluid-->
+        </nav>
+        <!-- .navbar-->
+    </div>
+    <style>
+        *:before, *:after, .form-control {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        .glyphicon-ok:before {
+            content: "\221A";
+        }
+
+        .leftregi form, .rightlogin form {
+            width: 100%;
+            text-align: left;
+        }
+
+        .rightlogin {
+            display: flex;
+            align-items: center;
+        }
+
+        .btn-block.sub-btn {
+            width: 40%;
+            margin: 10px auto;
+        }
+
+            .btn-block.sub-btn:focus {
+                background: #f60 !important;
+            }
+
+        p.red {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .form-group .red, p.red {
+            font-size: 13px;
+        }
+
+        .r-tip {
+            font-size: 13px;
+            font-weight: normal;
+            vertical-align: middle;
+            height: 48px;
+            display: table-cell;
+            padding-left: 5px;
+        }
+
+        .code-box {
+            position: relative;
+            width: 70%;
+            float: left;
+        }
+
+            .code-box .help-block {
+                margin-left: 0;
+                padding-top: 5px;
+            }
+
+        #code, #codeReg {
+            position: absolute;
+            left: 160px;
+            top: -5px;
+        }
+
+        .checkbox {
+            clear: both;
+            margin-left: 30%;
+        }
+
+            .checkbox a {
+                margin-top: 15px;
+            }
+
+        #agrCheckLabel {
+            width: auto;
+            user-select: none;
+        }
+
+        .m_title h4 {
+            text-align: center;
+            font-weight: normal;
+            font-size: 24px;
+        }
+        /*auto email*/
+        .auto-tip {
+            background: #fff;
+            color: #2c3e50;
+            border: 2px solid #dce4ec;
+            border-top: none;
+            border-radius: 4px;
+            z-index: 10000;
+            text-align: left;
+        }
+
+            .auto-tip li {
+                width: 100%;
+                height: 28px;
+                line-height: 28px;
+                padding: 0 15px;
+                font-size: 14px;
+            }
+
+                .auto-tip li.hoverBg {
+                    background: #ecf0f1;
+                    cursor: pointer;
+                }
+
+            .auto-tip em {
+                font-style: normal;
+            }
+
+        #signupForm .auto-tip {
+            top: 71px !important;
+        }
+
+        .completer-container, .pla {
+            position: absolute;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            font-family: inherit;
+            font-size: 14px;
+            line-height: normal;
+            list-style: none;
+            background-color: #fff;
+            border: 1px solid #eee;
+            border-radius: 3px;
+        }
+
+            .completer-container li, .pla li {
+                padding: .5em .8em;
+                margin: 0;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                cursor: pointer;
+                background-color: #fff;
+                border-bottom: 1px solid #eee;
+            }
+
+                .completer-container .completer-selected, .completer-container li:hover, .pla .completer-selected {
+                    margin-left: -1px;
+                    background-color: #eee;
+                    border-left: 1px solid #ff5e23;
+                }
+
+        /*bootstrap*/
+        .has-feedback {
+            position: relative;
+            clear: both;
+        }
+
+            .has-feedback .form-control {
+                float: left;
+                width: 40%;
+                padding-right: 42.5px;
+                font-size: 15px;
+                margin-bottom: 0;
+            }
+
+        .form-control-feedback {
+            position: absolute;
+            top: 0;
+            right: 30%;
+            z-index: 2;
+            display: block;
+            width: 34px;
+            height: 34px;
+            line-height: 34px;
+            text-align: center;
+            pointer-events: none;
+        }
+
+        .has-success .help-block, .has-success .control-label, .has-success .radio, .has-success .checkbox, .has-success .radio-inline, .has-success .checkbox-inline, .has-success.radio label, .has-success.checkbox label, .has-success.radio-inline label, .has-success.checkbox-inline label {
+            color: #3c763d;
+        }
+
+        .has-success .form-control {
+            border-color: #3c763d;
+        }
+
+            .has-success .form-control:focus {
+                border-color: #2b542c;
+            }
+
+        .has-success .input-group-addon {
+            color: #3c763d;
+            border-color: #3c763d;
+            background-color: #dff0d8;
+        }
+
+        .has-success .form-control-feedback {
+            color: #0da77d;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .has-error .help-block, .has-error .control-label, .has-error .radio, .has-error .checkbox, .has-error .radio-inline, .has-error .checkbox-inline, .has-error.radio label, .has-error.checkbox label, .has-error.radio-inline label, .has-error.checkbox-inline label {
+            color: #a94442;
+        }
+
+        .has-error .form-control {
+            border-color: #a94442;
+        }
+
+            .has-error .form-control:focus {
+                border-color: #843534;
+            }
+
+        .has-error .input-group-addon {
+            color: #a94442;
+            border-color: #a94442;
+            background-color: #f2dede;
+        }
+
+        .has-error .form-control-feedback {
+            color: #a94442;
+        }
+
+        .has-feedback label ~ .form-control-feedback {
+            top: 8px;
+        }
+
+        .has-feedback label.sr-only ~ .form-control-feedback {
+            top: 0;
+        }
+
+        .help-block {
+            display: block;
+            clear: both;
+            width: 40%;
+            margin-left: 30%;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            color: #737373;
+        }
+
+        .has-feedback .form-control.code-input {
+            width: 152px;
+        }
+
+        #codeGroup .form-control-feedback {
+            left: 114px;
+            top: 8px;
+        }
+        /*loading*/
+        .spinner {
+            display: none;
+            margin: 0 auto;
+            width: 50px;
+            text-align: center;
+        }
+
+            .spinner > div {
+                width: 10px;
+                height: 10px;
+                background-color: #ffad69;
+                border-radius: 100%;
+                display: inline-block;
+                -webkit-animation: bouncedelay 1.4s infinite ease-in-out;
+                animation: bouncedelay 1.4s infinite ease-in-out;
+                -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+            }
+
+            .spinner .bounce1 {
+                -webkit-animation-delay: -0.32s;
+                animation-delay: -0.32s;
+            }
+
+            .spinner .bounce2 {
+                -webkit-animation-delay: -0.16s;
+                animation-delay: -0.16s;
+            }
+
+        @-webkit-keyframes bouncedelay {
+            0%, 80%, 100% {
+                -webkit-transform: scale(0.0);
+            }
+
+            40% {
+                -webkit-transform: scale(1.0);
+            }
+        }
+
+        @keyframes bouncedelay {
+            0%, 80%, 100% {
+                transform: scale(0.0);
+                -webkit-transform: scale(0.0);
+            }
+
+            40% {
+                transform: scale(1.0);
+                -webkit-transform: scale(1.0);
+            }
+        }
+
+        .form-control-feedback {
+            margin-right: 0;
+            display: none;
+        }
+
+        .has-success .form-control-feedback {
+            display: block;
+        }
+
+        .has-feedback #captcha_code {
+            padding-right: 40px;
+        }
+
+        #loginSub:focus {
+            background-color: #18bc9c;
+            border-color: #18bc9c;
+        }
+
+        legend {
+            text-align: center;
+            color: #fff;
+        }
+
+        /*注册*/
+        #agreeCheck {
+            margin-top: 2px;
+        }
+
+        .password-level {
+            clear: both;
+            width: 40%;
+            margin: 0 auto;
+        }
+
+            .password-level .col-md-11 {
+                padding-left: 0;
+            }
+
+            .password-level .col-md-4 {
+                width: 33.33%;
+                float: left;
+            }
+
+            .password-level span {
+                display: block;
+                width: 100%;
+                height: 3px;
+                text-align: center;
+                line-height: 0;
+                font-size: 14px;
+                font-weight: bold;
+            }
+
+        #signPswLevel.password-level span, #fundPswLevel.password-level span {
+            height: 16px;
+            line-height: 16px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .discount {
+            color: #ff5e23;
+            margin: 10px 0 18px;
+            font-weight: bold;
+        }
+
+        #signupSub {
+            margin: 0 auto;
+        }
+
+        .input-item-info {
+            width: 30%;
+            float: left;
+        }
+
+        .code-box .form-control-feedback {
+            right: auto;
+            left: 114px;
+            top: 8px;
+        }
+    </style>
+    <div class="left_con_login">
+        <div class="login_incontent login-con">
+            <div class="login-box f-mt10 f-pb50">
+                <div class="main bgf">
+                    <div class="reg-box-pan display-inline">
+                        <div class="stepSt">
+                            <ul>
+                                <li class="col-xs-3 on">
+                                    <span class="num"><em class="f-r5"></em><i>1</i></span>
+                                    <span class="line_bg lbg-r"></span>
+                                    <p class="lbg-txt">{:L('user_register')}</p>
+                                </li>
+                                <li class="col-xs-3  on">
+                                    <span class="num"><em class="f-r5"></em><i>2</i></span>
+                                    <span class="line_bg lbg-l"></span>
+                                    <span class="line_bg lbg-r"></span>
+                                    <p class="lbg-txt">{:L('set_trade_password')}</p>
+
+                                </li>
+                                <li class="col-xs-3">
+
+                                    <span class="num"><em class="f-r5"></em><i>3</i></span>
+                                    <span class="line_bg lbg-l"></span>
+                                    <p class="lbg-txt">{:L('certification')}</p>
+
+                                </li>
+                                <li class="col-xs-3">
+                                    <span class="num"><em class="f-r5"></em><i>3</i></span>
+                                    <span class="line_bg lbg-l"></span>
+                                    <p class="lbg-txt">{:L('succeed')}</p>
+
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="reg-box" id="verifyCheck" style="margin-top:20px;">
+
+                            <div class="part2">
+                                <div class="alert alert-info" style="width:700px">为保障您的资金安全，请设置交易密码，请务必牢记</div>
+                                <div class="item col-xs-12 f-mb10" style="height:auto">
+                                    <span class="intelligent-label f-fl">{:L('trade_password')}：</span>
+                                    <div class="f-fl item-ifo">
+                                        <input type="password" class="txt03 f-r3 required" tabindex="2" id="paypassword">
+                                        <span class="ie8 icon-close close hide"></span>
+                                        <label class="icon-sucessfill blank hide"></label>
+                                        <label class="focus">请输入交易密码</label>
+                                        <label class="focus valid"></label>
+                                    </div>
+                                </div>
+
+                                <div class="item col-xs-12">
+                                    <span class="intelligent-label f-fl"><b class="ftx04">*</b>{:L('repeat_trade_password')}：</span>
+                                    <div class="f-fl item-ifo">
+                                        <input type="password"  id="repaypassword" class="txt03 f-r3 required" tabindex="4" data-valid="isNonEmpty||isInt" />
+                                        <span class="ie8 icon-close close hide" ></span>
+                                        <label class="icon-sucessfill blank hide"></label>
+
+                                        <label class="focus valid"></label>
+                                    </div>
+                                </div>
+                                <div class="item col-xs-12">
+                                    <span class="intelligent-label f-fl">&nbsp;</span>
+                                    <div class="f-fl item-ifo">
+                                        <a href=#" onclick="Update()" class="btn btn-blue f-r3" id="btn_part2">{:L('next')}</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+            <script>
+                function registerAgreement() {
+                    layer.open({
+                        type: 2,
+                        skin: 'layui-layer-rim', //加上边框
+                        area: ['800px', '600px'], //宽高
+                        title: '{:L('register_protocol ')}', //不显示标题
+                        content: "{:U('Login/webreg')}"
+                });
+                }
+
+                function formatState(state) {
+                    if (!state.id) { return state.text; }
+                    var $state = $(
+                        // '<span><img src="vendor/images/flags/' + state.element.value.toLowerCase() + '.png" class="img-flag" /> ' + state.text + '</span>'
+                        '<span><img style="" src="' + state.element.getAttribute("imgPath") + '" class="img-flag" /> ' + state.text + '</span>'
+                    );
+                    return $state;
+                };
+                $(document).ready(function() {
+                    $("#usercountry").select2({
+                        templateResult: formatState,
+                        templateSelection: formatState
+                    });
+                });
+                $('input').focus(function() {
+                    var t = $(this);
+                    if (t.attr('type') == 'text' || t.attr('type') == 'password')
+                        t.css({ 'box-shadow': '0px 0px 3px #1583fb', 'border': '1px solid #1583fb', 'color': '#333' });
+                    if (t.val() == t.attr('placeholder'))
+                        t.val('');
+                });
+                $('input').blur(function() {
+                    var t = $(this);
+                    if (t.attr('type') == 'text' || t.attr('type') == 'password')
+                        t.css({ 'box-shadow': 'none', 'border': '1px solid #e1e1e1', 'color': '#333' });
+                    if (t.attr('type') != 'password' && !t.val())
+                        t.val(t.attr('placeholder'));
+                });
+                $('.reg_input_box input').each(function(i, d) {
+                    $(d).focus(function() {
+                        var oRegMsg = $('#' + $(this).attr('id') + '-msg');
+                        oRegMsg.attr('class') == 'form_explain_error' ? oRegMsg.attr('class', 'form_explain').html(oRegMsg.attr('data-explain')).show() : oRegMsg.show();
+                    })
+                    $(d).blur(function() {
+                        var oRegMsg = $('#' + $(this).attr('id') + '-msg');
+                        $(this).parent().find('.form_explain').hide();
+                    })
+                })
+                var mbTest_username = /^(?![^a-zA-Z]+$)(?!\D+$).{5,15}$/;
+                var mbTest_password = /^[a-zA-Z0-9_]{5,15}$/;
+                //输入框消息
+                function formMsg(o, status, msg) {
+                    $('#' + o + '-msg').attr('class', 'form_explain_' + (status ? 'pass' : 'error')).html((typeof msg == 'undefined' ? '' : msg) + '<em></em>').show();
+                    return true;
+                }
+
+                function regusername() {
+                    var username = $('#username').val();
+                    if (username == "" || username == null) {
+                        formMsg('username', 0, '{:L('enter_user_name ')}');
+                        return false;
+                    }
+                    $.post("{:U('Login/chkUser')}", { username: username }, function(ret) {
+                        if (ret.status) {
+                            formMsg('username', 1);
+                            return true;
+                        } else {
+                            formMsg('username', 0, ret.info);
+                            return false;
+                        }
+                    }, 'json');
+                }
+
+                function regverify() {
+                    var verify = $('#verify').val();
+                    if (verify == "" || verify == null) {
+                        formMsg('verify', 0, '{:L('enter_captcha ')}');
+                        return false;
+                    } else {
+                        formMsg('verify', 1);
+                        return true;
+                    }
+                }
+
+                function regpassword() {
+                    var password = $('#password').val();
+                    if (password == "" || password == null) {
+                        formMsg('password', 0, '{:L('enter_login_password ')}');
+                        return false;
+                    } else {
+                        if (!mbTest_password.test(password)) {
+                            formMsg('password', 0, '{:L('login_password_error ')}');
+                            return false;
+                        } else {
+                            formMsg('password', 1);
+                            return true;
+                        }
+                    }
+                }
+
+                function regrepassword() {
+                    var password = $('#password').val();
+                    var repassword = $('#repassword').val();
+                    if (repassword == "" || repassword == null) {
+                        formMsg('repassword', 0, '{:L('enter_confirm_password ')}');
+                        return false;
+                    } else {
+                        if (!mbTest_password.test(repassword)) {
+                            formMsg('repassword', 0, '{:L('login_password_error ')}');
+                            return false;
+                        } else {
+                            if (password != repassword) {
+                                formMsg('repassword', 0, '{:L('confirm_login_error ')}');
+                                return false;
+                            } else {
+                                formMsg('repassword', 1);
+                                return true;
+                            }
+                        }
+                    }
+                }
+
+
+                function Update(){
+                    var paypassword=$("#paypassword").val();
+                    var repaypassword=$("#repaypassword").val();
+
+                    if(paypassword==""||paypassword==null){console.log(111);
+                        formMsg('paypassword', 0, '请输入交易密码');
+                        return false;
+                    }
+                    if(repaypassword==""||repaypassword==null){
+                        formMsg('repaypassword', 0, '请重复输入交易密码');
+                        return false;
+                    }
+                    if(paypassword!=repaypassword){
+                        formMsg('repassword', 0, '确认密码错误');
+                        return false;
+                    }
+
+                    $.post("/Login/upregister2.html",{paypassword:paypassword,repaypassword:repaypassword},function(data){
+                        if(data.status==1){
+                            layer.msg(data.info,{icon:1});
+                            window.location='/Login/register3';
+                        }else{
+                            layer.msg(data.info,{icon:2});
+                            if(data.url){
+                                window.location=data.url;
+                            }
+                        }
+                    },"json");
+                }
+
+            </script>
+            <script>
+                $(function () {
+                    //nav标记
+                    var currUrl = window.location.toString();
+                    if (currUrl.indexOf('#') > 0) {
+                        $.cookie('nav_index', 1, { path: '/' });
+                    } else if (currUrl.indexOf('/login') > 0 || currUrl.indexOf('#') > 0 || currUrl.indexOf('/page/') > 0 || currUrl.indexOf('/fee') > 0) {
+                        $.cookie('nav_index', 9, { path: '/' });
+                    } else if (currUrl.indexOf('/coins') > 0) {
+                        $.cookie('nav_index', 4, { path: '/' });
+                    }
+                    $(".bter-nav").children("li").click(function () {
+                        $.cookie('nav_index', $(this).index(), { path: '/' });
+                    }).eq($.cookie('nav_index')).addClass("nav-active");
+                    $(".user-log-out a,.more-lan a").click(function () {
+                        $.cookie('nav_index', 0, { path: '/' });
+                    });
+                    //用户等级
+                    var pb = $("#ProgressBar"), pbWidth = pb.width(), loginbar = $("#topLoginBar"), tmenu = $("#tierMenu"), barcon = $("#pbCon"), barmark = $("#pbCon").find("i"), pbar = $("#proBar"), fbar = $("#fproBar"), pro_val = '';
+                    loginbar.hover(function () {
+                        tmenu.stop().slideDown(200);
+                        $(this).stop().css("color", "#f80");
+                        barmark.css("opacity", "0");
+                        pbar.animate({ width: pro_val + '%' }, 800);
+                    }, function () {
+                        tmenu.stop().slideUp(100);
+                        $(this).stop().css("color", "#fff");
+                        barmark.css("opacity", "1");
+                        pbar.css('width', '0');
+                    });
+                    tmenu.css("width", pbWidth);
+                    fbar.animate({ width: pro_val + '%' }, 800);
+
+                    $.fn.animateProgress = function (progress, callback) {
+                        return this.each(function () {
+                            $(this).animate({
+                                width: progress + '%'
+                            }, {
+                                duration: 800,
+                                easing: 'swing',
+                                stepSt: function (progress) {
+                                    $('.value').text(Math.ceil(progress) + '%');
+                                },
+                                complete: function (scope, i, elem) {
+                                    if (callback) {
+                                        callback.call(this, i, elem);
+                                    };
+                                }
+                            });
+                        });
+                    };
+                    if (pro_val == '') barcon.animateProgress(0); else barcon.animateProgress(pro_val);
+
+                    //页面高度
+                    var lb = $(".leftbar"), mc = $(".main_content"), lh = lb.height(), mh = mc.height();
+                    if (lh < mh) { lb.css("height", mh) }
+
+                    //右侧客户服务
+                    $(".side-sev ul li").hover(function () {
+                        var _this = $(this);
+                        _this.find(".sidebox").stop().animate({ "width": "165px" }, 2).css({ "background": "#009173" });
+                    }, function () {
+                        $(this).find(".sidebox").stop().animate({ "width": "45px" }, 2).css({ "background": "none" });
+                    });
+
+                    $(".sideweixin").hover(function () {
+                        $(".wx-code span").stop().show();
+                        $(this).stop();
+                        $(".wx-code").stop().html('<img width="120" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJgAAACYAQMAAAAiDLJiAAAABlBMVEUrNDz///8m7jN3AAABkklEQVR4XrXWMc60IBSF4ddYUN4dDBsxsi0LE0mmcFtM3IizA0oKw/ln/JNpvhI9HU/JIfeC/qbJMjA+LLsjVHIBfJtJx9gpOyWvXBbVG6wwjICTdm9lYmy3UFHsU7dzjY2YCkG73WTStwmmPj38eS8t9uvS1uf23nMB2kzf7Ab9Jtl5utyyIviMi72EKwO+yVTclrqcmcGbi3RqM6DbjWnR2Rv4yy3jlDrlRdsObj06NZmYhhFYjlB9ZtGrzXJZlMDWg05ZSuEOc6mrZmUeICsGNZpiXx+m9am3cGsafZOpuANQmcN7Bwi63LKL/WuHaR46qXyK8I1WhlBNZeYBTqnVpK0+yPTSb25cbCoQ3lnrc6uYYi81WXYxvHbTqm8+h1aTUveWdIAHtyV/g326rKh8uzQXBxrN6QCkc7ZDeKnJJKliLDFUj8oQrrf/+wg774AyNZt0jJjWCKAy4Bvst89xMVSAkG6yx/mSK9kpje0WJIszXuZin1rs9wcxKXWSK3CDASNmcR78OYuDmkx/crn9A2cj27YK/b1/AAAAAElFTkSuQmCC" alt="比特儿微信" /><span>比特儿微信</span>').animate({ "width": "120px" }, 200).css({ "padding": "10px", "border-width": "1px" })
+                    }, function () {
+                        $(".wx-code span").stop().hide();
+                        $(this).stop();
+                        $(".wx-code").stop().animate({ "width": "0" }, 200).css({ "padding": "0", "border-width": "0" })
+                    });
+                    $("#bottomWXli").hover(function () {
+                        $(".wx-bottom").show()
+                    }, function () {
+                        $(".wx-bottom").hide()
+                    });
+
+                    //全站重要通知
+                    var notyContent = '';
+
+                    function notyCookie() { //设置通知cookie
+                        var noticeMsg = $("#siteNotyCon").text();
+                        $.cookie('notice', noticeMsg, { expires: 365, path: '/' });
+                    }
+
+                    var annCookie = $.cookie('notice');
+                    if (annCookie != notyContent && notyContent != '') { //通知有更新时
+                        var sNoty = $("#siteNoty").noty({
+                            text: "【重要通知】：<a id='siteNotyCon' href='#' target='_blank'>" + notyContent + "</a>",
+                            type: 'error',
+                            layout: 'top',
+                            theme: 'bterNotyTheme',
+                            closeWith: ['button'],
+                            animation: { speed: 0 },
+                            callback: {
+                                afterShow: function () {
+                                    $("#siteNotyCon").click(function () {
+                                        notyCookie();
+                                        sNoty.close();
+                                    })
+                                },
+                                onClose: function () {
+                                    $("#siteNoty").animate({ height: 0 }, 100).css("border", "none");
+                                    notyCookie()
+                                }
+                            }
+                        });
+                    }
+
+                });
+
+                //backtotop
+                (function () {
+                    var $backToTopTxt = "^", $backToTopEle = $('<div class="backToTop"></div>').appendTo($("body"))
+                            .text($backToTopTxt).click(function () {
+                                $("html, body").animate({ scrollTop: 0 }, 500);
+                            }), $backToTopFun = function () {
+                                var st = $(document).scrollTop(), winh = $(window).height();
+                                (st > 0) ? $backToTopEle.show() : $backToTopEle.hide();
+                                //IE6下的定位
+                                if (!window.XMLHttpRequest) {
+                                    $backToTopEle.css("top", st + winh - 166);
+                                }
+                            };
+                    $(window).bind("scroll", $backToTopFun);
+                    $(function () { $backToTopFun(); });
+                })();
+            </script>
+        </div>
+    </div>
+    <include file="Public:footer" />
+</body>
+</html>

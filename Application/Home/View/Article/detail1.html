@@ -1,0 +1,769 @@
+<include file="Public:header" />
+<link rel="stylesheet" href="__PUBLIC__/Home1/css/movesay.css" />
+<div class="content clearfix">
+    <!--左侧菜单-->
+    <table class="leftbar" style="padding-top: 35px; ">
+        <tbody>
+            <tr>
+                <td style="border-bottom:0;" valign="top">
+                    <div id="marketlist_wrapper" class="dataTables_wrapper" role="grid">
+                        <table class="marketlist dataTable" id="tradelist" cellspacing="0" cellpadding="0">
+                            <tbody role="alert" aria-live="polite" aria-relevant="all">
+                                <tr>
+                                    <td class="no-wrap alignRight" style=" width:100%;border:none">
+                                        <div id="wrapper-250">
+                                            <ul class="accordion">
+                                                <li id="adn1" class="files">
+                                                    <a href="#one" class="active">帮助中心<span class="umicon"></span></a>
+                                                    
+                                                    <ul class="sub-menu" style="display: block;">
+                                                        <volist name="ArticleTypeList" id="vo">
+                                                            <li><a data-id="myfunds" href="{:U('Article/index',array('id'=>$vo['id'],'type'=>1))}"><em>01</em>{$vo.title}</a></li>
+
+                                                        </volist>
+                                                    </ul>  
+                                                    
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // Store variables
+            var accordion_head = $('.accordion > li > a'),
+                accordion_body = $('.accordion li > .sub-menu');
+            // Open the first tab on load
+            //accordion_head.first().addClass('active').next().slideDown('normal');
+            //accordion_body.eq(2).find('a').eq(2).css('background', ' #efefef');
+            var found = false;
+            for (i = 0; i < accordion_body.length; i++) {
+                item = accordion_body.eq(i).find("[data-id='']");
+                if (item.length > 0) {
+                    accordion_head.eq(i).addClass('active').next().slideDown('normal');
+                    item.css({ 'color': ' #ff5e23', 'border-right-width': '3px', 'border-right-color': '#ff5e23' });
+                    found = true;
+                    break;
+                }
+            }
+            if (found == false)
+                accordion_head.eq(2).addClass('active').next().slideDown('normal');
+            // Click function
+            accordion_head.on('click', function (event) {
+                // Disable header links
+                event.preventDefault();
+                // Show and hide the tabs on click
+                if ($(this).attr('class') != 'active') {
+                    accordion_body.slideUp('normal');
+                    $(this).next().stop(true, true).slideToggle('normal');
+                    accordion_head.removeClass('active');
+                    $(this).addClass('active');
+                }
+            });
+
+            var icoType = '';
+            if (icoType == '') {
+                $("#buyIco").parent("li").remove()
+            }
+
+            $("input").focus(function () {
+                $(".failed").html("")
+            });
+
+            $(".files,.cloud,.mail").find("li").click(function () {
+                $.cookie('nav_index', 2, { path: '/' });
+            });
+            $(".sign").find("li").click(function () {
+                $.cookie('nav_index', 3, { path: '/' });
+            });
+        });
+    </script>
+
+    <!--右侧内容-->
+    <div class="main_content acc-m-con main_contentO">
+        <div class="right_mcontent">
+            <div class="safe_center clear" style="padding-left: 0px; border-bottom: 2px solid #e55600;">
+                <h1 style="margin-top: 0px; margin-bottom: 15px; line-height: 15px;">{$data.title}</h1>
+            </div>
+            <div class="sj" style="top: 40px; left: 72px;"></div>
+            <br>
+            <div class="new_list">
+                <ul>
+
+                    <div class="articletime">
+                        <span>{:L('publish_time')}：{$data.addtime|date="Y-m-d H:i:s",###}</span>
+                        <span>{:L('publish_author')}：{:C('web_title')}</span>
+                    </div>
+                    <div class="articletext">{$data['content']}</div>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div> 
+<br>
+<br>
+<script>
+    //菜单高亮
+    $('#article_box').addClass('active');
+</script>
+<script>
+
+    function boxLayout() {
+        setTimeout(function () {
+            var leftH = $(".leftregi").height();
+            $(".rightlogin").css("height", leftH);
+        }, 100)
+    } boxLayout();
+    $(window).resize(function () { boxLayout() });
+
+    //重置图片验证码
+    function resetCode() {
+        $("#captcha_code").val("");
+        $("#codeGroup").removeClass("has-error").removeClass("has-success");
+        $("#codeGroup").find(".help-block").text("");
+    }
+    function loadshow(targetDom) {
+        targetDom.find("span").hide();
+        targetDom.find(".spinner").show();
+    }
+    function loadhide(targetDom) {
+        targetDom.find("span").show();
+        targetDom.find(".spinner").hide();
+    }
+    //重置表单
+    function resetForm(formID) {
+        document.getElementById(formID).reset();
+    }
+
+
+    //自动邮箱
+    var mailAddr = ["", "@qq.com", "@163.com", "@126.com", "@sina.com", "@gmail.com", "@hotmail.com", "@aliyun.com", "@sohu.com"],
+        mailAddr1 = ["@qq.com", "@163.com", "@126.com", "@sina.com", "@gmail.com", "@hotmail.com", "@aliyun.com", "@sohu.com"];
+    var mailTarget;
+
+    function mailinput(mailTarget, mAddr) {
+        mailTarget.on('input propertychange', function () {
+            mailTarget.completer({ separator: '', source: mAddr, zIndex: 1051 });//渲染启动自动邮箱
+        });
+        mailTarget.on("keyup", function (e) {//email input回车填第一个数据
+            var theEvent = e || window.event;
+            var code = theEvent.keyCode || theEvent.which || theEvent.charCode;
+            if (code == 13) {
+                setTimeout(function () {
+                    mailTarget.parent().removeClass("has-error").addClass("has-success");
+                    mailTarget.parent().find(".help-block").text('');
+                }, 100);
+                mailTarget.parent().parent().next().find("input").focus()
+            }
+        });
+
+        mailTarget.on("keydown", function (e) {//email input tab键
+            var theEvent = e || window.event;
+            var code = theEvent.keyCode || theEvent.which || theEvent.charCode;
+            if (code == 9) {
+                $(".completer-container").hide();
+            }
+        });
+    }
+
+    function addErr(target) {//添加错误样式
+        $(target).addClass("has-error").removeClass("has-success");
+    }
+    function addSucc(target) {//添加成功样式
+        $(target).removeClass("has-error").addClass("has-success");
+    }
+    function printTip(target, tipText) {//输出表单提示
+        $(target).find(".help-block").text(tipText);
+        boxLayout();
+    }
+
+    $(function () {
+
+        var mailVal = $("#sig_email").val(),
+            mail_test = /^([a-zA-Z0-9\._-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;
+        if (!mail_test.test(mailVal)) {
+            $("#sig_email").val("")
+        }
+
+        //login form focus
+        $('#loginForm,#signupForm').find("input").focus(function () {
+            $(this).next(".input-icon").addClass("focus-ico");
+            $("#errmsg").text("");
+            loadhide($("#loginSub"))
+        }).blur(function () {
+            $(this).next(".input-icon").removeClass("focus-ico");
+        });
+
+        //登录验证
+        function emailcheck() {
+            var eVal = $("#email").val();
+            if (eVal == '') {
+                addErr("#emailGroup");
+                printTip("#emailGroup", "请输入您的用户名或邮箱！");
+                loadhide($("#loginSub"))
+            } else {
+                addSucc("#emailGroup");
+                printTip("#emailGroup", "");
+                loadhide($("#loginSub"));
+                return true;
+            }
+        }
+        function pswcheck() {
+            //return true;
+            var eVal = $("#password").val(),
+                    eVlength = eVal.length;
+
+            if (eVlength == 0) { //密码为空
+                addErr("#pswGroup");
+                printTip("#pswGroup", "请输入您的登录密码！");
+                loadhide($("#loginSub"));
+                $("#loginPswLevel").addClass("hide");
+            } else {
+                if (eVlength > 0 && eVlength < 6) { //大于0小于6位
+                    addErr("#pswGroup");
+                    printTip("#pswGroup", "登录密码不正确，请重新输入！");
+                } else { //大于6位
+                    addSucc("#pswGroup");
+                    printTip("#pswGroup", "");
+                    return true;
+                }
+            }
+
+        }
+        function codecheck() {
+            var eVal = $("#captcha_code").val(), vNum = eVal.length;
+            if (eVal == '') {
+                var codeShow = $("#codeGroup").is(":visible");
+                if (codeShow) {
+                    addErr("#codeGroup");
+                    printTip("#codeGroup", "请输入图片验证码！");
+                } else {
+                    $("#captcha_code").val("deflt")
+                }
+                loadhide($("#loginSub"))
+            } else {
+                if (vNum == 5) {
+                    addSucc("#codeGroup");
+                    printTip("#codeGroup", "");
+                    return true;
+                } else {
+                    addErr("#codeGroup");
+                    printTip("#codeGroup", "图片验证码不正确，请重新输入！");
+                    loadhide($("#loginSub"))
+                }
+
+            }
+        }
+
+        $("#email").blur(emailcheck).focus(function () {
+            //var mailTarget=$(this),mAddr=mailAddr;
+            if (!(navigator.appName == "Microsoft Internet Explorer" && navigator.appVersion.split(";")[1].replace(/[ ]/g, "") == "MSIE8.0")) {
+                //mailinput(mailTarget,mAddr);
+            }
+        });
+
+        $("#password").blur(pswcheck).focus(function () {
+            var mailVal = $("#email").val();
+            if (mailVal != '') { emailcheck() }
+        });
+
+        $("#captcha_code").blur(codecheck);
+
+
+        //登录
+        $("#loginSub").click(function () { //点击提交按钮开始
+            $(this).blur();
+            loadshow($(this));
+            if (emailcheck()) {//只填邮箱
+                pswcheck(); codecheck()
+            }
+            if (pswcheck()) {//只填密码
+                emailcheck(); codecheck()
+            }
+            if (codecheck()) {//只填验证码
+                emailcheck(); pswcheck()
+            }
+            if (pswcheck() && codecheck()) {//未填邮箱
+                emailcheck()
+            }
+            if (emailcheck() && codecheck()) {//未填密码
+                pswcheck()
+            }
+            if (emailcheck() && pswcheck()) {//未填验证码
+                codecheck()
+            }
+            if (emailcheck() && pswcheck() && codecheck()) {//表单验证成功
+
+                $("#loginForm").submit()
+            } else {//表单验证失败
+                emailcheck(); pswcheck(); codecheck();
+            }
+        });//点击提交按钮结束
+
+        $("#password,#captcha_code").on('focus', function () { //激活enter键
+            eDom = $(this), tDom = $("#loginSub");
+            pressEnter(eDom, tDom);
+        });
+        $("#checkRem").on('click', function () { //激活enter键
+            eDom = $(this), tDom = $("#loginSub");
+            pressEnter(eDom, tDom);
+        });
+
+
+    });
+
+
+    function pressEnter(eDom, tDom) { //监听回车
+        eDom.on('keyup', function (e) {
+            var theEvent = e || window.event;
+            var code = theEvent.keyCode || theEvent.which || theEvent.charCode;
+            if (code == 13) {
+                tDom.click();
+            }
+        });
+    }
+    function passwordLevel(password) {
+        var Modes = 0;
+        for (i = 0; i < password.length; i++) {
+            Modes |= CharMode(password.charCodeAt(i));
+        }
+        return bitTotal(Modes);
+        //CharMode函数
+        function CharMode(iN) {
+            if (iN >= 48 && iN <= 57)//数字
+            {
+                return 1;
+            }
+            if (iN >= 65 && iN <= 90) //大写字母
+            {
+                return 2;
+            }
+            if ((iN >= 97 && iN <= 122) || (iN >= 65 && iN <= 90))//大小写
+            {
+                return 4;
+            }
+            else {
+                return 8;
+            } //特殊字符
+        }
+
+        //bitTotal函数
+        function bitTotal(num) {
+            modes = 0;
+            for (i = 0; i < 4; i++) {
+                if (num & 1) modes++;
+                num >>>= 1;
+            }
+            return modes;
+        }
+    }
+
+    $("#sig_password").focus(function () {
+        $("#signPswLevel").removeClass("hide")
+    });
+    $("#fund_password").focus(function () {
+        $("#fundPswLevel").removeClass("hide")
+    });
+
+
+    //注册表单验证
+    function signUserNameCheck() { //用户名验证
+        //return true;
+        var nameVal = $("#sig_userName").val();
+        if (nameVal == '') {
+            addErr("#signup_userNameGroup");
+            printTip("#signup_userNameGroup", "请创建一个用户名！");
+            loadhide($("#signupSub"));
+        } else if (nameVal.length < 3) {
+            addErr("#signup_userNameGroup");
+            printTip("#signup_userNameGroup", "用户名太短！");
+            loadhide($("#loginSub"))
+        } else if (nameVal.length > 24) {
+            addErr("#signup_userNameGroup");
+            printTip("#signup_userNameGroup", "用户名太长，请勿超过24字符！");
+            loadhide($("#loginSub"))
+        } else {
+            if (isNaN(nameVal)) {
+                addSucc("#signup_userNameGroup");
+                printTip("#signup_userNameGroup", "");
+                loadhide($("#loginSub"));
+                return true;
+            } else {
+                addErr("#signup_userNameGroup");
+                printTip("#signup_userNameGroup", "用户名不能使用纯数字！");
+                loadhide($("#loginSub"))
+            }
+
+        }
+    }
+    function signEmailCheck() { //账邮箱验证
+        //return true;
+        var eVal = $("#sig_email").val();
+        if (eVal == '') {
+            addErr("#signup_emailGroup");
+            printTip("#signup_emailGroup", "请输入您的常用邮箱！");
+            loadhide($("#signupSub"));
+        } else {
+            var reg_mail = /^([a-zA-Z0-9\._-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;
+            if (reg_mail.test(eVal)) {
+                addSucc("#signup_emailGroup");
+                printTip("#signup_emailGroup", "");
+                return true;
+            } else {
+                addErr("#signup_emailGroup");
+                printTip("#signup_emailGroup", "邮箱格式不正确，请检查后重新输入！");
+                loadhide($("#signupSub"))
+            }
+        }
+    }
+    //重置注册图片验证码
+    function resetCode() {
+        $("#captcha_reg").val("");
+        $("#signup_codeGroup").removeClass("has-error").removeClass("has-success");
+        printTip("#signup_codeGroup", "");
+    }
+    function signPswCheck() { //登录密码验证
+        //return true;
+        var sVal = $("#sig_password").val(),
+                sVlength = sVal.length,
+                signLvl = passwordLevel(sVal);
+
+        if (sVlength == 0) { //登录密码为空
+            addErr("#signup_pswGroup");
+            printTip("#signup_pswGroup", "请输入一个登录密码！");
+            loadhide($("#signupSub"));
+            $("#signPswLevel").addClass("hide");
+        } else {
+            var tipWords = $("#signup_pswGroup").find(".help-block").text().length,
+                    checkOk = $("#signup_pswGroup").hasClass("has-success");
+            if (sVlength > 0 && sVlength < 6) { //大于0小于6位
+                printTip("#signup_pswGroup", "登录密码太简单！");
+                addErr("#signup_pswGroup");
+                if (tipWords == 26 || checkOk) {
+                    printTip("#signup_pswGroup", "登录密码需至少6位！");
+                }
+                $("#signPswLevel").removeClass("hide");
+                $("#loWeak").css("background-color", "#ff4c50");
+                $("#loNormal,#loStrong").css("background", "none");
+            } else { //大于6位
+                if (signLvl == 2) { //中
+                    addSucc("#signup_pswGroup");
+                    printTip("#signup_pswGroup", "");
+                    $("#loWeak,#loNormal").css("background-color", "#f90");
+                    $("#loStrong").css("background", "none");
+                    return true
+                } else if (signLvl >= 3) {
+                    if (sVlength > 8) { //强
+                        addSucc("#signup_pswGroup");
+                        printTip("#signup_pswGroup", "");
+                        $("#loWeak,#loNormal,#loStrong").css("background-color", "#00c100");
+                        return true
+                    } else { //中
+                        addSucc("#signup_pswGroup");
+                        printTip("#signup_pswGroup", "");
+                        $("#loWeak,#loNormal").css("background-color", "#f90");
+                        $("#loStrong").css("background", "none");
+                        return true
+                    }
+                } else {
+                    if (tipWords > 1 || checkOk) {
+                        addErr("#signup_pswGroup");
+                        printTip("#signup_pswGroup", "至少6位，且为数字、字母、符号的任意2种或以上组合！");
+                    }
+                    $("#loWeak").css("background-color", "#ff4c50");
+                    $("#loNormal,#loStrong").css("background", "none");
+                }
+            }
+        }
+    }
+
+    function fundPswCheck() { //资金密码验证
+        //return true;
+        var sVal = $("#fund_password").val(),
+                sVlength = sVal.length;
+        if (sVlength == 0) { //密码为空
+            addErr("#fund_pswGroup");
+            printTip("#fund_pswGroup", "请输入一个资金密码！");
+            loadhide($("#signupSub"));
+        } else {
+            var tipWords = $("#fund_pswGroup").find(".help-block").text().length,
+                    checkOk = $("#fund_pswGroup").hasClass("has-success");
+            if (sVlength > 0 && sVlength < 6) { //大于0小于6位
+                if (tipWords == 26 || checkOk) {
+                    addErr("#fund_pswGroup");
+                    printTip("#fund_pswGroup", "资金密码需至少6位！");
+                }
+            } else { //大于6位
+                addSucc("#fund_pswGroup");
+                printTip("#fund_pswGroup", "");
+                return true
+            }
+        }
+    }
+    function fundRePswCheck() { //重复资金密码验证
+        var pswVal = $("#fund_password").val(),
+                rePswVal = $("#fund_password2").val();
+        if (rePswVal == '') {
+            addErr("#fund_pswRepeat");
+            printTip("#fund_pswRepeat", "请再次输入您的资金密码！");
+        } else {
+            if (pswVal == rePswVal) {
+                addSucc("#fund_pswRepeat");
+                printTip("#fund_pswRepeat", "");
+                return true
+            } else {
+                addErr("#fund_pswRepeat");
+                printTip("#fund_pswRepeat", "两次输入的资金密码不一致，请重新输入！");
+                loadhide($("#signupSub"));
+            }
+        }
+    }
+    function signCodeCheck() { //图片验证码验证
+        var eVal = $("#captcha_reg").val(), vNum = eVal.length;
+        if (eVal == '') {
+            addErr("#signup_codeGroup");
+            printTip("#signup_codeGroup", "请输入图片验证码！");
+            loadhide($("#signupSub"));
+        } else {
+            if (vNum == 5) {
+                addSucc("#signup_codeGroup");
+                printTip("#signup_codeGroup", "");
+                return true;
+            } else {
+                addErr("#signup_codeGroup");
+                printTip("#signup_codeGroup", "图片验证码错误！");
+                loadhide($("#signupSub"));
+            }
+
+        }
+    }
+
+    function clearPsw(elm) {
+        var psws = $(elm),
+                sigPswLen = psws.val().length;
+        if (sigPswLen == 32) {
+            psws.val('');
+            psws.parents("div").removeClass("has-success")
+        }
+    }
+    $("#sig_email").blur(signEmailCheck).focus(function () {
+        var mailTarget = $(this), mAddr = mailAddr1;
+        if (!(navigator.appName == "Microsoft Internet Explorer" && navigator.appVersion.split(";")[1].replace(/[ ]/g, "") == "MSIE8.0")) {
+            mailinput(mailTarget, mAddr);
+        }
+    });
+    $("#sig_userName").blur(signUserNameCheck);
+
+    $("#sig_password").blur(function () {
+        signPswCheck();
+    }).on('input propertychange', function () {
+        signPswCheck()
+    }).focus(function () {
+        clearPsw("#sig_password")
+    });
+    $("#fund_password").blur(function () {
+        fundPswCheck();
+    }).on('input propertychange', function () {
+        fundPswCheck()
+    }).focus(function () {
+        clearPsw("#fund_password,#fund_password2")
+    });
+    $("#fund_password2").blur(fundRePswCheck).focus(function () {
+        clearPsw("#fund_password,#fund_password2")
+    });
+    $("#captcha_reg").blur(signCodeCheck);
+
+    var agr = $("#agrCheckLabel"),
+        signSub = $("#signupSub");
+    agr.click(function () { //同意用户协议按钮
+        if ($("#agreeCheck").prop("checked")) {
+            signSub.attr("disabled", false);
+        } else {
+            signSub.attr("disabled", true);
+        }
+    });
+
+    $("#signupSub").click(function () {
+        loadshow($(this));
+        if (signUserNameCheck()) { signPswCheck(); signEmailCheck(); fundPswCheck(); fundRePswCheck(); signCodeCheck() }
+        if (signPswCheck()) { signUserNameCheck(); signEmailCheck(); fundPswCheck(); fundRePswCheck(); signCodeCheck() }
+        if (signEmailCheck()) { signUserNameCheck(); signPswCheck(); fundPswCheck(); fundRePswCheck(); signCodeCheck() }
+        if (fundPswCheck()) { signUserNameCheck(); signPswCheck(); signEmailCheck(); fundRePswCheck(); signCodeCheck() }
+        if (fundRePswCheck()) { signUserNameCheck(); signPswCheck(); signEmailCheck(); fundPswCheck(); signCodeCheck() }
+        if (signCodeCheck()) { signUserNameCheck(); signPswCheck(); signEmailCheck(); fundPswCheck(); fundRePswCheck() }
+
+        if (signUserNameCheck() && signPswCheck() && signEmailCheck() && fundPswCheck() && fundRePswCheck() && signCodeCheck()) { //验证成功提交
+            $('#signupForm').submit();
+        } else { //表单验证失败
+            loadhide($(this));
+        }
+    });
+</script>
+<script>
+    //if ('https:' != document.location.protocol) {
+    //window.location = 'https://' + window.location.hostname + window.location.pathname;
+    //return true;
+    //}
+</script>
+<script>
+    $(function () {
+        //nav标记
+        var currUrl = window.location.toString();
+        if (currUrl.indexOf('#') > 0) {
+            $.cookie('nav_index', 1, { path: '/' });
+        } else if (currUrl.indexOf('/login') > 0 || currUrl.indexOf('#') > 0 || currUrl.indexOf('/page/') > 0 || currUrl.indexOf('/fee') > 0) {
+            $.cookie('nav_index', 9, { path: '/' });
+        } else if (currUrl.indexOf('/coins') > 0) {
+            $.cookie('nav_index', 4, { path: '/' });
+        }
+        $(".bter-nav").children("li").click(function () {
+            $.cookie('nav_index', $(this).index(), { path: '/' });
+        }).eq($.cookie('nav_index')).addClass("nav-active");
+        $(".user-log-out a,.more-lan a").click(function () {
+            $.cookie('nav_index', 0, { path: '/' });
+        });
+        //用户等级
+        var pb = $("#ProgressBar"), pbWidth = pb.width(), loginbar = $("#topLoginBar"), tmenu = $("#tierMenu"), barcon = $("#pbCon"), barmark = $("#pbCon").find("i"), pbar = $("#proBar"), fbar = $("#fproBar"), pro_val = '';
+        loginbar.hover(function () {
+            tmenu.stop().slideDown(200);
+            $(this).stop().css("color", "#f80");
+            barmark.css("opacity", "0");
+            pbar.animate({ width: pro_val + '%' }, 800);
+        }, function () {
+            tmenu.stop().slideUp(100);
+            $(this).stop().css("color", "#fff");
+            barmark.css("opacity", "1");
+            pbar.css('width', '0');
+        });
+        tmenu.css("width", pbWidth);
+        fbar.animate({ width: pro_val + '%' }, 800);
+
+        $.fn.animateProgress = function (progress, callback) {
+            return this.each(function () {
+                $(this).animate({
+                    width: progress + '%'
+                }, {
+                    duration: 800,
+                    easing: 'swing',
+                    step: function (progress) {
+                        $('.value').text(Math.ceil(progress) + '%');
+                    },
+                    complete: function (scope, i, elem) {
+                        if (callback) {
+                            callback.call(this, i, elem);
+                        };
+                    }
+                });
+            });
+        };
+        if (pro_val == '') barcon.animateProgress(0); else barcon.animateProgress(pro_val);
+
+        //页面高度
+        var lb = $(".leftbar"), mc = $(".main_content"), lh = lb.height(), mh = mc.height();
+        if (lh < mh) { lb.css("height", mh) }
+
+        //右侧客户服务
+        $(".side-sev ul li").hover(function () {
+            var _this = $(this);
+            _this.find(".sidebox").stop().animate({ "width": "165px" }, 2).css({ "background": "#009173" });
+        }, function () {
+            $(this).find(".sidebox").stop().animate({ "width": "45px" }, 2).css({ "background": "none" });
+        });
+
+        $(".sideweixin").hover(function () {
+            $(".wx-code span").stop().show();
+            $(this).stop();
+            $(".wx-code").stop().html('<img width="120" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJgAAACYAQMAAAAiDLJiAAAABlBMVEUrNDz///8m7jN3AAABkklEQVR4XrXWMc60IBSF4ddYUN4dDBsxsi0LE0mmcFtM3IizA0oKw/ln/JNpvhI9HU/JIfeC/qbJMjA+LLsjVHIBfJtJx9gpOyWvXBbVG6wwjICTdm9lYmy3UFHsU7dzjY2YCkG73WTStwmmPj38eS8t9uvS1uf23nMB2kzf7Ab9Jtl5utyyIviMi72EKwO+yVTclrqcmcGbi3RqM6DbjWnR2Rv4yy3jlDrlRdsObj06NZmYhhFYjlB9ZtGrzXJZlMDWg05ZSuEOc6mrZmUeICsGNZpiXx+m9am3cGsafZOpuANQmcN7Bwi63LKL/WuHaR46qXyK8I1WhlBNZeYBTqnVpK0+yPTSb25cbCoQ3lnrc6uYYi81WXYxvHbTqm8+h1aTUveWdIAHtyV/g326rKh8uzQXBxrN6QCkc7ZDeKnJJKliLDFUj8oQrrf/+wg774AyNZt0jJjWCKAy4Bvst89xMVSAkG6yx/mSK9kpje0WJIszXuZin1rs9wcxKXWSK3CDASNmcR78OYuDmkx/crn9A2cj27YK/b1/AAAAAElFTkSuQmCC" alt="比特儿微信" /><span>比特儿微信</span>').animate({ "width": "120px" }, 200).css({ "padding": "10px", "border-width": "1px" })
+        }, function () {
+            $(".wx-code span").stop().hide();
+            $(this).stop();
+            $(".wx-code").stop().animate({ "width": "0" }, 200).css({ "padding": "0", "border-width": "0" })
+        });
+        $("#bottomWXli").hover(function () {
+            $(".wx-bottom").show()
+        }, function () {
+            $(".wx-bottom").hide()
+        });
+
+        //全站重要通知
+        var notyContent = '';
+
+        function notyCookie() { //设置通知cookie
+            var noticeMsg = $("#siteNotyCon").text();
+            $.cookie('notice', noticeMsg, { expires: 365, path: '/' });
+        }
+
+        var annCookie = $.cookie('notice');
+        if (annCookie != notyContent && notyContent != '') { //通知有更新时
+            var sNoty = $("#siteNoty").noty({
+                text: "【重要通知】：<a id='siteNotyCon' href='#' target='_blank'>" + notyContent + "</a>",
+                type: 'error',
+                layout: 'top',
+                theme: 'bterNotyTheme',
+                closeWith: ['button'],
+                animation: { speed: 0 },
+                callback: {
+                    afterShow: function () {
+                        $("#siteNotyCon").click(function () {
+                            notyCookie();
+                            sNoty.close();
+                        })
+                    },
+                    onClose: function () {
+                        $("#siteNoty").animate({ height: 0 }, 100).css("border", "none");
+                        notyCookie()
+                    }
+                }
+            });
+        }
+
+    });
+
+    //backtotop
+    (function () {
+        var $backToTopTxt = "^", $backToTopEle = $('<div class="backToTop"></div>').appendTo($("body"))
+                .text($backToTopTxt).click(function () {
+                    $("html, body").animate({ scrollTop: 0 }, 500);
+                }), $backToTopFun = function () {
+                    var st = $(document).scrollTop(), winh = $(window).height();
+                    (st > 0) ? $backToTopEle.show() : $backToTopEle.hide();
+                    //IE6下的定位
+                    if (!window.XMLHttpRequest) {
+                        $backToTopEle.css("top", st + winh - 166);
+                    }
+                };
+        $(window).bind("scroll", $backToTopFun);
+        $(function () { $backToTopFun(); });
+    })();
+</script>
+<script>
+    $(document).ready(function () {
+
+        if ($.cookie('show_zero_funds') === undefined || $.cookie('show_zero_funds') === '1') {
+            $('tr[data-id=zero]').show();
+            $('#hidezero').prop('checked', false);
+        } else {
+            $('#hidezero').prop('checked', true);
+        }
+        $('#hidezero').on('click', function (event) {
+            $('tr[data-id=zero]').toggle();
+            if ($('tr[data-id=zero]').is(':visible')) {
+                $.cookie('show_zero_funds', '1');
+            } else {
+                $.cookie('show_zero_funds', '0');
+            }
+        });
+    });
+
+</script>
+
+
+
+<include file="Public:footer" />

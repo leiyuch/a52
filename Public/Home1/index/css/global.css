@@ -1,0 +1,12 @@
+﻿div.valid-false{position:absolute; top:0; right:0; left:0; background-color:#f9a5a2; opacity:.7; color:#fff; text-align: right; padding: 7.5px;}
+.input-group .valid-false{ z-index: 999; }
+input.valid-false{border-color: Red;}
+input.valid-true{border-color:green;}
+
+.table tr, .table td { vertical-align: middle; }
+
+@media(max-width: 991px)
+{
+	.nav .menu-logo{display: none;}
+	.classic-menu-dropdown { float: left!important; margin-top: 15px; width: 30%; }
+}

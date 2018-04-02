@@ -1,0 +1,71 @@
+<include file="Public:header"/>
+<div id="main-content">
+    <div id="top-alert" class="fixed alert alert-error" style="display: none;">
+        <button class="close fixed" style="margin-top: 4px;">&times;</button>
+        <div class="alert-content">警告内容</div>
+    </div>
+    <div id="main" class="main">
+        <div class="main-title-h" style="font-size: 24px;">
+            <span class="h1-title">集市配置</span>
+            <present name="Think.get.name">
+                <i class="ca"></i>[<a href="{:U('Huafei/type')}"> 配置列表</a> ]
+            </present>
+        </div>
+        <div class="cf">
+            <div class="fl">
+            </div>
+            <div class="search-form fr cf">
+
+            </div>
+        </div>
+        <div class="data-table table-striped">
+            <table class="">
+                <thead>
+                <tr>
+
+                    <th class="">ID</th>
+                    <th class="">币名</th>
+                    <th class="">币种</th>
+                    <th class="">佣金比例</th>
+                    <th class="">最少卖出量</th>
+                    <th class="">状态</th>
+                    <th class="">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <notempty name="list">
+                    <volist name="list" id="vo">
+                        <tr>
+
+                            <td>{$vo.id}</td>
+                            <td>{$vo.title}({$vo.name})</td>
+                            <td>{$vo.type}</td>
+                            <td>{$vo.yongjin}%</td>
+                            <td>{$vo.qc_min}</td>
+                            <td>
+                                <eq name="vo['qc_status']" value="0">禁用</eq>
+                                <eq name="vo['qc_status']" value="1">启用</eq>
+                            </td>
+                            <td>
+                                <a href="{:U('Bazaar/editconfig?id='.$vo['id'])}" class="btn btn-primary btn-xs">编辑</a>
+                            </td>
+                        </tr>
+                    </volist>
+                    <else/>
+                    <td colspan="12" class="text-center">Oh! 暂时还没有内容!</td>
+                </notempty>
+                </tbody>
+            </table>
+            <div class="page">
+                <div>{$page}</div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    //主导航高亮
+    $('.Adver-box').addClass('current');
+    //边导航高亮
+    $('.Adver-index').addClass('current');
+</script><!-- /内容区 -->
+<include file="Public:footer"/>

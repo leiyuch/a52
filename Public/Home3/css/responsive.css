@@ -1,0 +1,1589 @@
+
+@media (max-width: 1600px) {
+.slides {
+	padding: 170px 10% 0;
+}
+.slides .w50 .img-block, .slides .w50 {
+    height: 400px
+}
+.slides .w50 .img-block .img-holder {
+	width: 100%;
+}
+}
+@media (max-width: 1500px) {
+.slides {
+	padding: 170px 15px 0;
+}
+.more-services .img-block {
+	min-height: 600px;
+}
+
+.more-services .img-block .img-holder {
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+	top: 50%;
+}
+.supported-c .txt-box {
+	padding: 0 15px 0 30px;
+}
+
+}/*max-width: 1500px*/	
+
+
+@media (max-width: 1210px) {
+.supported-c .w50 {
+	width: 100%;
+}
+.supported-c .w50 .img-block .img-holder {
+    padding: 0;
+    max-width: 675px;
+    margin: 0 auto 40px;
+}
+.supported-c .txt-box {
+	text-align: center;
+	padding: 0;
+}
+.supported-c .steps {
+	width: 55%;
+}
+.w-use-block {
+	width: 45%;
+}
+.w-use-block ul.align-left {
+	padding: 0 0 30px 30px ;
+	margin-top: 25px;
+}
+
+.supported-c .steps {
+	padding: 0 15px 0;
+} 
+
+}/*max-width: 1210px*/
+
+
+
+@media (max-width: 1199px) {
+.slider1 h1,.slides h2 {
+font-size: 50px;
+margin-bottom: 10px;
+}
+.slider1 p {
+font-size: 20px;
+}
+.slider1 a.cbtn {
+margin-top: 30px;
+}
+
+.main-nav {
+padding: 20px 0;
+}
+.main-nav nav.nav1,.home2 .main-nav nav.nav1 {
+width: calc(100% - 200px);
+width: -webkit-calc(100% - 200px);
+width: -moz-calc(100% - 200px);
+padding-left: 50px;
+position: relative;
+left: 50px;
+z-index: 2;
+}
+.main-nav .nav-login {
+position: absolute;
+right: 15px;
+top: 108px;
+}
+.easy-to-learn .img-block {
+min-height: 630px;
+}
+.easy-to-learn .img-block .img-holder {
+-webkit-transform: translateY(-50%);
+-moz-transform: translateY(-50%);
+-ms-transform: translateY(-50%);
+-o-transform: translateY(-50%);
+transform: translateY(-50%);
+top: 50%;
+min-width: auto;
+}
+.how-we-help .img-block {
+	min-height: 750px;
+}
+.how-we-help .img-block .img-holder {
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+	top: 50%;
+}
+.form-block {
+	padding-right: 0;
+}
+.partners {
+	margin-bottom: 50px;
+}
+.slides .w50 .img-block, .slides .w50 {
+	padding: 35px 0 0;
+}
+.crypyo-letest-nws .nws {
+    min-height: 504px;
+}
+.uptodate {
+	margin-top: 50px;
+}
+.reviews {
+	padding: 0 100px;
+}
+.blog-gallery li {
+	width: 80px;
+}
+.blog-gallery li:nth-child(3n+3) {
+	float: left;
+	margin-right: 20px; 
+}
+.side-block-content.right-side {
+	padding: 0 0;
+    margin-top: 30px;
+}
+.important-description .img-block {
+	padding: 0;
+}
+.discription .h-style1 p.ffc {
+	font-size: 18px;
+}
+.discription .h-style1 h2 {
+	font-size: 20px;
+}
+.discription .h-style1 {
+	margin-bottom: 15px;
+}
+.discription .cbtn {
+	margin-top: 30px;
+}
+.block-style2.stl2 h3, .block-style2.stl2 p,.block-style2.stl3 h3, .block-style2.stl3 p {
+	padding: 0 0;
+}
+.block-style2 h4, .block-style2 h3 {
+    font-size: 18px;
+    line-height: 25px;
+}
+.how-we-help.r-contact .img-block .img-holder {
+	top: 50%;
+    left: 0;
+}
+.fullfeatured .fullfeatured-block h2 {
+	font-size: 40px;
+    margin-bottom: 5px;
+}
+.fullfeatured .img-block {
+	padding: 0;
+}
+.secure-trading .cc-coin-block {
+	margin-bottom: 20px;
+}
+.trading .h-style3 p.ffc {
+	padding: 0 16%;
+}
+.side-block-content {
+	padding: 0;
+}
+.more-services .img-block .img-holder {
+	position: relative;
+	-webkit-transform: translateY(0);
+	-moz-transform: translateY(0);
+	-ms-transform: translateY(0);
+	-o-transform: translateY(0);
+	transform: translateY(0);
+	top: 0;
+}
+.more-services .img-block {
+	min-height: auto;
+}
+.how-help-tab .tab-pane:nth-child(1) .down-triangle {
+    left: 15.33%;
+}
+.how-help-tab .tab-pane:nth-child(2) .down-triangle {
+    left: 50%;
+}
+.how-help-tab .tab-pane:nth-child(3) .down-triangle {
+    left: 83.33%;
+}
+.satisfied-customer .how-help-tab {
+	margin-right: 0;
+}
+.fullfeatured .fullfeatured-block {
+	padding: 0 0 0;
+}
+.main-nav nav.nav1 ul li.drop .drop-down {
+	padding-top: 24px;
+}
+.ls-form {
+	padding: 0 0 0;
+}
+}/*max-width: 1199px*/
+
+
+
+
+
+
+
+@media (min-width: 1024px) {
+.nav-opener {
+	display: none;
+}
+}
+
+@media (max-width: 940px) {
+.supported-c .steps, .w-use-block {
+	width: 100%;
+}
+.supported-c .txt-box {
+	text-align: center;
+}
+.supported-c .steps {
+    margin: 0 auto;
+    float: none;
+}
+.w-use-block {
+	text-align: center;
+}
+.w-use-block ul.align-left {
+    padding: 0 15px;
+}
+.w-use-block ul.align-left li {
+	float: left;
+	display: inline-block;
+	margin-right: 30px;
+}
+}
+
+@media (max-width: 1023px) {
+	.nav-opener {
+		position: absolute;
+		right: 15px;
+		top: 12px;
+		font-size: 30px;
+	}
+	.nav-opener:hover {
+		color: #fff;
+	}
+	.main-nav nav.nav1,.home2 .main-nav nav.nav1 {
+		left: 0;
+		position: absolute;
+		top: 50px;
+		padding: 0;
+		width: 100%;
+		background: #3157f8;
+		background: -webkit-linear-gradient(bottom left, #3157f8 0%, #f93d87 100%);
+		background: -o-linear-gradient(bottom left, #3157f8 0%, #f93d87 100%);
+		background: linear-gradient(to top right, #3157f8 0%, #f93d87 100%);
+		opacity: 0;
+		visibility: hidden;
+	}
+	.main-nav.nav-active nav.nav1 {
+	    top: 76px;
+	    opacity: 1;
+	    visibility: visible;
+	}
+	.main-nav nav.nav1 ul, .main-nav nav.nav1 ul li {
+		display: block;
+		float: left;
+		width: 100%;
+	}
+	.main-nav nav.nav1 ul li a {
+		border-bottom: 1px solid rgba(225,225,225,0.1);
+	}
+	.main-nav nav.nav1 ul li.drop:before {
+		right: 25px;
+	}
+	.main-nav nav.nav1 ul li.drop .drop-down {
+		width: 100%;
+		padding: 0;
+	}
+	.main-nav .nav-login {
+		right: 55px;
+		top: -2px;
+	}
+	.banner {
+		padding: 130px 0 100px;
+    	min-height: 940px;
+	}
+	.banner .slider1 {
+		z-index: 1;
+	}
+
+	.h-style1 h2, .h-style2 h2, .h-style3 h2 {
+		font-size: 35px;
+	}
+	.h-style1 p.ffc, .h-style2 p.ffc, .h-style3 p.ffc {
+		font-size: 18px;
+	}
+	.topnav ul li a {
+		font-size: 12px;
+	}
+}
+
+
+
+@media (max-width: 991px) {
+.token {
+	float: none;
+	margin: 100px auto 0;
+	display: inline-block;
+}
+.custome-container {
+	text-align: center;
+}
+.custome-container .c-colum {
+	width: 100%;
+	float: left;
+	margin: 0 auto 20px;
+}
+.how-we-help .img-block {
+	min-height: auto;
+}
+.how-help-tab {
+	margin-bottom: 50px;
+}
+.how-we-help .img-block .img-holder {
+	-webkit-transform: translateY(0);
+	-moz-transform: translateY(0);
+	-ms-transform: translateY(0);
+	-o-transform: translateY(0);
+	transform: translateY(0);
+	position: relative;
+	top: 0;
+	left: 0;
+    width: 100%;
+}
+.cc-calculator .img-block .img-holder {
+    left: 0;
+    position: relative;
+    top: 100px;
+    min-width: 400px;
+
+}
+.f-block .f-content>p {
+	min-height: 70px;
+	margin-bottom: 10px;
+}
+.f-block {
+	margin-bottom: 50px;
+}
+.slides {
+	padding: 0 15px 0;
+}
+.slider2 .w50 {
+	width: 100%;
+	float: left;
+}
+.slides .w50 .img-block, .slides .w50 {
+	height: auto;
+}
+.slides .w50 .img-block .img-holder {
+	position: relative;
+    left: 0;
+    padding: 0 104px;
+}
+.r-footer {
+	padding: 60px 0 0;
+}
+a.cbtn {
+	line-height: 40px;
+}
+a.cbtn span {
+	font-size: 14px;
+}
+.processing-package .circle {
+    width: 140px;
+    min-height: 140px;
+}
+.processing-package .price-table .basic-price p {
+    margin-top: 18px;
+}
+
+.e-wallet .list-item a .content-box {
+	float: right;
+	text-align: left;
+}
+.h-style3 p.ffc {
+    padding: 0 17% 0;
+}
+.processing-package .h-style3 p.ffc {
+	padding: 0 21% 0;
+}
+.satisfied-customer .how-help-tab {
+    max-width: 100%;
+    padding: 0 74px;
+    margin: 0 0 30px;
+}
+.satisfied-customer .h-style3 p.ffc {
+	padding: 0 30% 0;
+}
+.crypyo-letest-nws .nws {
+    min-height: 388px;
+}
+.cc-block-stl .txt-block {
+	padding: 17px 17px 0;
+}
+.form-block2 .form-inputs {
+	width: 100%;
+}
+.form-block2 .form-group {
+    width: 100%;
+    float: right;
+    margin: 5px 0;
+    text-align: center;
+}
+.form-block2 .form-group a.cbtn {
+	margin: 0 auto;
+	float: none;
+}
+.token-sale ul li .wrapper .coin-name>span {
+	width: 100%;
+	line-height: 1;
+}
+.token-sale ul li .wrapper .ico2,.token-sale ul li .wrapper .tags-block,.token-sale ul li .wrapper .useicon,.token-sale ul li .wrapper .end-in {
+	margin-top: 8px;
+}
+.aboutpage {
+	padding: 35px 0;
+}
+.aboutpage h3 {
+	font-size: 40px;
+	width: 100%;
+}
+.aboutpage ul {
+	float: left;
+}
+.aboutpage ul li a {
+	padding: 0 3px;
+}
+.block50-container .block50 .cbtn2 {
+	line-height: 40px;
+}
+.discription {
+    padding: 20px 0px 0 0;
+}
+.important-description hr {
+	margin: 20px 0 20px;
+}
+.about-more-crypto2 .block-style2 .img-holder {
+	margin-bottom: 20px;
+}
+.about-more-crypto2 .block-style2 h4 {
+	margin-bottom: 20px;
+}
+.about-more-crypto2 .block-style2 h3 {
+	margin-bottom: 10px;
+}
+.about-more-crypto2 .block-style2.stl2 p {
+	line-height: 20px;
+	margin-bottom: 15px;
+}
+.how-we-help.r-contact .img-block {
+	height: auto;
+}
+.how-we-help.r-contact .img-block .img-holder {
+	position: relative;
+    top: 0;
+    transform: translateY(0);
+    width: 100%;
+    left: -15%;
+}
+.crypto-alculator .ls-form {
+    display: block;
+    
+}
+.crypto-alculator .signup-form, .crypto-alculator .form-stl1 {
+	width: 100%;
+}
+.ico-cbtn {
+	line-height: 40px;
+}
+.fullfeatured .img-block {
+    padding: 0 100px;
+    margin-top: 30px;
+}
+.fullfeatured {
+	padding: 30px 0 0;
+}
+.side-block-content {
+	margin-top: 50px;
+}
+.f-block.p20 {
+	padding: 0;
+}
+.how-help-tab .tab-pane:nth-child(1) .down-triangle {
+    left: 70px;
+}
+.how-help-tab .tab-pane:nth-child(2) .down-triangle {
+    left: 230px;
+}
+.how-help-tab .tab-pane:nth-child(3) .down-triangle {
+    left: 393px;
+}
+.chart-view .h-style3 p.ffc {
+	padding: 0 27% 0;
+}
+.easy-to-learn .block-style1 .ab-learn p {
+	max-width: 360px;
+}
+.supported-c .steps .step-content .block {
+	width: 120px;
+}
+.supported-c .steps .bar {
+    bottom: 107px;
+}
+.share {
+	line-height: 44px;
+}
+.chart-area-block {
+	min-height: 350px;
+}
+.ls-form {
+	display: block;
+}
+.signup-form, .login-form {
+	width: 100%;
+}
+
+
+}
+/*max-width: 991px*/
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+	.currencies-all:hover .owl-nav .owl-prev {
+	    left: 15px;
+	}
+	.currencies-all:hover .owl-nav .owl-next {
+	    right: 15px;
+	}
+.easy-to-learn .img-block .img-holder {
+	position: relative;
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+    top: 0;
+}
+.easy-to-learn .img-block {
+	min-height: auto;
+}
+.quotes .quotes-txt p {
+    font-size: 16px;
+    line-height: 20px;
+}
+}/*max-width: 768px*/
+
+
+
+
+
+
+
+@media (max-width: 767px) {
+.copyright {
+	font-size: 12px;
+}
+.steps .step-content .block {
+	width: 105px;
+}
+.steps .step-content .block .instruction {
+	font-size: 12px;
+}
+.simple-step .steps .bar {
+    bottom: 88px;
+}
+.steps .step-content .block .ico i {
+    line-height: 60px;
+    min-width: 65px;
+}
+.steps .step-content .block .ico i:before {
+	font-size: 30px;
+}
+.partners {
+	padding: 0 0;
+}
+.ico-cbtn {
+	line-height: 40px;
+}
+.processing-package .h-style3 p.ffc {
+	padding: 0 20% 0;
+}
+.supported-c .steps .bar {
+	bottom: 73px;
+}
+.w-use-block ul.align-left {
+	text-align: left;
+}
+.w-use-block ul.align-left li {
+	width: 100%;
+	margin-right: 0; 
+}
+.supported-c .tabs-content .tabs-menu ul li a {
+    border-radius: 70px;
+    line-height: 45px;
+    padding: 0 15px;
+}
+.topnav ul.align-left {
+	display: none;
+}
+.nws .content-box {
+    padding: 0 20px 30px;
+}
+.nws {
+    min-height: 510px; 
+}
+.nws .content-box h2, .nws .content-box a {
+	font-size: 20px;
+	margin-bottom: 5px;
+}
+.nws .content-box .tag {
+	margin-bottom: 5px;
+}
+.nws .content-box p.ffc {
+	font-size: 18px;
+}
+.cc-block-stl .txt-block h3 {
+	font-size: 18px;
+	margin-bottom: 5px;
+}
+.cc-block-stl .txt-block {
+	padding: 30px 17px 0;
+} 
+.latestnews .cc-block-stl .txt-block {
+    padding: 10px 10px 0;
+}
+.hl2 h2 {
+	font-size: 25px;
+}
+.token-sale ul li .wrapper .coin-name>span {
+	display: none;
+}
+.token-sale ul li .wrapper .coin-name {
+	width: 12%;
+}
+.token-sale ul li .wrapper .tags-block {
+	width: 20%;
+}
+.token-sale ul li .wrapper .end-in {
+	width: 40.5%;
+}
+.token-sale ul li .wrapper .ico2,.token-sale ul li .wrapper .tags-block,.token-sale ul li .wrapper .useicon,.token-sale ul li .wrapper .end-in {
+	margin-top: 0px;
+} 
+.reviews .nws .content-box h2 {
+	font-size: 20px;
+}
+.reviews .nws .content-box p.ffc {
+	font-size: 16px;
+}
+.reviews .nws .content-box {
+    padding: 0 20px 20px 20px;
+}
+.blog-ceo-founder {
+	padding: 20px;
+    min-height: auto;
+}
+.comment-box .comment .about-commenter p span {
+	font-size: 12px;
+	width: 100%;
+    display: block;
+}
+.blog-block .about-blog h3 a,.investment h3 {
+	font-size: 20px;
+    line-height: 25px;
+}
+.blog-left {
+	padding: 40px 0 40px;
+}
+.download-block.ab-us {
+	padding: 60px 0 60px;
+}
+.table-custom {
+	overflow: auto;
+	border: 1px solid #e0e0e0;
+	border-style: none solid;
+	margin-bottom: 15px;
+}
+.coin-table {
+	margin-bottom: 0;
+}
+.processing-package .price-table {
+	margin-bottom: 20px;
+}
+.fullfeatured .img-block {
+	padding: 0 50px;
+}
+.select-coin.real-coin {
+	float: left;
+}
+.select-coin {
+	min-height: 50px;
+}
+.secure-trading  .cc-coin-block {
+	padding: 40px 20% 35px;
+}
+.range-labels li:nth-child(2n+2) {
+    display: none;
+}
+.blog-block .about-blog p.short-discription {
+	line-height: 22px;
+}
+.link,.sound-blog {
+	padding: 20px;
+}
+.map-section iframe {
+	height: 500px;
+}
+.main-nav .nav-login ul li a, .main-nav .nav-login .search-form span {
+	line-height: 40px;
+	font-size: 12px;
+}
+.main-nav .nav-login .search-form span,.main-nav .nav-login .search-form.fullw span {
+    min-width: 40px;
+}
+.main-nav .nav-login .search-form input {
+	width: 40px;
+}
+.main-nav .nav-login {
+	width: 230px;
+}
+.simple-step, .cc-calculator {
+	padding: 120px 0 80px;
+    min-height: auto;
+}	
+.easy-to-learn, .cryptocurrencies, .how-we-help, .partners-and-request, .strong-coin,.supported-crypto, .digital-crypto,.processing-package,.partners-block,.secure-trading,.crypto-alculator,.buy-different-amount,.o-address,.cryptocurrencies.elements {
+	padding: 60px 0 60px;
+}
+.how-c-works, .broking-package, .our-expert , .download-block,.digital-crypto-services,.about-more-crypto2,.feedback.form-block {
+	padding: 100px 0 60px;
+}
+.supported-c, .satisfied-customer, .discover-ico,.latestnews,.adv1,.how-we-help.r-contact.elements, .chart-view,.how-we-help.r-contact {
+	padding: 60px 0 0;
+}
+.unbeatable-services {
+	padding: 100px 0 30px;
+}
+.unbeatable-services .h-style2 {
+	margin-bottom: 100px;
+}
+.supported-crypto.elements {
+	padding: 30px 0 20px;
+}
+.token-sale {
+	margin-bottom: 40px;
+}
+.discover-ico.elements .token-sale {
+	margin-bottom: 0;
+}
+.discover-ico.elements .side-coin-block,.supported-c.elements {
+	margin-top: 40px;
+}
+.trading .h-style3,.digital-crypto-services .h-style2 {
+	margin-bottom: 40px;
+}
+.more-services {
+	padding: 60px 16% 60px;
+}
+.fullfeatured .fullfeatured-block {
+	padding: 0;
+}
+.expert .block {
+	padding: 15px 0 10px;
+}
+.aboutpage ul li a {
+	font-size: 14px;
+}
+.h-style1 p.ffc, .h-style2 p.ffc, .h-style3 p.ffc {
+	font-size: 18px;
+}
+.go-to-top {
+	font-size: 1.5em;
+    line-height: 50px;
+    display: inline-block;
+    padding: 0;
+    height: 50px;
+    width: 50px;
+}
+.important-description {
+	padding: 60px 0 30px;
+}
+.uptodate {
+	padding: 30px 20px 30px;
+}
+.o-nws .txt-block h3 {
+	font-size: 20px;
+}
+.o-nws .img-holder {
+	margin-bottom: 20px;
+}
+.o-nws .txt-block ul {
+	margin-bottom: 15px;
+}
+.token {
+	margin: 50px auto 0;
+}
+p {
+	line-height: 1.3;
+}
+.how-help-tab .tab-pane p {
+	font-size: 18px;
+	line-height: 1.3;
+}
+.how-help-tab .tab-pane h4 {
+	font-size: 18px;
+	margin-top: 15px;
+}
+.other-nws {
+	padding: 0 0 30px;
+}
+.topnav ul li a {
+    line-height: 30px;
+}
+.login-signup {
+	padding: 30px 0 30px;
+}
+
+}/*max-width: 767px*/
+
+
+
+
+
+
+
+
+
+@media (max-width: 640px) {
+.f-block .f-content .f-contact .contact-num li:nth-child(2n+1) {
+	width: 65px;
+}
+.f-block .f-content .f-contact .contact-num li {
+    width: calc(100% - 65px);
+    width: -webkit-calc(100% - 65px);
+    width: -moz-calc(100% - 65px);
+    font-size: 12px;
+}
+.f-contact li div {
+	font-size: 12px;
+}
+.slides .w50 .img-block .img-holder {
+	padding: 0 20px;
+}
+.slider2 .slides .slider1 .c-cover:nth-child(2) {
+	margin-bottom: 20px;
+}
+.slides .w50 .img-block, .slides .w50 {
+	padding: 15px 0 0;
+}
+.h-style1 h2, .h-style2 h2, .h-style3 h2 {
+	font-size: 26px;
+}
+.crypto-alculator .signup-form .h-style1:after {
+	top: 5px;
+}
+.supported-c .steps .step-content .block {
+	width: 120px;
+}
+.supported-c .tabs-content ul {
+	border-radius: 0;
+}
+.supported-c .tabs-menu ul li {
+	width: 100%;
+	display: block;
+	float: left;
+}
+.crypyo-letest-nws .block {
+	width: 100%;
+	margin-bottom: 10px;
+    padding: 0 100px;
+}
+.form-block2 .form-inputs .form-group {
+	width: 100%;
+	float: left;
+}
+.uptodate h2 {
+	margin-bottom: 20px;
+	padding: 0px 3%;
+}
+.reviews {
+	padding: 0 0px;
+}
+.nws .content-box p.ffc {
+	font-size: 16px;
+    line-height: 20px;
+}
+.blog-ceo-founder .about-ceo-founder .social {
+	float: left;
+}
+.comment-box .commenter {
+	width: 70px;
+}
+.comment-box .comment {
+	width: calc(100% - 70px);
+    width: -webkit-calc(100% - 70px);
+    width: -moz-calc(100% - 70px);
+}
+.comment-form .form-group {
+	width: 100%;
+	margin-right: 0;
+}
+.block50-container .block50 {
+	width: 100%;
+	margin-right: 0;
+}
+.block50-container .block50 p.txt {
+    margin-bottom: 10px;
+}
+.investment h3 {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.blog-block.single-blog p.txt {
+	line-height: 22px;
+	margin-bottom: 15px;
+}
+.blog-block.single-blog p.short-discription {
+	line-height: 22px;
+	margin-bottom: 15px;
+}
+.blog-block.single-blog p.short-discription::first-letter {
+	font-size: 50px;
+    margin: 5px 15px 0 0;
+}
+.error404 .error-block {
+    margin-top: -130px;
+    margin-bottom: 70px;
+}
+.error404 .error-block .cbtn {
+	margin-top: 15px;
+	margin-bottom: 0;
+}
+.aboutpage {
+    padding: 30px 0;
+}
+.crypto-alculator .form-group label {
+	font-size: 14px;
+}
+.crypto-alculator .signup-form, .crypto-alculator .form-stl1 {
+	padding: 30px;
+}
+.fullfeatured .fullfeatured-block h2 {
+    font-size: 35px;
+    letter-spacing: -2px;
+}
+.fullfeatured .fullfeatured-block p {
+	font-size: 20px;
+	margin-bottom: 15px;
+}
+.fullfeatured .fullfeatured-block .ico-cbtn {
+	margin-bottom: 5px;
+}
+.trading .h-style3 p.ffc {
+	padding: 0 10%;
+} 
+.link p {
+	font-size: 18px;
+}
+.blogs-slide .owl-nav .owl-next, .blogs-slide .owl-nav .owl-prev {
+    width: 30px;
+}
+.blogs-slide .owl-nav .owl-prev {
+	left: 0;
+}
+.blogs-slide .owl-nav .owl-next {
+	right: 0;
+}
+.main-nav .logo {
+	width: 150px;
+}
+.main-nav.nav-active nav.nav1 {
+	top: 64px;
+}
+.cc-calculator .img-block .img-holder {
+	min-width: 100%;
+	top: 40px;
+}
+.how-we-help .how-help-tab {
+	padding: 60px 0 0;
+}
+.digital-crypto .h-style3 {
+	margin-bottom: 20px;
+}
+.digital-crypto .e-wallet {
+	padding: 20px 0 0;
+}
+.download-block .steps .step-content .block:nth-child(1) {
+	left: 0;
+}
+.download-block .steps .step-content .block:nth-child(3) {
+	right: 0;
+}
+.chart-view .h-style3 p.ffc {
+	padding: 0 15% 0;
+}
+.h-style1:after {
+	top: 4px;
+	height: 22px;
+}
+.cc-coin-block .coin-holder {
+	margin-bottom: 20px;
+}
+.secure-trading .cc-coin-block {
+    padding: 20px 20% 20px;
+}
+.bcoin-value {
+    padding: 12px 0;
+}
+.processing-package .circle {
+	margin: 0 auto 20px;
+}
+.price-table .txt-block {
+    padding: 20px 0 0;
+    min-height: auto;
+    margin-bottom: 15px;
+}
+.price-table .basic-price h3 {
+	font-size: 45px;
+}
+.processing-package .price-table .basic-price p {
+	font-size: 15px;
+    margin: 28px auto 0;
+}
+.h-style3 .hl h2:after, .h-style3 .hl h2:before {
+	height: 22px;
+    top: 3px;
+}
+.h-style2:before, .h-style2:after {
+	width: 30px;
+}
+.block-style1 .ico {
+	width: 20%;
+	text-align: left;
+}
+.block-style1 .ab-learn {
+	width: 80%;
+	padding-right: 10%; 
+}
+.more-services.elements {
+	padding-right: 0; 		
+}
+.block-style1 .ico i:before {
+	font-size: 55px;
+}
+.broking-package .h-style2 p.ffc, .our-expert .h-style2 p.ffc {
+	padding: 0 10%;
+}
+.discription .h-style1:after {
+    top: 3px;
+    height: 22px; 
+}
+.more-services {
+	padding: 60px 15px 60px;
+}
+.token-sale ul li .wrapper {
+	padding: 10px 10px;
+}
+.f-block .f-content p {
+	font-size: 15px;
+	line-height: 1.3;
+}
+.f-block .h-head {
+    min-height: 60px; 
+}
+.f-block .f-content p {
+	padding: 0 0 0 0;
+}
+.f-contact> li {
+	margin-bottom: 10px;
+}
+.f-block .f-content .f-contact div p {
+	font-size: 13px;
+}
+.form-block .form-control {
+    padding: 10px 15px 10px 50px;
+}
+.form-block .form-group i {
+	top: 7px;
+    left: 6px;
+}
+.simple-step .steps .bar {
+    bottom: 90px;
+}
+.download-block .steps .bar  {
+	 bottom: 87px;
+}
+.value-view-box {
+	margin-bottom: 30px;
+}
+.buy-different-amount .h-style3 {
+	margin-bottom: 30px;
+}
+.h-style3 p.ffc {
+	padding: 0 5% 0;
+}
+.blog-block .about-blog ul.date-block {
+	margin-bottom: 15px;
+}
+.blog-block .about-blog p.short-discription, .blog-block.single-blog p.txt,.blog-ceo-founder p.txt {
+	font-size: 15px;
+	line-height: 1.3;
+}
+.blog-block .about-blog ul.date-block li a {
+	font-size: 10px;
+}
+.pagination-block .pagination>li a {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+}
+.pagination-block .pagination>li {
+	margin: 0 2px;
+}
+.blog-ceo-founder p.txt {
+	font-size: 15px;
+	margin-top: 5px;
+}
+.blog-stl3 h4 {
+	font-size: 18px;
+	margin-bottom: 35px;
+}
+.blog-stl3 {
+    padding: 30px 15px 30px;
+    margin-bottom: 20px;
+}
+.recent-posts a.side-blog-content p.ffc {
+	font-size: 15px;
+}
+.tags li {
+	margin-right: 5px;
+    margin-bottom: 5px;
+}
+.tags li a {
+    padding: 0 10px;
+    line-height: 30px;
+    font-size: 14px;
+}
+.recent-tweets li a h5 {
+	font-size: 15px;
+    line-height: 1.3;
+}
+.recent-tweets li a p {
+    margin-bottom: 5px;
+    line-height: 1.3;
+}
+.strong-coin .work-block p {
+	font-size: 15px;
+	line-height: 1.3;
+}
+.supported-c .tabs-content .tabs-menu ul li a {
+    font-size: 16px;
+    line-height: 40px;
+    padding: 0 0;
+}
+.supported-c.elements {
+	margin-bottom: 30px;
+}
+.block-style1 {
+    margin: 10px 0;
+}
+.block-style1 .ab-learn h2 {
+	font-size: 16px;
+	margin-bottom: 5px;
+}
+.more-services .h-style1 {
+	margin-bottom: 30px;
+}
+.digital-crypto-services .h-style2 p.ffc {
+    padding: 0 5%;	
+}
+.e-wallet .list-item a .content-box {
+    padding: 0 20px;
+}
+.e-wallet .list-item a .content-box h3 {
+	font-size: 16px;
+}
+.e-wallet .list-item {
+    margin-bottom: 0;
+}
+.e-wallet .list-item a {
+	padding: 20px 0;
+}
+.categories-menu li a {
+	font-size: 15px;
+}
+.uptodate h2 {
+	font-size: 20px;
+}
+.discription .h-style1 p.ffc {
+	font-size: 15px;
+}
+.blog-block {
+	padding-bottom: 25px;
+    margin-bottom: 30px;
+}
+.login-form, .signup-form {
+	padding: 40px 20px;
+}
+.aboutpage {
+	padding: 20px 200px 20px 0px;
+}
+.aboutpage h3 {
+	font-size: 25px;
+	line-height: 1.3;
+}
+.tagslide a {
+    line-height: 30px;
+}
+.quote-txt {
+	padding: 30px 40px;
+}
+.quote-txt p {
+	font-size: 18px;
+	line-height: 1.4;
+}
+.w-say span {
+	font-size: 19px;
+    margin-top: 30px;
+}
+
+}/*max-width: 640px*/
+
+
+
+
+
+
+
+
+@media (max-width: 575px) {
+.main-nav .nav-login {
+	right: 16px;
+	top: 80px;
+}
+.banner .slider1 {
+    z-index: 1;
+    margin-top: 40px;
+}
+.slider1 h1, .slides h2 {
+	font-size: 35px;
+}
+.slider1 p {
+	font-size: 18px;
+}
+.steps .step-content .block {
+	width: 75px;
+}
+.partners-logo {
+	width: 100%;
+	margin: 0 0 15px;
+}
+.w-use-block ul.align-left li a {
+	text-align: left;
+	font-size: 14px;
+}
+.home2.home3 .main-nav .nav-login {
+	right: 55px;
+	top: -2px;
+}
+.token-sale ul li .wrapper .tags-block, .token-sale ul li .wrapper .ico2 {
+	display: none;
+}
+.token-sale ul li .wrapper .coin-name {
+	width: 20%;
+}
+.token-sale ul li .wrapper .useicon {
+	width: 25%;
+}
+.token-sale ul li .wrapper .end-in {
+	width: 55%;
+}
+.comment-box.replied {
+    padding: 0 0 0 50px;
+}
+.comment-box .comment {
+    padding: 10px 15px 10px 15px;
+    min-height: auto;
+}
+.comment-box .comment .txt {
+    font-size: 15px;
+    line-height: 20px;
+    margin-bottom: 10px;
+}
+.blog-block .about-blog ul.view-co {
+    position: absolute;
+    width: auto;
+    right: 0;
+    display: inline-block;
+    top: -34px;
+    left: auto;
+}
+.single-blog.blog-block .about-blog ul.date-block {
+	margin-bottom: 10px;
+}
+.quotes .quotes-txt {
+	padding: 20px;
+}
+.download-block.ab-us .steps .step-content .block {
+	left: 0;
+}
+.download-block.ab-us .steps .step-content .block:nth-child(3) {
+	right: 0;
+}
+.select-coin [type="radio"]:checked + label, [type="radio"]:not(:checked) + label {
+	line-height: 30px;
+    width: 30px;
+}
+.h-style1 p.ffc, .h-style2 p.ffc, .h-style3 p.ffc {
+	font-size: 15px;
+}
+.select-coin .view-all {
+	font-size: 14px;
+}
+.value-view-box .block50 span {
+	font-size: 16px;
+}
+.map-section iframe {
+	height: 400px;
+} 
+.address {
+	padding: 20px 10px 5px;
+}
+.office .f-contact .contact-num li {
+    width: calc(100% - 60px);
+    width: -webkit-calc(100% - 60px);
+    width: -moz-calc(100% - 60px);
+}
+.office .f-contact .contact-num li:nth-child(2n+1) {
+	width: 60px;
+}
+.satisfied-customer .how-help-tab {
+	padding: 0 30px;
+}
+.work-block {
+	margin-bottom: 10px;
+}
+.go-to-top {
+	font-size: 1em;
+	height: 45px;
+    width: 45px;
+    line-height: 45px;
+}
+.hl2 .bg {
+	display: none;
+}
+.hl2 {
+	margin: 0 0 25px;
+}
+.hl2 h2 {
+	font-size: 20px;
+	padding: 0;
+}
+
+#area-chart, #line-chart, #bar-chart, #stacked, #pie-chart {
+    min-height: 200px;
+} 
+.chart-area-block {
+	min-height: 270px;
+}
+.chart-view .h-style3 p.ffc {
+	padding: 0 5% 0;
+}
+.block-style1 .ico i:before {
+	font-size: 45px;
+}
+.nws .content-box {
+	padding: 0 20px 20px;
+}
+.login-form .form-group .ico-cbtn.fb, .login-form .form-group .ico-cbtn.tw {
+	font-size: 14px;
+	width: 100%;
+    margin-bottom: 5px;
+}
+.form-stl2 .h-style1 {
+	margin-bottom: 20px;
+}
+.login-form h4 {
+	margin-bottom: 15px;
+}
+
+
+
+
+
+} /*max-width: 575px*/
+
+
+
+
+@media (max-width: 480px) {
+.cc-calculator a.cbtn {
+	min-width: 100%;
+}
+.satisfied-customer .h-style3 p.ffc {
+	padding: 0 18% 0;
+}
+.slides .w50 .ico-cbtn {
+	max-width: auto;
+	padding: 0 15px;
+	margin-bottom: 10px;
+}
+.supported-c .steps .step-content .block {
+	width: 100px;
+}
+.crypyo-letest-nws .block {
+   padding: 0 0;
+}
+.blog-ceo-founder .img-block {
+    width: 75px;
+    padding: 9px 15px 0 0;
+}
+.blog-ceo-founder .about-ceo-founder {
+    width: calc(100% - 75px);
+    width: -webkit-calc(100% - 75px);
+    width: -moz-calc(100% - 75px);
+}
+.taggedin p.blog-taggedin .share {
+	margin-top: 20px;
+}
+.comment-form {
+	padding: 20px;
+}
+.comment-form .form-group .cbtn {
+	width: 100%;
+}
+.error404 .error-block {
+    margin-top: -90px;
+}
+.link p {
+	font-size: 14px;
+	line-height: 1;
+} 
+.link a.weblink {
+	width: 30px;
+	height: 30px;
+}
+.link a.weblink i {
+	line-height: 30px;
+}
+.how-help-tab .tab-pane {
+	padding: 20px 20px 25px;
+}
+.how-help-tab .tab-pane:nth-child(1) .down-triangle {
+    left: 15.33%;
+}
+.how-help-tab .tab-pane:nth-child(2) .down-triangle {
+    left: 50%;
+}
+.how-help-tab .tab-pane:nth-child(3) .down-triangle {
+    left: 83.33%;
+}
+.aboutpage h3 {
+	font-size: 20px;
+	letter-spacing: -1px;
+    width: 100%;
+}
+.processing-package .h-style3 p.ffc {
+	padding: 0 0 0;
+}
+.slider2:hover .owl-nav .owl-prev {
+    left: 15px;
+}
+.slider2:hover .owl-nav .owl-next {
+    right: 15px;
+}
+.calculator-block {
+	padding: 30px 15px 40px;
+}
+.crypto-alculator .signup-form, .crypto-alculator .form-stl1 {
+	padding: 15px;
+}
+.h-style4 h4 {
+	margin-left: 0;
+}
+.work-block h3 {
+	font-size: 18px;
+	margin: 15px 0 8px;
+}
+}/*max-width: 480px */
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 479px) {
+	.home2.home3 .main-nav .nav-login {
+		display: none;
+	}
+	.range-labels li {
+		width: 60px;
+	}
+	.range-labels li:nth-child(3n+3) {
+		display: none;
+	}
+	.buy-different-amount {
+		padding: 60px 0;
+	}
+	.blog-block .about-blog .cbtn {
+		padding: 0 40px;
+		width: auto;
+	}
+	.fullfeatured .fullfeatured-block h2 {
+		font-size: 30px;
+	}
+	.supported-c .steps .step-content .block {
+		width: 76px;
+	}
+	.supported-c .steps .bar {
+		bottom: 87px;
+	}
+	.home2 .main-nav .nav-login {
+		display: none;
+	}
+	.aboutpage {
+	    padding: 20px 0px 20px 0px;
+	}
+	.quote-txt {
+    	padding: 20px 20px;
+	}
+}
+@media (max-width: 320px) {
+.cc-block-stl .txt-block {
+	padding: 10px 10px 0;
+}
+.cc-block-stl .txt-block h3 {
+	font-size: 18px;
+	margin-bottom: 0;
+}
+.token-sale ul li .wrapper .useicon {
+	display: none;
+}
+.token-sale ul li .wrapper .coin-name {
+	width: 25%;
+}
+.token-sale ul li .wrapper .end-in {
+	width: 75%;
+}
+.crypto-alculator .form-group .nice-select span {
+	font-size: 11px;
+}
+
+
+}

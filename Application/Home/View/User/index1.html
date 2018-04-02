@@ -1,0 +1,208 @@
+﻿<include file="Public:header" />
+
+ 
+ 
+ 
+    <div class="content clearfix">
+        <div id="siteNoty" class="notification-box"></div>   
+        <!--左侧菜单-->
+        <include file="User:left" />
+        <script type="text/javascript">
+            $(document).ready(function () {
+                // Store variables
+                var accordion_head = $('.accordion > li > a'),
+                    accordion_body = $('.accordion li > .sub-menu');
+                // Open the first tab on load
+                //accordion_head.first().addClass('active').next().slideDown('normal');
+                //accordion_body.eq(2).find('a').eq(2).css('background', ' #efefef');
+                var found = false;
+                for (i = 0; i < accordion_body.length; i++) {
+                    item = accordion_body.eq(i).find("[data-id='']");
+                    if (item.length > 0) {
+                        accordion_head.eq(i).addClass('active').next().slideDown('normal');
+                        item.css({ 'color': ' #ff5e23', 'border-right-width': '3px', 'border-right-color': '#ff5e23' });
+                        found = true;
+                        break;
+                    }
+                }
+                if (found == false)
+                    accordion_head.eq(0).addClass('active').next().slideDown('normal');
+                // Click function
+                accordion_head.on('click', function (event) {
+                    // Disable header links
+                    event.preventDefault();
+                    // Show and hide the tabs on click
+                    if ($(this).attr('class') != 'active') {
+                        accordion_body.slideUp('normal');
+                        $(this).next().stop(true, true).slideToggle('normal');
+                        accordion_head.removeClass('active');
+                        $(this).addClass('active');
+                    }
+                });
+
+                var icoType = '';
+                if (icoType == '') {
+                    $("#buyIco").parent("li").remove()
+                }
+
+                $("input").focus(function () {
+                    $(".failed").html("")
+                });
+
+                $(".files,.cloud,.mail").find("li").click(function () {
+                    $.cookie('nav_index', 2, { path: '/' });
+                });
+                $(".sign").find("li").click(function () {
+                    $.cookie('nav_index', 3, { path: '/' });
+                });
+            });
+        </script>
+        <!--右侧内容-->
+        <div class="main_content acc-m-con">
+            <div class="right_mcontent">   
+                <div class="safe_center clear" style="padding-left: 0px; border-bottom: 2px solid #e55600;">
+                    <h1 style="margin-top: 0px; margin-bottom: 15px; line-height: 15px;">{:L('security')}</h1>
+                </div>
+                <div class="sj" style="top: 40px; left: 60px;"></div>
+                <notempty name="prompt_text">
+                    <div class="mytips">
+                        <h6 style="color: #ff8000;">{:L('kindly_reminder')}</h6>
+                        {$prompt_text}
+                    </div>
+                </notempty>  
+                <div class="safe_center clear">
+                    <div class="sc_level">
+                        <if condition="($user['moble'] neq '') AND ($user['ga'] neq '')">
+                            <div class="sc_level_1"></div>
+                            <elseif condition="($user['moble'] neq '') AND ($user['ga'] eq '')" />
+                            <div class="sc_level_2"></div>
+                            <elseif condition="($user['moble'] eq '') AND ($user['ga'] neq '')" />
+                            <div class="sc_level_3"></div>
+                            <else />
+                            <div class="sc_level_4"></div>
+                        </if>
+                    </div>
+                    <dl>
+                        <dt>
+                            ID：<span>{$user.id}</span>
+                        </dt>
+                        <dd>{:L('real_name')}：{$user.truename}</dd>
+                        <dd>{:L('user_name')}：{$user.username}</dd>
+                    </dl>
+                </div>
+                <ul class="sc_statu">
+                    <li>
+                        <em class="sc_statu_type_1"></em>
+                        <dl>
+                            <dt>{:L('certification')}</dt>
+                            <dd class="alpass">
+                                {:L('user_certificated')}<a href="/user/nameauth.html">{:L('view')}</a>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <empty name="user['ga']">
+                            <em class="sc_statu_type_2_1"></em>
+                            <dl>
+                                <dt>{:L('user_dual_authentication')}</dt>
+                                <dd class="nopass">
+                                    {:L('user_not_authenticated')}<a href="/user/ga.html">{:L('user_authenticate_now')}</a>
+                                </dd>
+                            </dl>
+                            <else /> <em class="sc_statu_type_2"></em>
+                            <dl>
+                                <dt>{:L('user_dual_authentication')}</dt>
+                                <dd class="alpass">
+                                    {:L('user_authenticated')}<a href="/user/ga.html">{:L('view')}</a>
+                                </dd>
+                            </dl>
+                        </empty>
+                    </li>
+                    <li>
+                        <empty name="user['moble']">
+                            <em class="sc_statu_type_3_1"></em>
+                            <dl>
+                                <dt>{:L('bound_phone')}</dt>
+                                <dd class="nopass">
+                                    {:L('user_not_bound')} <a href="/user/moble.html">{:L('view')}</a>
+                                </dd>
+                            </dl>
+                            <else /> <em class="sc_statu_type_3"></em>
+                            <dl>
+                                <dt>{:L('bound_phone')}</dt>
+                                <dd class="alpass">
+                                    {:L('user_bound')} <a href="/user/moble.html">{:L('view')}</a>
+                                </dd>
+                            </dl>
+                        </empty>
+                    </li>
+                </ul>
+                <div class="sc_info_list" id="sc_info_list">
+                    <dl>
+                        <dt>{:L('login_password')}</dt>
+                        <dd>
+                            <p>{:L('user_login_password_desc')}</p>
+                        </dd>
+                        <dd>
+                            <div class="changepw">
+                                <a href="/user/password.html">{:L('user_modify_login_password')}</a>
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>{:L('trade_password')}</dt>
+                        <dd>
+                            <p>{:L('user_trade_password_desc')}</p>
+                        </dd>
+                        <dd>
+                            <div class="changepw">
+                                <a href="/user/paypassword.html">{:L('user_modify_trade_password')}</a>
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>{:L('certification')}</dt>
+                        <dd>
+                            <p>{:L('user_certification_desc')}</p>
+                        </dd>
+                        <dd>
+                            <div class="changepw">
+                                {:L('user_certificated')} <a href="/user/nameauth.html">{:L('view')}</a>
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>{:L('user_dual_authentication')}</dt>
+                        <dd>
+                            <p>{:L('user_authenticator_desc')}</p>
+                        </dd>
+                        <dd>
+                            <div class="changepw">
+                                <empty name="user['ga']"> {:L('user_not_authenticated')} ｜ <a href="/user/ga.html">{:L('user_authenticate_now')}</a> <else /> <a href="/user/ga.html">{:L('view')}</a> </empty>
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>{:L('bound_phone')}</dt>
+                        <dd>
+                            <p>{:L('user_bound_phone_desc')}</p>
+                        </dd>
+                        <dd>
+                            <div class="changepw">
+                                <empty name="user['moble']"> {:L('user_not_bound')} ｜ <a href="/user/moble.html">{:L('user_bound_now')}</a> <else /> <a href="/user/moble.html">{:L('view')}</a> </empty>
+                            </div>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+    <br>
+    <br>
+    <script>
+        $('#user_box').addClass('active');
+        $('#user_index').addClass('active');
+        $('#user_index i').attr('class', 'coin_menu_op_14');
+    </script>
+    <include file="Public:footer" />

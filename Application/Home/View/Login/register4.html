@@ -1,0 +1,126 @@
+
+<include file="Public:header" />
+		
+<section class="login-content clearfix ">
+    <div class="form" style="height:395px">
+        <div class="title">注册成功</div>
+        <div class="input register_email">
+                <div class="part4 text-center">
+                        <h3 style="font-size: 16px;padding-top: 60px;">恭喜用户<span style="color:red;">{$user.username}</span>，您已经注册成功</h3>
+                        <p style="padding-top: 39px;"> <strong id="times" class="f-size18"></strong> 点击，跳转到 <a href="/finance/" class="c-blue" style="color:#1997d7">用户中心</a></p>
+                        
+                    </div>
+              
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</section>
+
+
+
+
+
+<include file="Public:footer" />
+<!-- include jQuery -->
+<script src="__PUBLIC__/Home3/js/admin/jquery.min.js"></script>
+<!-- bootstrap -->
+<script src="__PUBLIC__/Home3/js/bootstrap.min.js"></script>
+<!-- plugins.js -->
+<script src="__PUBLIC__/Home3/js/plugins.js"></script>
+<!-- all parallax -->
+<script src="__PUBLIC__/Home3/js/parlx.js"></script>
+<!-- nice-select -->
+<script src="__PUBLIC__/Home3/js/jquery.nice-select.js"></script>
+<!-- chart js -->
+<script src="__PUBLIC__/Home3/js/raphael-min.js"></script>
+<script src="__PUBLIC__/Home3/js/morris.min.js"></script>
+<!-- dscountdown -->
+<script src="__PUBLIC__/Home3/js/dscountdown.min.js"></script>
+<!-- custom js -->
+<script src="__PUBLIC__/Home3/js/custom.js"></script>
+<script src="__PUBLIC__/Home3/js/sidebar-menu.js"></script>
+<script src="__PUBLIC__/Home3/layer/layer.js"></script>
+<script>
+$.sidebarMenu($('.sidebar-menu'))
+</script>
+<script>
+
+function getcode() {
+    var email=$("#email").val();  
+    if (!f_email(email)) {
+        layer.alert("请输入正确的邮箱！", {
+          icon: 2,
+          skin: 'layer-ext-moon'
+        });
+        $("#email").focus();
+        return false;
+     }     
+
+}
+function f_email(value){
+   var re=/^(?:[a-z\d]+[_\-\+\.]?)*[a-z\d]+@(?:([a-z\d]+\-?)*[a-z\d]+\.)+([a-z]{2,})+$/i;
+   return re.test(value);
+}
+function add() {
+                  var truename=$("#regtruename").val();
+                    var idcard=$("#regidcard").val();
+                    var email=$("#regemail").val();
+
+                    /*
+                    if(truename==""||truename=null){
+                        formMsg('truename', 0, '请输入真实姓名');
+                        return false;
+                    }*/
+                    if(truename=="" || truename==null || truename=="请输入真实姓名"){
+                       // formMsg('idcard', 0, '{:L('enter_id_number')}');
+                        layer.alert('请输入真实姓名', {
+                        icon: 2,
+                        skin: 'layer-ext-moon'
+                        });
+                        $("#regtruename").focus();
+                        return false;
+                    }
+                    if(idcard=="" || idcard==null || idcard=="请输入身份证件"){
+                       // formMsg('idcard', 0, '{:L('enter_id_number')}');
+                        layer.alert('{:L('enter_id_number')}', {
+                        icon: 2,
+                        skin: 'layer-ext-moon'
+                        });
+                        $("#regidcard").focus();
+                        return false;
+                    }
+
+                    if (!f_email(email)) {
+                        layer.alert("请输入正确的邮箱！", {
+                        icon: 2,
+                        skin: 'layer-ext-moon'
+                        });
+                        $("#regemail").focus();
+                        return false;
+                    } 
+
+
+                    $.post("{:U('Login/upregister3')}",{truename:truename,idcard:idcard,email:email},function(data){
+                        if(data.status==1){
+                          //  layer.msg(data.info,{icon:1});
+                            // layer.alert(data.info, {
+                            //  icon: 1,
+                            //  skin: 'layer-ext-moon'
+                            // });
+                            window.location='/Login/register4';
+                        }else{
+                             layer.alert(data.info, {
+                             icon: 2,
+                             skin: 'layer-ext-moon'
+                            });
+                            // layer.msg(data.info,{icon:2});
+                            // if(data.url){
+                            //     window.location=data.url;
+                            // }
+                        }
+                    },"json");
+    
+    }
+</script>
+</body>
+</html>

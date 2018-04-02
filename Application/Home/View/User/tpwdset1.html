@@ -1,0 +1,110 @@
+<include file="Public:header" />
+<div class="content clearfix">
+    <!--左侧菜单-->
+    <include file="User:left" />
+    <!--右侧内容-->
+    <div class="main_content acc-m-con">
+        <div class="right_mcontent">
+            <div class="safe_center clear" style="padding-left: 0px; border-bottom: 2px solid #e55600;">
+                <h1 style="margin-top: 0px; margin-bottom: 15px; line-height: 15px;">{:L('user_set_trade_password_enter')}</h1>
+            </div>
+            <div class="sj" style="top: 40px; left: 60px;"></div>
+            <br>
+
+            <div class="sectioncont">
+                <form enctype="application/x-www-form-urlencoded" method="post" action="">
+                    <table id="withdrawtable">
+                        <tbody>
+                            <style>
+                                p {
+                                    margin: 0 !important;
+                                    padding: 0 !important;
+                                    margin-left: 356px;
+                                }
+
+                                .p {
+                                    margin-left: 256px;
+                                }
+                            </style>
+                            <div class="p">
+                                <p style="float:left; width:500px;">
+                                    <input type="radio" value="1" name="tpwdsetting" style="width: 15px !important">
+                                    <eq name="user['tpwdsetting']" value="1"></eq> {:L('user_set_trade_password_op1')}
+ 
+                                </p><br>
+                                <p style="float:left; width:500px;">
+                                    <input type="radio" value="2" name="tpwdsetting" style="width: 15px !important">
+                                    <eq name="user['tpwdsetting']" value="2">checked="checked"</eq> {:L('user_set_trade_password_op2')}
+                                </p>
+                                <br>
+                                <p style="float:left; width:500px;">
+                                    <input id="tpwdsetting" type="radio" value="3" name="tpwdsetting" style="width: 15px !important">
+                                    <eq name="user['tpwdsetting']" value="3">checked="checked"</eq> {:L('user_set_trade_password_op3')}
+                                </p>
+                                <br>
+                                <p><input type="text" value="{:L('enter_trade_password')}" size="10" name="paypassword" id="paypassword"></p>
+                            </div>
+                            <tr>    
+                            <tr>   
+                                <td><input id="apiinout" style="margin-left:256px;"
+       type="button" value=" {:l('save')}" onclick="Update()"
+       class="sub-btn"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+
+            
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<script>
+	$('input').focus(function(){
+		var t=$(this);
+		if(t.attr('type')=='text'||t.attr('type')=='password')
+			t.css({'box-shadow' : '0px 0px 3px #1583fb','border' : '1px solid #1583fb','color' : '#333' });
+		if(t.val()==t.attr('placeholder'))
+			t.val('');
+	});
+	$('input').blur(function(){
+		var t=$(this);
+		if(t.attr('type')=='text'||t.attr('type')=='password')
+			t.css({'box-shadow' : 'none','border' : '1px solid #e1e1e1','color' : '#333' });
+		if(t.attr('type')!='password'&&!t.val())
+			t.val(t.attr('placeholder'));
+	});
+
+	function Update(){
+		var paypassword=$("#paypassword").val();
+		var tpwdsetting=$("input[name='tpwdsetting']:checked").val();
+		if(paypassword==""||paypassword==null){
+			layer.tips('{:L('enter_trade_password')}','#paypassword',{tips : 3 });
+			return false;
+		}
+		if(tpwdsetting==""||tpwdsetting==null){
+			layer.tips('{:L('user_please_select_one')}','#tpwdsetting',{tips : 3 });
+			return false;
+		}
+
+		$.post("{:U('User/uptpwdsetting')}",{paypassword : paypassword,tpwdsetting : tpwdsetting },function(data){
+			if(data.status==1){
+				layer.msg(data.info,{icon : 1 });
+				window.location="{:U('User/tpwdset')}";
+			}else{
+				layer.msg(data.info,{icon : 2 });
+				if(data.url){
+					window.location=data.url;
+				}
+			}
+		},"json");
+	}
+</script>
+<script>
+	$('#user_box').addClass('active');
+	$('#user_tpwdset').addClass('active');
+	$('#user_tpwdset i').attr('class','coin_menu_op_15');
+</script>
+<include file="Public:footer" />

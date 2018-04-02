@@ -1,0 +1,604 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>用户登录/注册 -- 优质区块链资产交易平台，支持比特币，莱特币，以太坊等交易</title>
+    <meta name="description" content="比特儿 的网址是 bter.com， 是一个中文比特币Bitcoin, 以太坊, Ethereum,莱特币, Litecoin，交易平台，其特点是快捷，安全。 ">
+    <meta name="keywords" content="比特币, bitcoin, BTC, Ethereum, 以太坊, litecoin, LTC, namecoin, ppcoin, ETC, ETH, FTC, NMC, PPC, 交易平台，交易网站，比特币交易，比特币兑换，比特币市场 ">
+    <link href="__PUBLIC__/Home1/Css/style.css" rel="stylesheet" type="text/css">
+    <link href="__PUBLIC__/Home1/Css/signUp.css" rel="stylesheet" type="text/css">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/apple-touch-icon-120x120.png" />
+    <script src="__PUBLIC__/Home1/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="__PUBLIC__/Home1/Scripts/jquery.common.tools.js"></script>
+
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="__PUBLIC__/Home1/css/gloab.css" />
+    <link rel="stylesheet" href="__PUBLIC__/Home1/css/index.css" />
+    <!--<script src="login/js/jquery-1.11.1.min.js"></script>-->
+    <script src="__PUBLIC__/Home1/Scripts//register.js"></script>
+    <script src="__PUBLIC__/Home1/Scripts//jquery.cookies.2.2.0.js"></script>
+    <link href="__PUBLIC__/Home1/css//mdi.min.css" rel="stylesheet">
+    <script src="__PUBLIC__/layer/layer.js"></script>
+    <!--[if IE]><script src="Scripts/html5.js"></script><![endif]-->
+    <script>
+        (function () {
+            if (! /*@cc_on!@*/ 0) return;
+            document.createElement("template");
+        })();
+    </script>
+</head>
+
+<body>
+    <div id="siteNoty" class="notification-box"></div>
+    <div class="site-header site-header-fixed-top" id="site_header">
+        <link href="head/app.css" rel="stylesheet" type="text/css">
+        <link href="head/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="head/app-theme-5.css" rel="stylesheet" type="text/css">
+        <nav class="navbar site-navbar navbar-lg navbar-primary navbar-bg-from-transparent navbar-fg-from-light" id="site_navbar" style="background:rgb(7, 105, 224);">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#site_navbar_collapse"><i class="navbar-toggle-icon mdi mdi-menu"></i></button>
+                    <div class="site-branding">
+                        <h1 class="site-branding-title sr-only"><a class="site-branding-title-link" href="#">Site title</a></h1>
+                        <div class="site-branding-media">
+                            <a class="site-branding-media-link" href="#">
+                                <img class="site-branding-media-img site-branding-media-img-light" src="images/site-branding-media-img-light.png" alt=""><img class="site-branding-media-img site-branding-media-img-dark" src="images/site-branding-media-img-dark.png"
+                                                                                                                                                              alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="collapse navbar-collapse" id="site_navbar_collapse">
+                    <div class="navbar-right">
+                        <ul class="nav navbar-nav menu primary-menu">
+                            <li class="menu-item active"><a href="index.html">首页</a></li>
+                            <li class="menu-item"><a href="btc_cny.html">交易中心</a></li>
+                            <li class="menu-item"><a href="myfunds.html">财富账单</a></li>
+                            <li class="menu-item"><a href="id_setup.html">安全中心</a></li>
+                            <li class="menu-item"><a href="news.html">服务中心</a></li>
+                        </ul>
+                        <a href="login.html"><button class="btn btn-secondary navbar-btn" type="button">登录</button></a>
+                    </div>
+                </div>
+                <!-- .navbar-collapse-->
+            </div>
+            <!-- .container-fluid-->
+        </nav>
+        <!-- .navbar-->
+    </div>
+    <style>
+        *:before, *:after, .form-control {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        .glyphicon-ok:before {
+            content: "\221A";
+        }
+
+        .leftregi form, .rightlogin form {
+            width: 100%;
+            text-align: left;
+        }
+
+        .rightlogin {
+            display: flex;
+            align-items: center;
+        }
+
+        .btn-block.sub-btn {
+            width: 40%;
+            margin: 10px auto;
+        }
+
+            .btn-block.sub-btn:focus {
+                background: #f60 !important;
+            }
+
+        p.red {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .form-group .red, p.red {
+            font-size: 13px;
+        }
+
+        .r-tip {
+            font-size: 13px;
+            font-weight: normal;
+            vertical-align: middle;
+            height: 48px;
+            display: table-cell;
+            padding-left: 5px;
+        }
+
+        .code-box {
+            position: relative;
+            width: 70%;
+            float: left;
+        }
+
+            .code-box .help-block {
+                margin-left: 0;
+                padding-top: 5px;
+            }
+
+        #code, #codeReg {
+            position: absolute;
+            left: 160px;
+            top: -5px;
+        }
+
+        .checkbox {
+            clear: both;
+            margin-left: 30%;
+        }
+
+            .checkbox a {
+                margin-top: 15px;
+            }
+
+        #agrCheckLabel {
+            width: auto;
+            user-select: none;
+        }
+
+        .m_title h4 {
+            text-align: center;
+            font-weight: normal;
+            font-size: 24px;
+        }
+        /*auto email*/
+        .auto-tip {
+            background: #fff;
+            color: #2c3e50;
+            border: 2px solid #dce4ec;
+            border-top: none;
+            border-radius: 4px;
+            z-index: 10000;
+            text-align: left;
+        }
+
+            .auto-tip li {
+                width: 100%;
+                height: 28px;
+                line-height: 28px;
+                padding: 0 15px;
+                font-size: 14px;
+            }
+
+                .auto-tip li.hoverBg {
+                    background: #ecf0f1;
+                    cursor: pointer;
+                }
+
+            .auto-tip em {
+                font-style: normal;
+            }
+
+        #signupForm .auto-tip {
+            top: 71px !important;
+        }
+
+        .completer-container, .pla {
+            position: absolute;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            font-family: inherit;
+            font-size: 14px;
+            line-height: normal;
+            list-style: none;
+            background-color: #fff;
+            border: 1px solid #eee;
+            border-radius: 3px;
+        }
+
+            .completer-container li, .pla li {
+                padding: .5em .8em;
+                margin: 0;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                cursor: pointer;
+                background-color: #fff;
+                border-bottom: 1px solid #eee;
+            }
+
+                .completer-container .completer-selected, .completer-container li:hover, .pla .completer-selected {
+                    margin-left: -1px;
+                    background-color: #eee;
+                    border-left: 1px solid #ff5e23;
+                }
+
+        /*bootstrap*/
+        .has-feedback {
+            position: relative;
+            clear: both;
+        }
+
+            .has-feedback .form-control {
+                float: left;
+                width: 40%;
+                padding-right: 42.5px;
+                font-size: 15px;
+                margin-bottom: 0;
+            }
+
+        .form-control-feedback {
+            position: absolute;
+            top: 0;
+            right: 30%;
+            z-index: 2;
+            display: block;
+            width: 34px;
+            height: 34px;
+            line-height: 34px;
+            text-align: center;
+            pointer-events: none;
+        }
+
+        .has-success .help-block, .has-success .control-label, .has-success .radio, .has-success .checkbox, .has-success .radio-inline, .has-success .checkbox-inline, .has-success.radio label, .has-success.checkbox label, .has-success.radio-inline label, .has-success.checkbox-inline label {
+            color: #3c763d;
+        }
+
+        .has-success .form-control {
+            border-color: #3c763d;
+        }
+
+            .has-success .form-control:focus {
+                border-color: #2b542c;
+            }
+
+        .has-success .input-group-addon {
+            color: #3c763d;
+            border-color: #3c763d;
+            background-color: #dff0d8;
+        }
+
+        .has-success .form-control-feedback {
+            color: #0da77d;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .has-error .help-block, .has-error .control-label, .has-error .radio, .has-error .checkbox, .has-error .radio-inline, .has-error .checkbox-inline, .has-error.radio label, .has-error.checkbox label, .has-error.radio-inline label, .has-error.checkbox-inline label {
+            color: #a94442;
+        }
+
+        .has-error .form-control {
+            border-color: #a94442;
+        }
+
+            .has-error .form-control:focus {
+                border-color: #843534;
+            }
+
+        .has-error .input-group-addon {
+            color: #a94442;
+            border-color: #a94442;
+            background-color: #f2dede;
+        }
+
+        .has-error .form-control-feedback {
+            color: #a94442;
+        }
+
+        .has-feedback label ~ .form-control-feedback {
+            top: 8px;
+        }
+
+        .has-feedback label.sr-only ~ .form-control-feedback {
+            top: 0;
+        }
+
+        .help-block {
+            display: block;
+            clear: both;
+            width: 40%;
+            margin-left: 30%;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            color: #737373;
+        }
+
+        .has-feedback .form-control.code-input {
+            width: 152px;
+        }
+
+        #codeGroup .form-control-feedback {
+            left: 114px;
+            top: 8px;
+        }
+        /*loading*/
+        .spinner {
+            display: none;
+            margin: 0 auto;
+            width: 50px;
+            text-align: center;
+        }
+
+            .spinner > div {
+                width: 10px;
+                height: 10px;
+                background-color: #ffad69;
+                border-radius: 100%;
+                display: inline-block;
+                -webkit-animation: bouncedelay 1.4s infinite ease-in-out;
+                animation: bouncedelay 1.4s infinite ease-in-out;
+                -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+            }
+
+            .spinner .bounce1 {
+                -webkit-animation-delay: -0.32s;
+                animation-delay: -0.32s;
+            }
+
+            .spinner .bounce2 {
+                -webkit-animation-delay: -0.16s;
+                animation-delay: -0.16s;
+            }
+
+        @-webkit-keyframes bouncedelay {
+            0%, 80%, 100% {
+                -webkit-transform: scale(0.0);
+            }
+
+            40% {
+                -webkit-transform: scale(1.0);
+            }
+        }
+
+        @keyframes bouncedelay {
+            0%, 80%, 100% {
+                transform: scale(0.0);
+                -webkit-transform: scale(0.0);
+            }
+
+            40% {
+                transform: scale(1.0);
+                -webkit-transform: scale(1.0);
+            }
+        }
+
+        .form-control-feedback {
+            margin-right: 0;
+            display: none;
+        }
+
+        .has-success .form-control-feedback {
+            display: block;
+        }
+
+        .has-feedback #captcha_code {
+            padding-right: 40px;
+        }
+
+        #loginSub:focus {
+            background-color: #18bc9c;
+            border-color: #18bc9c;
+        }
+
+        legend {
+            text-align: center;
+            color: #fff;
+        }
+
+        /*注册*/
+        #agreeCheck {
+            margin-top: 2px;
+        }
+
+        .password-level {
+            clear: both;
+            width: 40%;
+            margin: 0 auto;
+        }
+
+            .password-level .col-md-11 {
+                padding-left: 0;
+            }
+
+            .password-level .col-md-4 {
+                width: 33.33%;
+                float: left;
+            }
+
+            .password-level span {
+                display: block;
+                width: 100%;
+                height: 3px;
+                text-align: center;
+                line-height: 0;
+                font-size: 14px;
+                font-weight: bold;
+            }
+
+        #signPswLevel.password-level span, #fundPswLevel.password-level span {
+            height: 16px;
+            line-height: 16px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .discount {
+            color: #ff5e23;
+            margin: 10px 0 18px;
+            font-weight: bold;
+        }
+
+        #signupSub {
+            margin: 0 auto;
+        }
+
+        .input-item-info {
+            width: 30%;
+            float: left;
+        }
+
+        .code-box .form-control-feedback {
+            right: auto;
+            left: 114px;
+            top: 8px;
+        }
+    </style>
+    <div class="left_con_login">
+        <div class="login_incontent login-con">
+            <div class="login-box f-mt10 f-pb50">
+                <div class="main bgf">
+                    <div class="reg-box-pan display-inline">
+                        <div class="stepSt">
+                            <ul>
+                                <li class="col-xs-3 on">
+                                    <span class="num"><em class="f-r5"></em><i>1</i></span>
+                                    <span class="line_bg lbg-r"></span>
+                                    <p class="lbg-txt">{:L('user_register')}</p>
+                                </li>
+                                <li class="col-xs-3 on">
+                                    <span class="num"><em class="f-r5"></em><i>2</i></span>
+                                    <span class="line_bg lbg-l"></span>
+                                    <span class="line_bg lbg-r"></span>
+                                    <p class="lbg-txt">{:L('set_trade_password')}</p>
+
+                                </li>
+                                <li class="col-xs-3 on">
+
+                                    <span class="num"><em class="f-r5"></em><i>3</i></span>
+                                    <span class="line_bg lbg-l"></span>
+                                    <p class="lbg-txt">{:L('certification')}</p>
+
+                                </li>
+                                <li class="col-xs-3">
+                                    <span class="num"><em class="f-r5"></em><i>3</i></span>
+                                    <span class="line_bg lbg-l"></span>
+                                    <p class="lbg-txt">{:L('succeed')}</p>
+
+                                </li>
+                            </ul>
+                        </div>
+
+
+                        <div class="reg-box" id="verifyCheck" style="margin-top:20px;">
+                            <div class="part3">
+                                <div class="item col-xs-12">
+                                    <span class="intelligent-label f-fl"><b class="ftx04">*</b>{:L('real_name')}：</span>
+                                    <div class="f-fl item-ifo">
+                                        <input type="text" maxlength="10" class="txt03 f-r3 required" tabindex="1" data-valid="isNonEmpty||between:2-10||isZh" data-error="真实姓名不能为空||真实姓名长度2-10位||只能输入中文" id="regtruename" />
+                                        <span class="ie8 icon-close close hide"></span>
+                                        <label class="icon-sucessfill blank hide"></label>
+                                        <label class="focus">2-10位，中文真实姓名</label>
+                                        <label class="focus valid"></label>
+                                    </div>
+                                </div>
+                                <div class="item col-xs-12">
+                                    <span class="intelligent-label f-fl"><b class="ftx04">*</b>{:L('id_number')}：</span>
+                                    <div class="f-fl item-ifo">
+                                        <input type="text" class="txt03 f-r3 required" tabindex="2" data-valid="isNonEmpty||isCard" data-error="身份证号不能为空||身份证号码格式不正确" maxlength="18" id="regidcard" />
+                                        <span class="ie8 icon-close close hide"></span>
+                                        <label class="icon-sucessfill blank hide"></label>
+                                        <label class="focus">请填写18位有效的身份证号</label>
+                                        <label class="focus valid"></label>
+                                    </div>
+                                </div>
+                                <div class="item col-xs-12">
+                                    <span class="intelligent-label f-fl"><b class="ftx04">*</b>{:L('secure_email')}：</span>
+                                    <div class="f-fl item-ifo">
+                                        <input type="text" class="txt03 f-r3 required" tabindex="2" data-valid="isNonEmpty||isCard" data-error="身份证号不能为空||身份证号码格式不正确" maxlength="18" id="regemail" />
+                                        <span class="ie8 icon-close close hide"></span>
+                                        <label class="icon-sucessfill blank hide"></label>
+                                        <label class="focus">请填写你的邮箱</label>
+                                        <label class="focus valid"></label>
+                                    </div>
+                                </div>
+                                <div class="item col-xs-12">
+                                    <span class="intelligent-label f-fl">&nbsp;</span>
+                                    <div class="f-fl item-ifo">
+                                        <a href="#" onclick="Update();" class=" btn btn-blue f-r3" id="btn_part3">{:L('next')}</a>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                $('input').focus(function(){
+                    var t=$(this);
+                    if(t.attr('type')=='text'||t.attr('type')=='password')
+                        t.css({'box-shadow':'0px 0px 3px #1583fb','border':'1px solid #1583fb','color':'#333' });
+                    if(t.val()==t.attr('placeholder'))
+                        t.val('');
+                });
+                $('input').blur(function(){
+                    var t=$(this);
+                    if(t.attr('type')=='text'||t.attr('type')=='password')
+                        t.css({'box-shadow':'none','border':'1px solid #e1e1e1','color':'#333' });
+                    if(t.attr('type')!='password'&&!t.val())
+                        t.val(t.attr('placeholder'));
+                });
+                $('.reg_input_box input').each(function(i,d){
+                    $(d).focus(function(){
+                        var oRegMsg=$('#'+$(this).attr('id')+'-msg');
+                        oRegMsg.attr('class')=='form_explain_error'?oRegMsg.attr('class','form_explain').html(oRegMsg.attr('data-explain')).show():oRegMsg.show();
+                    })
+                    $(d).blur(function(){
+                        var oRegMsg=$('#'+$(this).attr('id')+'-msg');
+                        $(this).parent().find('.form_explain').hide();
+                    })
+                })
+                var mbTest_username=/^(?![^a-zA-Z]+$)(?!\D+$).{5,15}$/;
+                var mbTest_password=/^[a-zA-Z0-9_]{5,15}$/;
+                //输入框消息
+                function formMsg(o, status, msg){
+                    $('#'+o+'-msg').attr('class', 'form_explain_'+(status?'pass':'error')).html((typeof msg == 'undefined'? '': msg)+'<em></em>').show();
+                    return true;
+                }
+
+
+                function Update(){
+                    var truename=$("#regtruename").val();
+                    var idcard=$("#regidcard").val();
+                    var email=$("#regemail").val();
+
+                    /*
+                    if(truename==""||truename=null){
+                        formMsg('truename', 0, '请输入真实姓名');
+                        return false;
+                    }*/
+                    if(idcard==""||idcard==null){
+                        formMsg('idcard', 0, '{:L('enter_id_number')}');
+                        return false;
+                    }
+
+
+                    $.post("{:U('Login/upregister3')}",{truename:truename,idcard:idcard,email:email},function(data){
+                        if(data.status==1){
+                            layer.msg(data.info,{icon:1});
+                            window.location='/Login/register4';
+                        }else{
+                            layer.msg(data.info,{icon:2});
+                            if(data.url){
+                                window.location=data.url;
+                            }
+                        }
+                    },"json");
+                }
+
+
+
+
+
+            </script>
+            <include file="Public:footer" />
+        </div>
+    </div>
+</body>
+</html>

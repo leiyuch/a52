@@ -1,0 +1,138 @@
+<include file="Public:header" />
+<div class="content clearfix">
+    <!--左侧菜单-->
+    <table class="leftbar" style="padding-top: 35px; ">
+        <tbody>
+            <tr>
+                <td style="border-bottom:0;" valign="top">
+                    <div id="marketlist_wrapper" class="dataTables_wrapper" role="grid">
+                        <table class="marketlist dataTable" id="tradelist" cellspacing="0" cellpadding="0">
+                            <tbody role="alert" aria-live="polite" aria-relevant="all">
+                                <tr>
+                                    <td class="no-wrap alignRight" style=" width:100%;border:none">
+                                        <div id="wrapper-250">
+                                            <ul class="accordion">
+                                                <li id="adn1" class="files">
+                                                    <a href="#one" class="active">帮助中心<span class="umicon"></span></a>
+
+                                                    <ul class="sub-menu" style="display: block;">
+                                                        <volist name="ArticleTypeList" id="vo">
+                                                            <li><a data-id="myfunds" href="{:U('Article/index',array('id'=>$vo['id'],'type'=>1))}"><em>01</em>{$vo.title}</a></li>
+
+                                                        </volist>
+                                                    </ul>
+
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // Store variables
+            var accordion_head = $('.accordion > li > a'),
+                accordion_body = $('.accordion li > .sub-menu');
+            // Open the first tab on load
+            //accordion_head.first().addClass('active').next().slideDown('normal');
+            //accordion_body.eq(2).find('a').eq(2).css('background', ' #efefef');
+            var found = false;
+            for (i = 0; i < accordion_body.length; i++) {
+                item = accordion_body.eq(i).find("[data-id='']");
+                if (item.length > 0) {
+                    accordion_head.eq(i).addClass('active').next().slideDown('normal');
+                    item.css({ 'color': ' #ff5e23', 'border-right-width': '3px', 'border-right-color': '#ff5e23' });
+                    found = true;
+                    break;
+                }
+            }
+            if (found == false)
+                accordion_head.eq(2).addClass('active').next().slideDown('normal');
+            // Click function
+            accordion_head.on('click', function (event) {
+                // Disable header links
+                event.preventDefault();
+                // Show and hide the tabs on click
+                if ($(this).attr('class') != 'active') {
+                    accordion_body.slideUp('normal');
+                    $(this).next().stop(true, true).slideToggle('normal');
+                    accordion_head.removeClass('active');
+                    $(this).addClass('active');
+                }
+            });
+
+            var icoType = '';
+            if (icoType == '') {
+                $("#buyIco").parent("li").remove()
+            }
+
+            $("input").focus(function () {
+                $(".failed").html("")
+            });
+
+            $(".files,.cloud,.mail").find("li").click(function () {
+                $.cookie('nav_index', 2, { path: '/' });
+            });
+            $(".sign").find("li").click(function () {
+                $.cookie('nav_index', 3, { path: '/' });
+            });
+        });
+    </script>
+
+
+
+
+    <!--右侧内容-->
+    <div class="main_content acc-m-con main_contentO">
+        <div class="right_mcontent">
+            <div class="safe_center clear" style="padding-left: 0px; border-bottom: 2px solid #e55600;">
+                <h1 style="margin-top: 0px; margin-bottom: 15px; line-height: 15px;">{$data.title}</h1>
+            </div>
+            <div class="sj" style="top: 40px; left: 72px;"></div>
+            <br>
+            <div class="new_list">
+                <ul>
+
+                    <div class="articletime">
+                        <span>{:L('publish_time')}：{$data.addtime|date="Y-m-d H:i:s",###}</span>
+                        <span>{:L('publish_author')}：{:C('web_title')}</span>
+                    </div>
+                    <div class="articletext">{$data['content']}</div>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>    
+<br>
+<br>
+<script>
+    //菜单高亮
+    $('#article_box').addClass('active');
+</script>
+<script>
+    $(document).ready(function () {
+
+        if ($.cookie('show_zero_funds') === undefined || $.cookie('show_zero_funds') === '1') {
+            $('tr[data-id=zero]').show();
+            $('#hidezero').prop('checked', false);
+        } else {
+            $('#hidezero').prop('checked', true);
+        }
+        $('#hidezero').on('click', function (event) {
+            $('tr[data-id=zero]').toggle();
+            if ($('tr[data-id=zero]').is(':visible')) {
+                $.cookie('show_zero_funds', '1');
+            } else {
+                $.cookie('show_zero_funds', '0');
+            }
+        });
+    });
+
+</script>
+<include file="Public:footer" />

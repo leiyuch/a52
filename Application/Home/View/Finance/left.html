@@ -1,0 +1,52 @@
+<table class="leftbar" style="padding-top: 35px; ">
+    <tbody>
+        <tr>
+            <td style="border-bottom:0;" valign="top">
+                <div id="marketlist_wrapper" class="dataTables_wrapper" role="grid">
+                    <table class="marketlist dataTable" id="tradelist" cellspacing="0" cellpadding="0">
+                        <tbody role="alert" aria-live="polite" aria-relevant="all">
+                            <tr>
+                                <td class="no-wrap alignRight" style=" width:100%;border:none">
+                                    <div id="wrapper-250">
+                                        <ul class="accordion">
+                                            <li id="adn1" class="files">
+                                                <a href="#one" class="active">财务中心<span class="umicon"></span></a>
+                                                <ul class="sub-menu" style="display: block;">
+                                                    <li><a data-id="myfunds" href="/finance/index.html"><em>01</em>财富中心</a></li>
+                                                    <li><a data-id='interest' href="/finance/myzr.html"><em>02</em>我要接收</a></li>
+                                                    <li><a data-id='dividend' href="/finance/myzc.html"><em>03</em>我要发送</a></li>
+
+
+                                                </ul>
+                                            </li>
+                                            <li id="adn4" class="cloud">
+                                                <a href="#two" class="">财富账单<span class="umicon"></span></a>
+                                                <ul class="sub-menu" style="display: none;">
+                                                    <li><a data-id="myreferrals" href="/finance/mywt.html"><em>04</em>委托管理</a></li>
+                                                    <li><a data-id="mypurselog" href="/finance/mycj.html"><em>05</em>成交查询</a></li>
+                                                </ul>
+                                            </li>
+                                            <li id="adn4" class="sign">
+                                                <a href="#there" class="">我要分享<span class="umicon"></span></a>
+                                                <ul class="sub-menu" style="display: none;">
+                                                    <li><a data-id="myreferrals" href="/finance/mytj.html"><em>06</em>分享</a></li>
+                                                    <li><a data-id="mypurselog" href="/finance/mywd.html"><em>07</em>我的分享</a></li>
+                                                </ul>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<script>
+	//顶部菜单高亮
+	$('.coin_menu_box a').hover(function(){var str=str_1=$(this).parent().find('i').attr('class');if(str.length>15)str=str.substring(0,str.length-2);$(this).parent().find('i').attr('class',str)},function(){$(this).parent().find('i').attr('class',str_1)});
+</script>

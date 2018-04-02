@@ -1,0 +1,974 @@
+[ 2018-03-16T11:54:05+08:00 ] 127.0.0.1 /admin/login?movesay=lanbing
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000052s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004474s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000740s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000871s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000066s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000171s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006387s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006558s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000682s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000780s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000783s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000873s ]
+
+[ 2018-03-16T11:54:05+08:00 ] 127.0.0.1 /Admin/Verify/code.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002379s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000594s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000694s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000914s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001112s ]
+
+[ 2018-03-16T11:54:53+08:00 ] 127.0.0.1 /Admin/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003677s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000651s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000777s ]
+SQL: SHOW COLUMNS FROM `movesay_admin` [ RunTime:0.0059s ]
+SQL: SELECT * FROM `movesay_admin` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2018-03-16T11:55:00+08:00 ] 127.0.0.1 /Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002471s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000669s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000783s ]
+SQL: SHOW COLUMNS FROM `movesay_config` [ RunTime:0.0212s ]
+SQL: SELECT * FROM `movesay_config` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0025s ]
+SQL: SHOW COLUMNS FROM `movesay_coin` [ RunTime:0.0148s ]
+SQL: SELECT * FROM `movesay_coin` WHERE `status` = 1  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `movesay_market` [ RunTime:0.0092s ]
+SQL: SELECT * FROM `movesay_market` WHERE `status` = 1  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `movesay_version` [ RunTime:0.0213s ]
+SQL: SELECT `name` FROM `movesay_version` WHERE `status` = 0 ORDER BY name desc LIMIT 1   [ RunTime:0.0066s ]
+SQL: SHOW COLUMNS FROM `movesay_menu` [ RunTime:0.0174s ]
+SQL: SELECT * FROM `movesay_menu` WHERE `pid` = 0 AND `hide` = 0 AND `is_dev` = 0 ORDER BY sort asc  [ RunTime:0.0116s ]
+SQL: SELECT `id` FROM `movesay_menu` WHERE ( url like 'Index/index%' ) LIMIT 1   [ RunTime:0.0072s ]
+SQL: SHOW COLUMNS FROM `movesay_menu` [ RunTime:0.0064s ]
+SQL: SELECT `id`,`pid`,`title` FROM `movesay_menu` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT DISTINCT  `group` FROM `movesay_menu` WHERE ( pid = 1 )  [ RunTime:0.0190s ]
+SQL: SELECT `id`,`url` FROM `movesay_menu` WHERE `pid` = 1 AND `hide` = 0 AND `is_dev` = 0  [ RunTime:0.0004s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip`,`ico_name` FROM `movesay_menu` WHERE `group` = '系统' AND `pid` = 1 AND `hide` = 0 AND `is_dev` = 0 ORDER BY sort asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_user` [ RunTime:0.0191s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_user_coin` [ RunTime:0.0130s ]
+SQL: SELECT SUM(cny) AS tp_sum FROM `movesay_user_coin` LIMIT 1   [ RunTime:0.0285s ]
+SQL: SELECT SUM(cnyd) AS tp_sum FROM `movesay_user_coin` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `movesay_trade_log` [ RunTime:0.0155s ]
+SQL: SELECT SUM(mum) AS tp_sum FROM `movesay_trade_log` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `movesay_article` [ RunTime:0.0061s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_article` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `movesay_mycz` [ RunTime:0.0147s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1518624000 AND `addtime` < 1518710400  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_mytx` [ RunTime:0.0148s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1518624000 AND `addtime` < 1518710400  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1518710400 AND `addtime` < 1518796800  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1518710400 AND `addtime` < 1518796800  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1518796800 AND `addtime` < 1518883200  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1518796800 AND `addtime` < 1518883200  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1518883200 AND `addtime` < 1518969600  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1518883200 AND `addtime` < 1518969600  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1518969600 AND `addtime` < 1519056000  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1518969600 AND `addtime` < 1519056000  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1519056000 AND `addtime` < 1519142400  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1519056000 AND `addtime` < 1519142400  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1519142400 AND `addtime` < 1519228800  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1519142400 AND `addtime` < 1519228800  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1519228800 AND `addtime` < 1519315200  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1519228800 AND `addtime` < 1519315200  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1519315200 AND `addtime` < 1519401600  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1519315200 AND `addtime` < 1519401600  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1519401600 AND `addtime` < 1519488000  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1519401600 AND `addtime` < 1519488000  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1519488000 AND `addtime` < 1519574400  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1519488000 AND `addtime` < 1519574400  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1519574400 AND `addtime` < 1519660800  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1519574400 AND `addtime` < 1519660800  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1519660800 AND `addtime` < 1519747200  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1519660800 AND `addtime` < 1519747200  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1519747200 AND `addtime` < 1519833600  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1519747200 AND `addtime` < 1519833600  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1519833600 AND `addtime` < 1519920000  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1519833600 AND `addtime` < 1519920000  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1519920000 AND `addtime` < 1520006400  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1519920000 AND `addtime` < 1520006400  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1520006400 AND `addtime` < 1520092800  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1520006400 AND `addtime` < 1520092800  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1520092800 AND `addtime` < 1520179200  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1520092800 AND `addtime` < 1520179200  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1520179200 AND `addtime` < 1520265600  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1520179200 AND `addtime` < 1520265600  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1520265600 AND `addtime` < 1520352000  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1520265600 AND `addtime` < 1520352000  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1520352000 AND `addtime` < 1520438400  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1520352000 AND `addtime` < 1520438400  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1520438400 AND `addtime` < 1520524800  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1520438400 AND `addtime` < 1520524800  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1520524800 AND `addtime` < 1520611200  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1520524800 AND `addtime` < 1520611200  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1520611200 AND `addtime` < 1520697600  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1520611200 AND `addtime` < 1520697600  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1520697600 AND `addtime` < 1520784000  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1520697600 AND `addtime` < 1520784000  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1520784000 AND `addtime` < 1520870400  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1520784000 AND `addtime` < 1520870400  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1520870400 AND `addtime` < 1520956800  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1520870400 AND `addtime` < 1520956800  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1520956800 AND `addtime` < 1521043200  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1520956800 AND `addtime` < 1521043200  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1521043200 AND `addtime` < 1521129600  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1521043200 AND `addtime` < 1521129600  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1521129600 AND `addtime` < 1521216000  ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1521129600 AND `addtime` < 1521216000  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1518580496 AND `addtime` < 1518666896  ) LIMIT 1   [ RunTime:0.0202s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1518666896 AND `addtime` < 1518753296  ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1518753296 AND `addtime` < 1518839696  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1518839696 AND `addtime` < 1518926096  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1518926096 AND `addtime` < 1519012496  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1519012496 AND `addtime` < 1519098896  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1519098896 AND `addtime` < 1519185296  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1519185296 AND `addtime` < 1519271696  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1519271696 AND `addtime` < 1519358096  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1519358096 AND `addtime` < 1519444496  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1519444496 AND `addtime` < 1519530896  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1519530896 AND `addtime` < 1519617296  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1519617296 AND `addtime` < 1519703696  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1519703696 AND `addtime` < 1519790096  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1519790096 AND `addtime` < 1519876496  ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1519876496 AND `addtime` < 1519962896  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1519962896 AND `addtime` < 1520049296  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1520049296 AND `addtime` < 1520135696  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1520135696 AND `addtime` < 1520222096  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1520222096 AND `addtime` < 1520308496  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1520308496 AND `addtime` < 1520394896  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1520394896 AND `addtime` < 1520481296  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1520481296 AND `addtime` < 1520567696  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1520567696 AND `addtime` < 1520654096  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1520654096 AND `addtime` < 1520740496  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1520740496 AND `addtime` < 1520826896  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1520826896 AND `addtime` < 1520913296  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1520913296 AND `addtime` < 1520999696  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1520999696 AND `addtime` < 1521086096  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1521086096 AND `addtime` < 1521172496  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1521172496 AND `addtime` < 1521258896  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1521258896 AND `addtime` < 1521345296  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1521345296 AND `addtime` < 1521431696  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1521431696 AND `addtime` < 1521518096  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1521518096 AND `addtime` < 1521604496  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1521604496 AND `addtime` < 1521690896  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1521690896 AND `addtime` < 1521777296  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1521777296 AND `addtime` < 1521863696  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1521863696 AND `addtime` < 1521950096  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1521950096 AND `addtime` < 1522036496  ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1522036496 AND `addtime` < 1522122896  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1522122896 AND `addtime` < 1522209296  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1522209296 AND `addtime` < 1522295696  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1522295696 AND `addtime` < 1522382096  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1522382096 AND `addtime` < 1522468496  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1522468496 AND `addtime` < 1522554896  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1522554896 AND `addtime` < 1522641296  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1522641296 AND `addtime` < 1522727696  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1522727696 AND `addtime` < 1522814096  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1522814096 AND `addtime` < 1522900496  ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1522900496 AND `addtime` < 1522986896  ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1522986896 AND `addtime` < 1523073296  ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1523073296 AND `addtime` < 1523159696  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1523159696 AND `addtime` < 1523246096  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1523246096 AND `addtime` < 1523332496  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1523332496 AND `addtime` < 1523418896  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1523418896 AND `addtime` < 1523505296  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1523505296 AND `addtime` < 1523591696  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1523591696 AND `addtime` < 1523678096  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1523678096 AND `addtime` < 1523764496  ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: cztx E:\data\a52jiaoyi\Application\Admin\Controller\IndexController.class.php 第 70 行.
+NOTIC: [8] Undefined variable: authUrl E:\data\a52jiaoyi\Application\Admin\Controller\IndexController.class.php 第 82 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000584s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000907s ]
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 30 行.
+NOTIC: [8] Undefined variable: versionUp E:\data\a52jiaoyi\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 97 行.
+SQL: select version() as v; [ RunTime:0.0241s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.089836s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.090161s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002251s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002525s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003105s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003483s ]
+
+[ 2018-03-16T11:55:08+08:00 ] 127.0.0.1 /Admin/Index/coin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003125s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000671s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000778s ]
+SQL: SHOW COLUMNS FROM `movesay_config` [ RunTime:0.0081s ]
+SQL: SELECT * FROM `movesay_config` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `movesay_coin` [ RunTime:0.0068s ]
+SQL: SELECT * FROM `movesay_coin` WHERE `status` = 1  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `movesay_market` [ RunTime:0.0086s ]
+SQL: SELECT * FROM `movesay_market` WHERE `status` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `movesay_version` [ RunTime:0.0060s ]
+SQL: SELECT `name` FROM `movesay_version` WHERE `status` = 0 ORDER BY name desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_menu` [ RunTime:0.0076s ]
+SQL: SELECT * FROM `movesay_menu` WHERE `pid` = 0 AND `hide` = 0 AND `is_dev` = 0 ORDER BY sort asc  [ RunTime:0.0005s ]
+SQL: SELECT `id` FROM `movesay_menu` WHERE ( url like 'Index/coin%' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_menu` [ RunTime:0.0060s ]
+SQL: SELECT `id`,`pid`,`title` FROM `movesay_menu` WHERE ( id=157 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `id`,`pid`,`title` FROM `movesay_menu` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT DISTINCT  `group` FROM `movesay_menu` WHERE ( pid = 1 )  [ RunTime:0.0004s ]
+SQL: SELECT `id`,`url` FROM `movesay_menu` WHERE `pid` = 1 AND `hide` = 0 AND `is_dev` = 0  [ RunTime:0.0004s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip`,`ico_name` FROM `movesay_menu` WHERE `group` = '系统' AND `pid` = 1 AND `hide` = 0 AND `is_dev` = 0 ORDER BY sort asc  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `movesay_coin` WHERE `name` = 'sgc' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_user_coin` [ RunTime:0.0058s ]
+SQL: SELECT SUM(sgc) AS tp_sum FROM `movesay_user_coin` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT SUM(sgcd) AS tp_sum FROM `movesay_user_coin` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_myzr` [ RunTime:0.0286s ]
+SQL: SELECT SUM(fee) AS tp_sum FROM `movesay_myzr` WHERE `coinname` = 'sgc' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_myzc` [ RunTime:0.0175s ]
+SQL: SELECT SUM(fee) AS tp_sum FROM `movesay_myzc` WHERE `coinname` = 'sgc' LIMIT 1   [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `movesay_coin_json` [ RunTime:0.0142s ]
+SQL: SELECT * FROM `movesay_coin_json` WHERE `name` = 'sgc' ORDER BY id desc LIMIT 1   [ RunTime:0.0026s ]
+SQL: SELECT SUM(sgc) AS tp_sum FROM `movesay_user_coin` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT SUM(sgcd) AS tp_sum FROM `movesay_user_coin` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT SUM(fee) AS tp_sum FROM `movesay_myzr` WHERE ( `addtime` >= 1510588800 AND `addtime` <= 1510675199  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(fee) AS tp_sum FROM `movesay_myzc` WHERE ( `addtime` >= 1510588800 AND `addtime` <= 1510675199  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `movesay_coin_json` WHERE `name` = 'sgc' AND `addtime` = 1510675199 LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `movesay_coin_json` (`name`,`data`,`addtime`) VALUES ('sgc','[1678223.9,0,null,null]','1510675199') [ RunTime:0.0005s ]
+SQL: SELECT * FROM `movesay_coin_json` WHERE `name` = 'sgc' ORDER BY id asc LIMIT 100   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000159s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000293s ]
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\0854272a61fabc7d7eacf8f9a95b2b75.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\0854272a61fabc7d7eacf8f9a95b2b75.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\0854272a61fabc7d7eacf8f9a95b2b75.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\0854272a61fabc7d7eacf8f9a95b2b75.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\0854272a61fabc7d7eacf8f9a95b2b75.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\0854272a61fabc7d7eacf8f9a95b2b75.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\0854272a61fabc7d7eacf8f9a95b2b75.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\0854272a61fabc7d7eacf8f9a95b2b75.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\0854272a61fabc7d7eacf8f9a95b2b75.php 第 30 行.
+NOTIC: [8] Undefined variable: versionUp E:\data\a52jiaoyi\Runtime\Cache\Admin\0854272a61fabc7d7eacf8f9a95b2b75.php 第 97 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013169s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013383s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000781s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000861s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001262s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001363s ]
+
+[ 2018-03-16T11:55:11+08:00 ] 127.0.0.1 /Admin/Index/market.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002598s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000776s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000923s ]
+SQL: SHOW COLUMNS FROM `movesay_config` [ RunTime:0.0082s ]
+SQL: SELECT * FROM `movesay_config` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0023s ]
+SQL: SHOW COLUMNS FROM `movesay_coin` [ RunTime:0.0085s ]
+SQL: SELECT * FROM `movesay_coin` WHERE `status` = 1  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `movesay_market` [ RunTime:0.0115s ]
+SQL: SELECT * FROM `movesay_market` WHERE `status` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `movesay_version` [ RunTime:0.0116s ]
+SQL: SELECT `name` FROM `movesay_version` WHERE `status` = 0 ORDER BY name desc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `movesay_menu` [ RunTime:0.0064s ]
+SQL: SELECT * FROM `movesay_menu` WHERE `pid` = 0 AND `hide` = 0 AND `is_dev` = 0 ORDER BY sort asc  [ RunTime:0.0004s ]
+SQL: SELECT `id` FROM `movesay_menu` WHERE ( url like 'Index/market%' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_menu` [ RunTime:0.0064s ]
+SQL: SELECT `id`,`pid`,`title` FROM `movesay_menu` WHERE ( id=12 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `id`,`pid`,`title` FROM `movesay_menu` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT DISTINCT  `group` FROM `movesay_menu` WHERE ( pid = 1 )  [ RunTime:0.0004s ]
+SQL: SELECT `id`,`url` FROM `movesay_menu` WHERE `pid` = 1 AND `hide` = 0 AND `is_dev` = 0  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip`,`ico_name` FROM `movesay_menu` WHERE `group` = '系统' AND `pid` = 1 AND `hide` = 0 AND `is_dev` = 0 ORDER BY sort asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `movesay_trade_log` [ RunTime:0.0077s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_trade_log` WHERE `market` = 'sgc_cny' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT SUM(fee_buy) AS tp_sum FROM `movesay_trade_log` WHERE `market` = 'sgc_cny' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT SUM(fee_sell) AS tp_sum FROM `movesay_trade_log` WHERE `market` = 'sgc_cny' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT SUM(mum) AS tp_sum FROM `movesay_trade_log` WHERE `market` = 'sgc_cny' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_trade_log` WHERE `market` = 'sgc_cny' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `movesay_market_json` [ RunTime:0.0346s ]
+SQL: SELECT * FROM `movesay_market_json` WHERE `name` = 'sgc_cny' ORDER BY id desc LIMIT 1   [ RunTime:0.0046s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_trade_log` WHERE `market` = 'sgc_cny' AND ( `addtime` >= 1506182400 AND `addtime` <= 1506268799  ) LIMIT 1   [ RunTime:0.0071s ]
+SQL: SELECT * FROM `movesay_market_json` WHERE `name` = 'sgc_cny' AND `data` = '' LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `movesay_market_json` SET `addtime`='1506268799' WHERE `name` = 'sgc_cny' AND `data` = '' [ RunTime:0.0003s ]
+SQL: SELECT * FROM `movesay_market_json` WHERE `name` = 'sgc_cny' ORDER BY id asc LIMIT 100   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000106s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000203s ]
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\632aa3244369482b260c2c790eb8ab04.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\632aa3244369482b260c2c790eb8ab04.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\632aa3244369482b260c2c790eb8ab04.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\632aa3244369482b260c2c790eb8ab04.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\632aa3244369482b260c2c790eb8ab04.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\632aa3244369482b260c2c790eb8ab04.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\632aa3244369482b260c2c790eb8ab04.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\632aa3244369482b260c2c790eb8ab04.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\632aa3244369482b260c2c790eb8ab04.php 第 30 行.
+NOTIC: [8] Undefined variable: versionUp E:\data\a52jiaoyi\Runtime\Cache\Admin\632aa3244369482b260c2c790eb8ab04.php 第 97 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013613s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013698s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000681s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000770s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000829s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000919s ]
+
+[ 2018-03-16T11:55:13+08:00 ] 127.0.0.1 /Admin/Article/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002243s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000648s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000747s ]
+SQL: SHOW COLUMNS FROM `movesay_config` [ RunTime:0.0125s ]
+SQL: SELECT * FROM `movesay_config` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `movesay_coin` [ RunTime:0.0113s ]
+SQL: SELECT * FROM `movesay_coin` WHERE `status` = 1  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `movesay_market` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `movesay_market` WHERE `status` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `movesay_version` [ RunTime:0.0067s ]
+SQL: SELECT `name` FROM `movesay_version` WHERE `status` = 0 ORDER BY name desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_menu` [ RunTime:0.0058s ]
+SQL: SELECT * FROM `movesay_menu` WHERE `pid` = 0 AND `hide` = 0 AND `is_dev` = 0 ORDER BY sort asc  [ RunTime:0.0004s ]
+SQL: SELECT `id` FROM `movesay_menu` WHERE ( url like 'Article/index%' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_menu` [ RunTime:0.0069s ]
+SQL: SELECT `id`,`pid`,`title` FROM `movesay_menu` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT DISTINCT  `group` FROM `movesay_menu` WHERE ( pid = 2 )  [ RunTime:0.0007s ]
+SQL: SELECT `id`,`url` FROM `movesay_menu` WHERE `pid` = 2 AND `hide` = 0 AND `is_dev` = 0  [ RunTime:0.0004s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip`,`ico_name` FROM `movesay_menu` WHERE `group` = '内容' AND `pid` = 2 AND `hide` = 0 AND `is_dev` = 0 ORDER BY sort asc  [ RunTime:0.0006s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip`,`ico_name` FROM `movesay_menu` WHERE `group` = '提示管理' AND `pid` = 2 AND `hide` = 0 AND `is_dev` = 0 ORDER BY sort asc  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip`,`ico_name` FROM `movesay_menu` WHERE `group` = '内容管理' AND `pid` = 2 AND `hide` = 0 AND `is_dev` = 0 ORDER BY sort asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_article` [ RunTime:0.0066s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_article` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' E:\data\a52jiaoyi\ThinkPHP\Library\Think\Page.class.php 第 62 行.
+SQL: SELECT * FROM `movesay_article` ORDER BY id desc LIMIT 0,15   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `movesay_admin` [ RunTime:0.0066s ]
+SQL: SELECT `username` FROM `movesay_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_article_type` [ RunTime:0.0344s ]
+SQL: SELECT `title` FROM `movesay_article_type` WHERE `name` = 'aaa' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `movesay_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `title` FROM `movesay_article_type` WHERE `name` = 'ccc' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `movesay_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `title` FROM `movesay_article_type` WHERE `name` = 'bbb' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `movesay_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `title` FROM `movesay_article_type` WHERE `name` = 'bbb' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `movesay_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `title` FROM `movesay_article_type` WHERE `name` = 'bbb' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `movesay_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `title` FROM `movesay_article_type` WHERE `name` = 'bbb' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `movesay_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `title` FROM `movesay_article_type` WHERE `name` = 'bbb' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `movesay_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `title` FROM `movesay_article_type` WHERE `name` = 'bbb' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000102s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000210s ]
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 30 行.
+NOTIC: [8] Undefined variable: versionUp E:\data\a52jiaoyi\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 97 行.
+NOTIC: [8] Undefined index: status E:\data\a52jiaoyi\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 138 行.
+NOTIC: [8] Undefined index: status E:\data\a52jiaoyi\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 141 行.
+NOTIC: [8] Undefined index: field E:\data\a52jiaoyi\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 146 行.
+NOTIC: [8] Undefined index: name E:\data\a52jiaoyi\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 149 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014569s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014660s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000509s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000586s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000700s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000786s ]
+
+[ 2018-03-16T11:55:22+08:00 ] 127.0.0.1 /Admin/Finance/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002387s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000738s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000864s ]
+SQL: SHOW COLUMNS FROM `movesay_config` [ RunTime:0.0066s ]
+SQL: SELECT * FROM `movesay_config` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `movesay_coin` [ RunTime:0.0058s ]
+SQL: SELECT * FROM `movesay_coin` WHERE `status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_market` [ RunTime:0.0061s ]
+SQL: SELECT * FROM `movesay_market` WHERE `status` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `movesay_version` [ RunTime:0.0054s ]
+SQL: SELECT `name` FROM `movesay_version` WHERE `status` = 0 ORDER BY name desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_menu` [ RunTime:0.0057s ]
+SQL: SELECT * FROM `movesay_menu` WHERE `pid` = 0 AND `hide` = 0 AND `is_dev` = 0 ORDER BY sort asc  [ RunTime:0.0005s ]
+SQL: SELECT `id` FROM `movesay_menu` WHERE ( url like 'Finance/index%' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_menu` [ RunTime:0.0057s ]
+SQL: SELECT `id`,`pid`,`title` FROM `movesay_menu` WHERE ( id=4 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT DISTINCT  `group` FROM `movesay_menu` WHERE ( pid = 4 )  [ RunTime:0.0005s ]
+SQL: SELECT `id`,`url` FROM `movesay_menu` WHERE `pid` = 4 AND `hide` = 0 AND `is_dev` = 0  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip`,`ico_name` FROM `movesay_menu` WHERE `group` = '财务' AND `pid` = 4 AND `hide` = 0 AND `is_dev` = 0 ORDER BY sort asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_mytx` [ RunTime:0.0062s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_mytx` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' E:\data\a52jiaoyi\ThinkPHP\Library\Think\Page.class.php 第 62 行.
+SQL: SELECT * FROM `movesay_mytx` ORDER BY id desc LIMIT 0,15   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000112s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000218s ]
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\be63e8ac18ebea09dc932cef0872ffd8.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\be63e8ac18ebea09dc932cef0872ffd8.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\be63e8ac18ebea09dc932cef0872ffd8.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\be63e8ac18ebea09dc932cef0872ffd8.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\be63e8ac18ebea09dc932cef0872ffd8.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\be63e8ac18ebea09dc932cef0872ffd8.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\be63e8ac18ebea09dc932cef0872ffd8.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\be63e8ac18ebea09dc932cef0872ffd8.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\be63e8ac18ebea09dc932cef0872ffd8.php 第 30 行.
+NOTIC: [8] Undefined variable: versionUp E:\data\a52jiaoyi\Runtime\Cache\Admin\be63e8ac18ebea09dc932cef0872ffd8.php 第 97 行.
+NOTIC: [8] Undefined index: field E:\data\a52jiaoyi\Runtime\Cache\Admin\be63e8ac18ebea09dc932cef0872ffd8.php 第 130 行.
+NOTIC: [8] Undefined index: name E:\data\a52jiaoyi\Runtime\Cache\Admin\be63e8ac18ebea09dc932cef0872ffd8.php 第 133 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013657s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013760s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000612s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000688s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000838s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000943s ]
+
+[ 2018-03-16T11:55:29+08:00 ] 127.0.0.1 /Admin/Config/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002418s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000787s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000920s ]
+SQL: SHOW COLUMNS FROM `movesay_config` [ RunTime:0.0221s ]
+SQL: SELECT * FROM `movesay_config` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0025s ]
+SQL: SHOW COLUMNS FROM `movesay_coin` [ RunTime:0.0139s ]
+SQL: SELECT * FROM `movesay_coin` WHERE `status` = 1  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `movesay_market` [ RunTime:0.0106s ]
+SQL: SELECT * FROM `movesay_market` WHERE `status` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `movesay_version` [ RunTime:0.0065s ]
+SQL: SELECT `name` FROM `movesay_version` WHERE `status` = 0 ORDER BY name desc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `movesay_menu` [ RunTime:0.0062s ]
+SQL: SELECT * FROM `movesay_menu` WHERE `pid` = 0 AND `hide` = 0 AND `is_dev` = 0 ORDER BY sort asc  [ RunTime:0.0004s ]
+SQL: SELECT `id` FROM `movesay_menu` WHERE ( url like 'Config/index%' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_menu` [ RunTime:0.0067s ]
+SQL: SELECT `id`,`pid`,`title` FROM `movesay_menu` WHERE ( id=7 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT DISTINCT  `group` FROM `movesay_menu` WHERE ( pid = 7 )  [ RunTime:0.0005s ]
+SQL: SELECT `id`,`url` FROM `movesay_menu` WHERE `pid` = 7 AND `hide` = 0 AND `is_dev` = 0  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip`,`ico_name` FROM `movesay_menu` WHERE `group` = '设置' AND `pid` = 7 AND `hide` = 0 AND `is_dev` = 0 ORDER BY sort asc  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip`,`ico_name` FROM `movesay_menu` WHERE `group` = '开发组' AND `pid` = 7 AND `hide` = 0 AND `is_dev` = 0 ORDER BY sort asc  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `movesay_config` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000199s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000315s ]
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\9bb5e7ead1bbec7c3d970a481af28a6e.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\9bb5e7ead1bbec7c3d970a481af28a6e.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\9bb5e7ead1bbec7c3d970a481af28a6e.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\9bb5e7ead1bbec7c3d970a481af28a6e.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\9bb5e7ead1bbec7c3d970a481af28a6e.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\9bb5e7ead1bbec7c3d970a481af28a6e.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\9bb5e7ead1bbec7c3d970a481af28a6e.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\9bb5e7ead1bbec7c3d970a481af28a6e.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\9bb5e7ead1bbec7c3d970a481af28a6e.php 第 30 行.
+NOTIC: [8] Undefined variable: versionUp E:\data\a52jiaoyi\Runtime\Cache\Admin\9bb5e7ead1bbec7c3d970a481af28a6e.php 第 97 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015269s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015364s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000675s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000774s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000769s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000876s ]
+
+[ 2018-03-16T11:55:40+08:00 ] 127.0.0.1 /Admin/Config/text.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002394s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001182s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001459s ]
+SQL: SHOW COLUMNS FROM `movesay_config` [ RunTime:0.0213s ]
+SQL: SELECT * FROM `movesay_config` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0022s ]
+SQL: SHOW COLUMNS FROM `movesay_coin` [ RunTime:0.0178s ]
+SQL: SELECT * FROM `movesay_coin` WHERE `status` = 1  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `movesay_market` [ RunTime:0.0103s ]
+SQL: SELECT * FROM `movesay_market` WHERE `status` = 1  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `movesay_version` [ RunTime:0.0096s ]
+SQL: SELECT `name` FROM `movesay_version` WHERE `status` = 0 ORDER BY name desc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `movesay_menu` [ RunTime:0.0062s ]
+SQL: SELECT * FROM `movesay_menu` WHERE `pid` = 0 AND `hide` = 0 AND `is_dev` = 0 ORDER BY sort asc  [ RunTime:0.0005s ]
+SQL: SELECT `id` FROM `movesay_menu` WHERE ( url like 'Config/text%' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_menu` [ RunTime:0.0063s ]
+SQL: SELECT `id`,`pid`,`title` FROM `movesay_menu` WHERE ( id=163 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`pid`,`title` FROM `movesay_menu` WHERE ( id=7 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT DISTINCT  `group` FROM `movesay_menu` WHERE ( pid = 7 )  [ RunTime:0.0006s ]
+SQL: SELECT `id`,`url` FROM `movesay_menu` WHERE `pid` = 7 AND `hide` = 0 AND `is_dev` = 0  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip`,`ico_name` FROM `movesay_menu` WHERE `group` = '设置' AND `pid` = 7 AND `hide` = 0 AND `is_dev` = 0 ORDER BY sort asc  [ RunTime:0.0004s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip`,`ico_name` FROM `movesay_menu` WHERE `group` = '开发组' AND `pid` = 7 AND `hide` = 0 AND `is_dev` = 0 ORDER BY sort asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_text` [ RunTime:0.0296s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_text` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' E:\data\a52jiaoyi\ThinkPHP\Library\Think\Page.class.php 第 62 行.
+SQL: SELECT * FROM `movesay_text` ORDER BY id desc LIMIT 0,15   [ RunTime:0.0118s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000100s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000201s ]
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\4ca972e2dae350e26127e938655503bf.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\4ca972e2dae350e26127e938655503bf.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\4ca972e2dae350e26127e938655503bf.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\4ca972e2dae350e26127e938655503bf.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\4ca972e2dae350e26127e938655503bf.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\4ca972e2dae350e26127e938655503bf.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\4ca972e2dae350e26127e938655503bf.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\4ca972e2dae350e26127e938655503bf.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\4ca972e2dae350e26127e938655503bf.php 第 30 行.
+NOTIC: [8] Undefined variable: versionUp E:\data\a52jiaoyi\Runtime\Cache\Admin\4ca972e2dae350e26127e938655503bf.php 第 97 行.
+NOTIC: [8] Undefined index: status E:\data\a52jiaoyi\Runtime\Cache\Admin\4ca972e2dae350e26127e938655503bf.php 第 137 行.
+NOTIC: [8] Undefined index: status E:\data\a52jiaoyi\Runtime\Cache\Admin\4ca972e2dae350e26127e938655503bf.php 第 140 行.
+NOTIC: [8] Undefined index: field E:\data\a52jiaoyi\Runtime\Cache\Admin\4ca972e2dae350e26127e938655503bf.php 第 145 行.
+NOTIC: [8] Undefined index: name E:\data\a52jiaoyi\Runtime\Cache\Admin\4ca972e2dae350e26127e938655503bf.php 第 148 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013796s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013918s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000851s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000927s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000988s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001101s ]
+
+[ 2018-03-16T11:55:47+08:00 ] 127.0.0.1 /Admin/Config/qita.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002399s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000652s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000750s ]
+SQL: SHOW COLUMNS FROM `movesay_config` [ RunTime:0.0074s ]
+SQL: SELECT * FROM `movesay_config` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `movesay_coin` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `movesay_coin` WHERE `status` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `movesay_market` [ RunTime:0.0065s ]
+SQL: SELECT * FROM `movesay_market` WHERE `status` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `movesay_version` [ RunTime:0.0059s ]
+SQL: SELECT `name` FROM `movesay_version` WHERE `status` = 0 ORDER BY name desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_menu` [ RunTime:0.0062s ]
+SQL: SELECT * FROM `movesay_menu` WHERE `pid` = 0 AND `hide` = 0 AND `is_dev` = 0 ORDER BY sort asc  [ RunTime:0.0004s ]
+SQL: SELECT `id` FROM `movesay_menu` WHERE ( url like 'Config/qita%' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `movesay_menu` [ RunTime:0.0061s ]
+SQL: SELECT `id`,`pid`,`title` FROM `movesay_menu` WHERE ( id=95 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`pid`,`title` FROM `movesay_menu` WHERE ( id=7 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT DISTINCT  `group` FROM `movesay_menu` WHERE ( pid = 7 )  [ RunTime:0.0005s ]
+SQL: SELECT `id`,`url` FROM `movesay_menu` WHERE `pid` = 7 AND `hide` = 0 AND `is_dev` = 0  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip`,`ico_name` FROM `movesay_menu` WHERE `group` = '设置' AND `pid` = 7 AND `hide` = 0 AND `is_dev` = 0 ORDER BY sort asc  [ RunTime:0.0004s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip`,`ico_name` FROM `movesay_menu` WHERE `group` = '开发组' AND `pid` = 7 AND `hide` = 0 AND `is_dev` = 0 ORDER BY sort asc  [ RunTime:0.0007s ]
+SQL: SELECT * FROM `movesay_config` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000141s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000248s ]
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\47648417d22055a53464fa8c57893f7d.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\47648417d22055a53464fa8c57893f7d.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\47648417d22055a53464fa8c57893f7d.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\47648417d22055a53464fa8c57893f7d.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\47648417d22055a53464fa8c57893f7d.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\47648417d22055a53464fa8c57893f7d.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\47648417d22055a53464fa8c57893f7d.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\47648417d22055a53464fa8c57893f7d.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\47648417d22055a53464fa8c57893f7d.php 第 30 行.
+NOTIC: [8] Undefined variable: versionUp E:\data\a52jiaoyi\Runtime\Cache\Admin\47648417d22055a53464fa8c57893f7d.php 第 97 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015009s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015109s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000612s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000689s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000734s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000827s ]
+
+[ 2018-03-16T11:55:54+08:00 ] 127.0.0.1 /Admin/Config/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002728s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000682s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000786s ]
+SQL: SHOW COLUMNS FROM `movesay_config` [ RunTime:0.0072s ]
+SQL: SELECT * FROM `movesay_config` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `movesay_coin` [ RunTime:0.0081s ]
+SQL: SELECT * FROM `movesay_coin` WHERE `status` = 1  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `movesay_market` [ RunTime:0.0071s ]
+SQL: SELECT * FROM `movesay_market` WHERE `status` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `movesay_version` [ RunTime:0.0078s ]
+SQL: SELECT `name` FROM `movesay_version` WHERE `status` = 0 ORDER BY name desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_menu` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `movesay_menu` WHERE `pid` = 0 AND `hide` = 0 AND `is_dev` = 0 ORDER BY sort asc  [ RunTime:0.0004s ]
+SQL: SELECT `id` FROM `movesay_menu` WHERE ( url like 'Config/index%' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `movesay_menu` [ RunTime:0.0079s ]
+SQL: SELECT `id`,`pid`,`title` FROM `movesay_menu` WHERE ( id=7 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT DISTINCT  `group` FROM `movesay_menu` WHERE ( pid = 7 )  [ RunTime:0.0006s ]
+SQL: SELECT `id`,`url` FROM `movesay_menu` WHERE `pid` = 7 AND `hide` = 0 AND `is_dev` = 0  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip`,`ico_name` FROM `movesay_menu` WHERE `group` = '设置' AND `pid` = 7 AND `hide` = 0 AND `is_dev` = 0 ORDER BY sort asc  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip`,`ico_name` FROM `movesay_menu` WHERE `group` = '开发组' AND `pid` = 7 AND `hide` = 0 AND `is_dev` = 0 ORDER BY sort asc  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `movesay_config` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000193s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000310s ]
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\9bb5e7ead1bbec7c3d970a481af28a6e.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\9bb5e7ead1bbec7c3d970a481af28a6e.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\9bb5e7ead1bbec7c3d970a481af28a6e.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\9bb5e7ead1bbec7c3d970a481af28a6e.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\9bb5e7ead1bbec7c3d970a481af28a6e.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\9bb5e7ead1bbec7c3d970a481af28a6e.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\9bb5e7ead1bbec7c3d970a481af28a6e.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\9bb5e7ead1bbec7c3d970a481af28a6e.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\9bb5e7ead1bbec7c3d970a481af28a6e.php 第 30 行.
+NOTIC: [8] Undefined variable: versionUp E:\data\a52jiaoyi\Runtime\Cache\Admin\9bb5e7ead1bbec7c3d970a481af28a6e.php 第 97 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017302s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017434s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000657s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000737s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000787s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000881s ]
+
+[ 2018-03-16T11:56:00+08:00 ] 127.0.0.1 /Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002507s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000725s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000839s ]
+SQL: SHOW COLUMNS FROM `movesay_config` [ RunTime:0.0214s ]
+SQL: SELECT * FROM `movesay_config` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `movesay_coin` [ RunTime:0.0329s ]
+SQL: SELECT * FROM `movesay_coin` WHERE `status` = 1  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `movesay_market` [ RunTime:0.0445s ]
+SQL: SELECT * FROM `movesay_market` WHERE `status` = 1  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `movesay_version` [ RunTime:0.0166s ]
+SQL: SELECT `name` FROM `movesay_version` WHERE `status` = 0 ORDER BY name desc LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `movesay_menu` [ RunTime:0.0099s ]
+SQL: SELECT * FROM `movesay_menu` WHERE `pid` = 0 AND `hide` = 0 AND `is_dev` = 0 ORDER BY sort asc  [ RunTime:0.0007s ]
+SQL: SELECT `id` FROM `movesay_menu` WHERE ( url like 'Index/index%' ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `movesay_menu` [ RunTime:0.0099s ]
+SQL: SELECT `id`,`pid`,`title` FROM `movesay_menu` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT DISTINCT  `group` FROM `movesay_menu` WHERE ( pid = 1 )  [ RunTime:0.0009s ]
+SQL: SELECT `id`,`url` FROM `movesay_menu` WHERE `pid` = 1 AND `hide` = 0 AND `is_dev` = 0  [ RunTime:0.0005s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip`,`ico_name` FROM `movesay_menu` WHERE `group` = '系统' AND `pid` = 1 AND `hide` = 0 AND `is_dev` = 0 ORDER BY sort asc  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `movesay_user` [ RunTime:0.0104s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `movesay_user_coin` [ RunTime:0.0094s ]
+SQL: SELECT SUM(cny) AS tp_sum FROM `movesay_user_coin` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT SUM(cnyd) AS tp_sum FROM `movesay_user_coin` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `movesay_trade_log` [ RunTime:0.0464s ]
+SQL: SELECT SUM(mum) AS tp_sum FROM `movesay_trade_log` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_article` [ RunTime:0.0065s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_article` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `movesay_mycz` [ RunTime:0.0067s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1518624000 AND `addtime` < 1518710400  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_mytx` [ RunTime:0.0064s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1518624000 AND `addtime` < 1518710400  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1518710400 AND `addtime` < 1518796800  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1518710400 AND `addtime` < 1518796800  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1518796800 AND `addtime` < 1518883200  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1518796800 AND `addtime` < 1518883200  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1518883200 AND `addtime` < 1518969600  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1518883200 AND `addtime` < 1518969600  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1518969600 AND `addtime` < 1519056000  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1518969600 AND `addtime` < 1519056000  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1519056000 AND `addtime` < 1519142400  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1519056000 AND `addtime` < 1519142400  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1519142400 AND `addtime` < 1519228800  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1519142400 AND `addtime` < 1519228800  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1519228800 AND `addtime` < 1519315200  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1519228800 AND `addtime` < 1519315200  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1519315200 AND `addtime` < 1519401600  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1519315200 AND `addtime` < 1519401600  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1519401600 AND `addtime` < 1519488000  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1519401600 AND `addtime` < 1519488000  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1519488000 AND `addtime` < 1519574400  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1519488000 AND `addtime` < 1519574400  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1519574400 AND `addtime` < 1519660800  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1519574400 AND `addtime` < 1519660800  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1519660800 AND `addtime` < 1519747200  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1519660800 AND `addtime` < 1519747200  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1519747200 AND `addtime` < 1519833600  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1519747200 AND `addtime` < 1519833600  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1519833600 AND `addtime` < 1519920000  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1519833600 AND `addtime` < 1519920000  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1519920000 AND `addtime` < 1520006400  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1519920000 AND `addtime` < 1520006400  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1520006400 AND `addtime` < 1520092800  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1520006400 AND `addtime` < 1520092800  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1520092800 AND `addtime` < 1520179200  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1520092800 AND `addtime` < 1520179200  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1520179200 AND `addtime` < 1520265600  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1520179200 AND `addtime` < 1520265600  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1520265600 AND `addtime` < 1520352000  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1520265600 AND `addtime` < 1520352000  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1520352000 AND `addtime` < 1520438400  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1520352000 AND `addtime` < 1520438400  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1520438400 AND `addtime` < 1520524800  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1520438400 AND `addtime` < 1520524800  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1520524800 AND `addtime` < 1520611200  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1520524800 AND `addtime` < 1520611200  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1520611200 AND `addtime` < 1520697600  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1520611200 AND `addtime` < 1520697600  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1520697600 AND `addtime` < 1520784000  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1520697600 AND `addtime` < 1520784000  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1520784000 AND `addtime` < 1520870400  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1520784000 AND `addtime` < 1520870400  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1520870400 AND `addtime` < 1520956800  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1520870400 AND `addtime` < 1520956800  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1520956800 AND `addtime` < 1521043200  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1520956800 AND `addtime` < 1521043200  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1521043200 AND `addtime` < 1521129600  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1521043200 AND `addtime` < 1521129600  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mycz` WHERE `status` <> 0 AND ( `addtime` > 1521129600 AND `addtime` < 1521216000  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_mytx` WHERE `status` = 1 AND ( `addtime` > 1521129600 AND `addtime` < 1521216000  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1518580557 AND `addtime` < 1518666957  ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1518666957 AND `addtime` < 1518753357  ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1518753357 AND `addtime` < 1518839757  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1518839757 AND `addtime` < 1518926157  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1518926157 AND `addtime` < 1519012557  ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1519012557 AND `addtime` < 1519098957  ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1519098957 AND `addtime` < 1519185357  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1519185357 AND `addtime` < 1519271757  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1519271757 AND `addtime` < 1519358157  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1519358157 AND `addtime` < 1519444557  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1519444557 AND `addtime` < 1519530957  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1519530957 AND `addtime` < 1519617357  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1519617357 AND `addtime` < 1519703757  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1519703757 AND `addtime` < 1519790157  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1519790157 AND `addtime` < 1519876557  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1519876557 AND `addtime` < 1519962957  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1519962957 AND `addtime` < 1520049357  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1520049357 AND `addtime` < 1520135757  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1520135757 AND `addtime` < 1520222157  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1520222157 AND `addtime` < 1520308557  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1520308557 AND `addtime` < 1520394957  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1520394957 AND `addtime` < 1520481357  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1520481357 AND `addtime` < 1520567757  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1520567757 AND `addtime` < 1520654157  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1520654157 AND `addtime` < 1520740557  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1520740557 AND `addtime` < 1520826957  ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1520826957 AND `addtime` < 1520913357  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1520913357 AND `addtime` < 1520999757  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1520999757 AND `addtime` < 1521086157  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1521086157 AND `addtime` < 1521172557  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1521172557 AND `addtime` < 1521258957  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1521258957 AND `addtime` < 1521345357  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1521345357 AND `addtime` < 1521431757  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1521431757 AND `addtime` < 1521518157  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1521518157 AND `addtime` < 1521604557  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1521604557 AND `addtime` < 1521690957  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1521690957 AND `addtime` < 1521777357  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1521777357 AND `addtime` < 1521863757  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1521863757 AND `addtime` < 1521950157  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1521950157 AND `addtime` < 1522036557  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1522036557 AND `addtime` < 1522122957  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1522122957 AND `addtime` < 1522209357  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1522209357 AND `addtime` < 1522295757  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1522295757 AND `addtime` < 1522382157  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1522382157 AND `addtime` < 1522468557  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1522468557 AND `addtime` < 1522554957  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1522554957 AND `addtime` < 1522641357  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1522641357 AND `addtime` < 1522727757  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1522727757 AND `addtime` < 1522814157  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1522814157 AND `addtime` < 1522900557  ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1522900557 AND `addtime` < 1522986957  ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1522986957 AND `addtime` < 1523073357  ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1523073357 AND `addtime` < 1523159757  ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1523159757 AND `addtime` < 1523246157  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1523246157 AND `addtime` < 1523332557  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1523332557 AND `addtime` < 1523418957  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1523418957 AND `addtime` < 1523505357  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1523505357 AND `addtime` < 1523591757  ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1523591757 AND `addtime` < 1523678157  ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_user` WHERE ( `addtime` > 1523678157 AND `addtime` < 1523764557  ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: cztx E:\data\a52jiaoyi\Application\Admin\Controller\IndexController.class.php 第 70 行.
+NOTIC: [8] Undefined variable: authUrl E:\data\a52jiaoyi\Application\Admin\Controller\IndexController.class.php 第 82 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000288s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000615s ]
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 30 行.
+NOTIC: [8] Undefined variable: versionUp E:\data\a52jiaoyi\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 97 行.
+SQL: select version() as v; [ RunTime:0.0004s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015787s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015904s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000783s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000869s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001115s ]
+
+[ 2018-03-16T11:56:24+08:00 ] 127.0.0.1 /Admin/Index/coin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002692s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000676s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000779s ]
+SQL: SHOW COLUMNS FROM `movesay_config` [ RunTime:0.0067s ]
+SQL: SELECT * FROM `movesay_config` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `movesay_coin` [ RunTime:0.0057s ]
+SQL: SELECT * FROM `movesay_coin` WHERE `status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_market` [ RunTime:0.0055s ]
+SQL: SELECT * FROM `movesay_market` WHERE `status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_version` [ RunTime:0.0074s ]
+SQL: SELECT `name` FROM `movesay_version` WHERE `status` = 0 ORDER BY name desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_menu` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `movesay_menu` WHERE `pid` = 0 AND `hide` = 0 AND `is_dev` = 0 ORDER BY sort asc  [ RunTime:0.0004s ]
+SQL: SELECT `id` FROM `movesay_menu` WHERE ( url like 'Index/coin%' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `movesay_menu` [ RunTime:0.0055s ]
+SQL: SELECT `id`,`pid`,`title` FROM `movesay_menu` WHERE ( id=157 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`pid`,`title` FROM `movesay_menu` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT DISTINCT  `group` FROM `movesay_menu` WHERE ( pid = 1 )  [ RunTime:0.0004s ]
+SQL: SELECT `id`,`url` FROM `movesay_menu` WHERE `pid` = 1 AND `hide` = 0 AND `is_dev` = 0  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip`,`ico_name` FROM `movesay_menu` WHERE `group` = '系统' AND `pid` = 1 AND `hide` = 0 AND `is_dev` = 0 ORDER BY sort asc  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `movesay_coin` WHERE `name` = 'sgc' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_user_coin` [ RunTime:0.0080s ]
+SQL: SELECT SUM(sgc) AS tp_sum FROM `movesay_user_coin` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT SUM(sgcd) AS tp_sum FROM `movesay_user_coin` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_myzr` [ RunTime:0.0072s ]
+SQL: SELECT SUM(fee) AS tp_sum FROM `movesay_myzr` WHERE `coinname` = 'sgc' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `movesay_myzc` [ RunTime:0.0078s ]
+SQL: SELECT SUM(fee) AS tp_sum FROM `movesay_myzc` WHERE `coinname` = 'sgc' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `movesay_coin_json` [ RunTime:0.0071s ]
+SQL: SELECT * FROM `movesay_coin_json` WHERE `name` = 'sgc' ORDER BY id desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT SUM(sgc) AS tp_sum FROM `movesay_user_coin` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT SUM(sgcd) AS tp_sum FROM `movesay_user_coin` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(fee) AS tp_sum FROM `movesay_myzr` WHERE ( `addtime` >= 1510675200 AND `addtime` <= 1510761599  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(fee) AS tp_sum FROM `movesay_myzc` WHERE ( `addtime` >= 1510675200 AND `addtime` <= 1510761599  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `movesay_coin_json` WHERE `name` = 'sgc' AND `addtime` = 1510761599 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `movesay_coin_json` (`name`,`data`,`addtime`) VALUES ('sgc','[1678223.9,0,null,null]','1510761599') [ RunTime:0.0003s ]
+SQL: SELECT * FROM `movesay_coin_json` WHERE `name` = 'sgc' ORDER BY id asc LIMIT 100   [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000119s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000229s ]
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\0854272a61fabc7d7eacf8f9a95b2b75.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\0854272a61fabc7d7eacf8f9a95b2b75.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\0854272a61fabc7d7eacf8f9a95b2b75.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\0854272a61fabc7d7eacf8f9a95b2b75.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\0854272a61fabc7d7eacf8f9a95b2b75.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\0854272a61fabc7d7eacf8f9a95b2b75.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\0854272a61fabc7d7eacf8f9a95b2b75.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\0854272a61fabc7d7eacf8f9a95b2b75.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\0854272a61fabc7d7eacf8f9a95b2b75.php 第 30 行.
+NOTIC: [8] Undefined variable: versionUp E:\data\a52jiaoyi\Runtime\Cache\Admin\0854272a61fabc7d7eacf8f9a95b2b75.php 第 97 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019129s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019229s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000581s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000660s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000791s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000897s ]
+
+[ 2018-03-16T11:56:30+08:00 ] 127.0.0.1 /Admin/Index/market.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005075s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001385s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001613s ]
+SQL: SHOW COLUMNS FROM `movesay_config` [ RunTime:0.0099s ]
+SQL: SELECT * FROM `movesay_config` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `movesay_coin` [ RunTime:0.0095s ]
+SQL: SELECT * FROM `movesay_coin` WHERE `status` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `movesay_market` [ RunTime:0.0062s ]
+SQL: SELECT * FROM `movesay_market` WHERE `status` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `movesay_version` [ RunTime:0.0066s ]
+SQL: SELECT `name` FROM `movesay_version` WHERE `status` = 0 ORDER BY name desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_menu` [ RunTime:0.0061s ]
+SQL: SELECT * FROM `movesay_menu` WHERE `pid` = 0 AND `hide` = 0 AND `is_dev` = 0 ORDER BY sort asc  [ RunTime:0.0005s ]
+SQL: SELECT `id` FROM `movesay_menu` WHERE ( url like 'Index/market%' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_menu` [ RunTime:0.0063s ]
+SQL: SELECT `id`,`pid`,`title` FROM `movesay_menu` WHERE ( id=12 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`pid`,`title` FROM `movesay_menu` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT DISTINCT  `group` FROM `movesay_menu` WHERE ( pid = 1 )  [ RunTime:0.0005s ]
+SQL: SELECT `id`,`url` FROM `movesay_menu` WHERE `pid` = 1 AND `hide` = 0 AND `is_dev` = 0  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip`,`ico_name` FROM `movesay_menu` WHERE `group` = '系统' AND `pid` = 1 AND `hide` = 0 AND `is_dev` = 0 ORDER BY sort asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `movesay_trade_log` [ RunTime:0.0071s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_trade_log` WHERE `market` = 'sgc_cny' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT SUM(fee_buy) AS tp_sum FROM `movesay_trade_log` WHERE `market` = 'sgc_cny' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(fee_sell) AS tp_sum FROM `movesay_trade_log` WHERE `market` = 'sgc_cny' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(mum) AS tp_sum FROM `movesay_trade_log` WHERE `market` = 'sgc_cny' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movesay_trade_log` WHERE `market` = 'sgc_cny' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `movesay_market_json` [ RunTime:0.0074s ]
+SQL: SELECT * FROM `movesay_market_json` WHERE `name` = 'sgc_cny' ORDER BY id desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `movesay_trade_log` WHERE `market` = 'sgc_cny' AND ( `addtime` >= 1506182400 AND `addtime` <= 1506268799  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `movesay_market_json` WHERE `name` = 'sgc_cny' AND `data` = '' LIMIT 1   [ RunTime:0.0002s ]
+SQL: UPDATE `movesay_market_json` SET `addtime`='1506268799' WHERE `name` = 'sgc_cny' AND `data` = '' [ RunTime:0.0003s ]
+SQL: SELECT * FROM `movesay_market_json` WHERE `name` = 'sgc_cny' ORDER BY id asc LIMIT 100   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000114s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000219s ]
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\632aa3244369482b260c2c790eb8ab04.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\632aa3244369482b260c2c790eb8ab04.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\632aa3244369482b260c2c790eb8ab04.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\632aa3244369482b260c2c790eb8ab04.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\632aa3244369482b260c2c790eb8ab04.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\632aa3244369482b260c2c790eb8ab04.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\632aa3244369482b260c2c790eb8ab04.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\632aa3244369482b260c2c790eb8ab04.php 第 30 行.
+NOTIC: [8] Undefined index: class E:\data\a52jiaoyi\Runtime\Cache\Admin\632aa3244369482b260c2c790eb8ab04.php 第 30 行.
+NOTIC: [8] Undefined variable: versionUp E:\data\a52jiaoyi\Runtime\Cache\Admin\632aa3244369482b260c2c790eb8ab04.php 第 97 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019585s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019677s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000545s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000617s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000779s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000870s ]
+

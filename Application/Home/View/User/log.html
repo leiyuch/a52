@@ -1,0 +1,117 @@
+<include file="Public:header" />
+		
+		<section class="box-content">
+			
+			    <style>
+			            
+			    </style>
+			    <div class="main-content clearfix">
+				    <div class="now"> 
+					    <i class="fa fa-home fa-lg move mr5"></i>
+						<a href="/" class="movesay">{:L('home')}</a> &gt; 
+					    <a href="{:U('User/index')}" class="movesay">{:L('security')} </a> &gt;  {:L('user_login_log')}
+				    </div>
+				     
+                    <include file="User:header_left" />
+
+				    <div class="tag-list-content assets_content bg_w"> 
+				     <div class="safe_center clear"> 
+				      	<h1> <span> {:L('user_login_log')} </span> <span> <a class="right" onclick="$('#hints').slideToggle();"> <i class="fa fa-hand-o-right move fz_14 mr5"></i> <span class="fz_12 move">帮助</span> </a> </span> </h1> 
+				     </div> 
+				    <div class="cnyin_record">
+						<div class="f_body">
+							<table class="f_table" id="investLog_content">
+								<thead>
+								<tr>
+										<th>{:L('user_operate_time')}</th>
+										<th>{:L('user_operate_type')}</th>
+										<th>{:L('user_operate_remark')}</th>
+										<th>{:L('user_operate_ip')}</th>
+										<th>{:L('user_operate_addr')}</th>
+										<th>{:L('status')}</th>
+								</tr>
+								</thead>
+								<tbody>
+
+								 <volist name="list" id="vo">
+                                            <tr>
+                                                <td>{$vo.addtime|addtime}</td>
+                                                <td>
+                                                    <if condition="(LANG_SET eq 'en') && (!empty($vo['en_type']))">
+                                                        {$vo.en_type}
+                                                        <else />
+                                                        {$vo.type}
+                                                    </if>
+                                                </td>
+                                                <td>
+                                                    <if condition="(LANG_SET eq 'en') && (!empty($vo['en_remark']))">
+                                                        {$vo.en_remark}
+                                                        <else />
+                                                        {$vo.remark}
+                                                    </if>
+                                                </td>
+                                                <td>{$vo.addip}</td>
+                                                <td>
+                                                    <if condition="(LANG_SET eq 'en') && (!empty($vo['en_addr']))">
+                                                        {$vo.en_addr}
+                                                        <else />
+                                                        {$vo.addr}
+                                                    </if>
+                                                </td>
+                                                <td>
+                                                    <eq name="vo.status" value="0">
+                                                        <font color="violet">{:L('user_operate_status1')}</font>
+                                                    </eq>
+                                                    <eq name="vo.status" value="1"><font class="green"> {:L('user_operate_status2')}</font></eq>
+                                                    <eq name="vo.status" value="2">
+                                                        <font color="red">{:L('user_operate_status3')}</font>
+                                                    </eq>
+                                                </td>
+                                            </tr>
+                                        </volist>					
+														
+														
+							    </tbody>
+							</table>
+							<div class="pages"> {$page}   </div>
+						</div>
+					</div>
+				     
+				      
+					    
+					 
+				     
+				     
+				     
+				    </div> 
+				</div>
+				<div class="clearfix"></div>
+		</section>
+		
+
+		
+
+		<include file="Public:footer" />
+	<!-- include jQuery -->
+	<script src="__PUBLIC__/Home3/js/admin/jquery.min.js"></script>
+	<!-- bootstrap -->
+	<script src="__PUBLIC__/Home3/js/bootstrap.min.js"></script>
+	<!-- plugins.js -->
+	<script src="__PUBLIC__/Home3/js/plugins.js"></script>
+	<!-- all parallax -->
+	<script src="__PUBLIC__/Home3/js/parlx.js"></script>
+	<!-- nice-select -->
+	
+	<!-- chart js -->
+	<script src="__PUBLIC__/Home3/js/raphael-min.js"></script>
+	<script src="__PUBLIC__/Home3/js/morris.min.js"></script>
+	 <!-- dscountdown -->
+	<script src="__PUBLIC__/Home3/js/dscountdown.min.js"></script>
+	<!-- custom js -->
+	<script src="__PUBLIC__/Home3/js/custom.js"></script>
+	<script src="__PUBLIC__/Home3/js/sidebar-menu.js"></script>
+	<script>
+		$.sidebarMenu($('.sidebar-menu'))
+	</script>
+</body>
+</html>

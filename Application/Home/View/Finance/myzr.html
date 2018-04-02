@@ -1,0 +1,250 @@
+﻿<include file="Public:header" />
+	<section class="box-content">
+			
+		<style>
+				
+		</style>
+		<div class="main-content clearfix">
+			<div class="now"> 
+				<i class="fa fa-home fa-lg move mr5"></i>
+				<a href="/" class="movesay">{:L('home')}</a> &gt; 
+				<a href="{:U('Finance/index')}" class="movesay">{:L('finance_center')} </a> &gt; {:L('finance_i_want_to_receive')} 
+				</div>
+    <include file="Finance:header_left" />
+				    <div class="tag-list-content assets_content bg_w"> 
+				     <div class="safe_center clear"> 
+				      	<h1> <span> {:L('finance_i_want_to_receive')} </span> <span> <a class="right" onclick="$('#hints').slideToggle();"> <i class="fa fa-hand-o-right move fz_14 mr5"></i> <span class="fz_12 move">帮助</span> </a> </span> </h1> 
+				     </div> 
+				     
+				     <div class="mytable-body"> 
+					      <div class="step1 cny_record"> 
+					       <div class="weituo_bizhong"> 
+					        <div class="bizhong_select"> 
+					         <div class="bz_btn"> 
+					          <img src="http://moduoio.oss-cn-hongkong.aliyuncs.com/moduoio/1510216983457.png" alt="" style=" width: 22px;float: left;margin-top: 5px;" /> 
+					          <span id="coin-default"> 
+									<select name="type" id="coin-select" style="margin-top: 6px;">
+											<volist name="coin_list" id="vo">
+													<eq name="xnb" value="$key">
+														<option value="{$vo['name']}" selected="selected">{$vo.title} ({$vo['name']|strtoupper})</option>
+														<else />
+														<option value="{$vo['name']}">{$vo.title} ({$vo['name']|strtoupper})</option>
+													</eq>
+												</volist>
+									</select>
+					          </span> 
+					         </div> 
+					        </div> 
+					        <div class="bizhong_type" style="width: 620px;"> 
+					         <span>{:L('finance_usable')}<em class="coin-name"></em>：<font class="coin-balance">{$user_coin[$xnb]|Num}</font></span> 
+					        </div> 
+					       </div> 
+					       <br /> 
+					       <div class="cnyin_record"> 
+							   <!-- <p>这是您的钱包地址，请将您的 BitCoin 转入此地址：</p> -->
+							   <p>  {:L('finance_wallet_address1')}<b >{$coin_list[$xnb]['title']}</b> {:L('finance_wallet_address2')}：</p>
+					        <div class="adr-zhuanru" style="position: relative;z-index:0;"> 
+					         <!--线下处理 以及 需绑定监听--> 
+					         <div class="coin-name txtEmphasis" style=""> 
+					          <dt style="margin: 4px 0">
+					           <b>{$qianbao}</b>
+					          </dt> 
+					           
+					          
+					         </div> 
+					        </div> 
+							<div id="hints" class="mytips"> 
+						        <p> </p>
+								<p>{:L('finance_wallet_address4')}：<br /> 1.  <span id="txxz_1">{:L('finance_wallet_address5')}</span>
+									<b >{$coin_list[$xnb]['title']}</b> {:L('finance_wallet_address6')}
+									<b >{$coin_list[$xnb]['title']}</b> {:L('finance_wallet_address7')}
+									<b id="confirmNum">{$coin_list[$xnb]['zr_dz']}</b> {:L('finance_wallet_address8')}
+									<b >{$coin_list[$xnb]['title']}</b> {:L('finance_wallet_address9')}
+									<br /> 2. {:L('finance_wallet_address10')}<span class="kuangchi-buyao">{:L('finance_wallet_address11')}</span> </p> 
+						        <p> <br /> </p> 
+						        <p></p> 
+						    </div> 
+
+
+					       </div> 
+					      </div> 
+					      <!--转入记录--> 
+					      <div class="step2 f_body"> 
+					       <table class="f_table" id="investLog_content"> 
+					        <thead> 
+					         <tr> 
+									<th>{:L('finance_transfer_in_time')}</th>
+                                    <th>{:L('finance_transfer_in_currency')}</th>
+                                    <th>{:L('finance_transfer_out_address')}</th>
+                                    <th >{:L('finance_transfer_out_amount')}</th>
+                                    <th>{:L('finance_transfer_out_give')}</th>
+                                    <th >{:L('finance_arrival_quantity')}</th>
+                                    <th >{:L('status')}</th>
+					         </tr> 
+					        </thead> 
+					        <tbody> 
+									<volist name="list" id="vo">
+											<tr>
+												<td>{$vo.addtime|addtime}</td>
+												<td>{$vo.coinname}</td>
+												<td>{$vo.username}</td>
+												<td>{$vo['num']|NumToStr}</td>
+												<td>{$vo['fee']|NumToStr}</td>
+												<td>{$vo['mum']|NumToStr}</td>
+												<td>
+													<eq name="vo.status" value="1">
+														<font color="#23a800">{:L('finance_transfer_succeed')} </font>
+														<else />
+														<font color="red">{:L('finance_transfer_wait')}{$vo.status|abs}{:L('finance_transfer_a_confirm')}</font>
+													</eq>
+												</td>
+											</tr>
+										</volist>
+					        </tbody> 
+					       </table> 
+					       <div class="pages">{$page}</div> 
+					      </div> 
+					 </div> 
+				     
+				     
+				     
+				    </div> 
+				</div>
+				<div class="clearfix"></div>
+		</section>
+		
+
+		
+
+
+		
+
+		
+
+
+		
+		<footer class="r-footer">
+			<div class="fixed-bg-scroll scroll2" style="background: url('__PUBLIC__/Home3/images/fbg.jpg');"></div>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4 col-md-4">
+						<div class="f-block">
+							<div class="h-head">
+								<div class="img-holder">
+									<a href="#"><img src="__PUBLIC__/Home3/images/f-logo.png" alt="" class="img-responsive"></a>
+								</div>
+							</div>
+							<div class="f-content">
+								<p>是一个全球化的数字货币交易所。正在高速发展的区块链资产交易平台，为全球区块链爱好者提供多币种、多语言的币币兑换服务。 最安全，最便利的多币种全球交易平台。</p>
+								<ul class="list-unstyled align-left social-nav">
+									 <li><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+									 <li><a href="https://www.twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
+									 <li><a href="https://www.linkedin.com"><i class="fa fa-linkedin"></i></a></li>
+									 <li><a href="https://plus.google.com/ "><i class="fa fa-google-plus"></i></a></li>
+									 <li><a href="https://www.pinterest.com"><i class="fa fa-pinterest"></i></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-4">
+						<div class="f-block">
+							<div class="h-head">
+								<h2>场景应用</h2>
+							</div>
+							<div class="f-content">
+								<ul class="list-unstyled align-left project-gallery">
+									<li>
+										<a href="#">
+											<img src="__PUBLIC__/Home3/images/img5.jpg" alt="">
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<img src="__PUBLIC__/Home3/images/img6.jpg" alt="">
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<img src="__PUBLIC__/Home3/images/img7.jpg" alt="">
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<img src="__PUBLIC__/Home3/images/img8.jpg" alt="">
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<img src="__PUBLIC__/Home3/images/img9.jpg" alt="">
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<img src="__PUBLIC__/Home3/images/img10.jpg" alt="">
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-4">
+						<div class="f-block p20">
+							<div class="h-head">
+								<h2>联系方式</h2>
+							</div>
+							<div class="f-content">
+								<ul class="list-unstyled align-left f-contact">
+									<li><span class="flaticon-place-localizer"></span>
+										<div>
+											<p>121 King Street, Melbourne Victoria 3000 Australia</p>
+										</div>
+									</li>
+									<li><span class="flaticon-telephone"></span>
+										<div>
+											<ul class="list-unstyled align-left contact-num">
+												<li>Phone.<br>Fax.</li>
+												<li>+61 3 8376 6284 <br> +61 3 8376 6285</li>
+											</ul>
+										</div>
+									</li>
+									<li><span class="flaticon-contact"></span>
+										<div>
+											<ul class="list-unstyled align-left contact-num">
+												<li>Info.<br>HR</li>
+												<li>love@Cryptonic.com <br> job@Cryptonic.com</li>
+											</ul>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+				<div class="copyright wfp"><a href="#">Copyright</a> © 2018 - baidu.com All Rights Reserved</div>
+		<span id="go_to_top" class="go-to-top"><i class="fa fa-long-arrow-up"></i></span>
+	</div>
+	<!-- include jQuery -->
+	<script src="__PUBLIC__/Home3/js/admin/jquery.min.js"></script>
+	<!-- bootstrap -->
+	<script src="__PUBLIC__/Home3/js/bootstrap.min.js"></script>
+	<!-- plugins.js -->
+	<script src="__PUBLIC__/Home3/js/plugins.js"></script>
+	<!-- all parallax -->
+	<script src="__PUBLIC__/Home3/js/parlx.js"></script>
+	<!-- nice-select -->
+	
+	<!-- chart js -->
+	<script src="__PUBLIC__/Home3/js/raphael-min.js"></script>
+	<script src="__PUBLIC__/Home3/js/morris.min.js"></script>
+	 <!-- dscountdown -->
+	<script src="__PUBLIC__/Home3/js/dscountdown.min.js"></script>
+	<!-- custom js -->
+	<script src="__PUBLIC__/Home3/js/custom.js"></script>
+	<script src="__PUBLIC__/Home3/js/sidebar-menu.js"></script>
+	<script>
+		$.sidebarMenu($('.sidebar-menu'))
+	</script>
+</body>
+</html>

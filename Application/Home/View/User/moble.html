@@ -1,0 +1,181 @@
+<include file="Public:header" />
+		
+		<section class="box-content">
+			
+			    <style>
+			            
+			    </style>
+			    <div class="main-content clearfix">
+				    <div class="now"> 
+					    <i class="fa fa-home fa-lg move mr5"></i>
+							<a href="/" class="movesay">{:L('home')}</a> &gt; 
+					    <a href="{:U('User/index')}" class="movesay">{:L('security')} </a> &gt; {:L('security')} 
+				    </div>
+				     
+                    <include file="User:header_left" />  
+
+				    <div class="tag-list-content assets_content bg_w"> 
+				     <div class="safe_center clear"> 
+				      	<h1> <span>{:L('bound_phone')} </span> <span> <a class="right" onclick="$('#hints').slideToggle();"> <i class="fa fa-hand-o-right move fz_14 mr5"></i> <span class="fz_12 move">帮助</span> </a> </span> </h1> 
+				     </div> 
+				     
+				     <div class="pwtrade mart30 mt50">
+						  <div class="step3" >
+									<empty name="user['moble']">
+											<div id="msg-box"></div>
+											<form id="form-mobilebinda" class="pwtrade mart30" style="padding-top: 40px;">
+													<dl>
+															<dt>{:L('phone_number')}：</dt>
+															<dd id="dd-mobilebinda">
+																	<input type="text" id="moble">
+															</dd>
+													</dl>
+													<dl>
+															<dt>{:L('captcha')}：</dt>
+															<dd id="dd-mobilebindb">
+																	<input type="text" id="verify" value="" style="width: 80px; box-shadow: none;"/>
+																	<img class="codeImg reloadverify" src="{:U('Verify/code')}" title="换一张" onclick="this.src=this.src+'?t='+Math.random()" width="100" height="38">
+															</dd>
+													</dl>
+													<dl>
+															<dt></dt>
+															<dd>
+																	<input type="button" class="btns2" value="{:L('bound_phone')}" onclick="Update()"></dd>
+																	<!-- <input type="button" value="{:L('bound_phone')}" id="btn-mobilebind" onclick="Update()"/> -->
+															</dd>
+													</dl>
+											</form>
+											<else/>
+
+
+						    <div class="band_succ move" style="margin-bottom: 20px;margin-left: 155px;">
+						      <i class="fa fa-check mr5"></i>{:L('user_already_bound_phone')}</div>
+						    <dl>
+						      <dt>{:L('phone_number')}：</dt>
+						      <dd id="dd-mobilebindc" title="联系管理员修改">
+						        <input type="text" value="{$user.moble}"  style="margin-top:5px;"></dd>
+						    </dl>
+						    <dl>
+						      <dt>{:L('user_bound_time')}：</dt>
+						      <dd id="dd-mobilebindd" style="padding-top:10px;">
+											<if condition="$user.mobletime gt 0">    
+										{$user.mobletime|date="Y-m-d H:i:s",###}
+									 </if>
+									</dd></dl>
+						    <dl style="margin-left: -70px;">
+						      <dt></dt>
+						      <!-- <dd><input type="button" class="btns2" value="更换绑定" onclick="new_moble()"></dd> -->
+								</dl>
+							</empty>
+							</div>
+							
+						  <div class="step4" style="display:none;" >
+						    <form class="pwtrade mart30">
+						      <dl class="step5" style="margin-top: 40px;">
+						        <dt>当前手机号码：</dt>
+						        <dd class="yuyin">
+						          <div class="clear">18617135092</div></dd>
+						      </dl>
+						      <dl>
+						        <dt>新手机号码：</dt>
+						        <dd>
+						          <input type="text" id="moble_new" class="texts">(接收验证码)</dd>
+						        <link rel="stylesheet" href="/comfile/css/intlTelInput.css"></dl>
+						      <dl class="step5">
+						        <dt>获取验证码：</dt>
+						        <dd class="yuyin">
+						          <div class="clear">
+						            <input type="button" value="发送短信验证码" class="btns" onclick="send_moble_new('sms')" style="width: 100px;font-size: 12px;"></div>
+						        </dd>
+						      </dl>
+						      <dl class="step6" style="display:none;">
+						        <dt>短信验证码：</dt>
+						        <dd>
+						          <input type="text" id="moble_verify_new" value="" class="texts" placeholder="请输入短信验证码">
+						          <span id="reg_moble_new"></span>
+						        </dd>
+						      </dl>
+						      <dl>
+						        <dt></dt>
+						        <dd>
+						          <input type="button" value="更换绑定" id="genghuan" disabled="" class="btns2" onclick="moble_news()"></dd>
+						      </dl>
+						    </form>
+						  </div>
+						</div>
+						<script>
+						    function new_moble() {
+						        $(".step3").hide();
+						        $(".step4").show();
+						    }
+
+						</script>
+				    
+					      
+					    
+				     
+				     
+				     
+				    </div> 
+				</div>
+				<div class="clearfix"></div>
+		</section>
+		
+
+		
+
+
+		
+
+		
+
+
+		<include file="Public:footer" />
+	<!-- include jQuery -->
+	<script src="__PUBLIC__/Home3/js/admin/jquery.min.js"></script>
+	<!-- bootstrap -->
+	<script src="__PUBLIC__/Home3/js/bootstrap.min.js"></script>
+	<!-- plugins.js -->
+	<script src="__PUBLIC__/Home3/js/plugins.js"></script>
+	<!-- all parallax -->
+	<script src="__PUBLIC__/Home3/js/parlx.js"></script>
+	<!-- nice-select -->
+	
+	<!-- chart js -->
+	<script src="__PUBLIC__/Home3/js/raphael-min.js"></script>
+	<script src="__PUBLIC__/Home3/js/morris.min.js"></script>
+	 <!-- dscountdown -->
+	<script src="__PUBLIC__/Home3/js/dscountdown.min.js"></script>
+	<!-- custom js -->
+	<script src="__PUBLIC__/Home3/js/custom.js"></script>
+	<script src="__PUBLIC__/Home3/js/sidebar-menu.js"></script>
+	<script src="__PUBLIC__/layer/layer.js"></script>	
+	<script>
+		$.sidebarMenu($('.sidebar-menu'))
+	</script>
+	<script>
+	 function Update() {
+        var moble = $("#moble").val();
+        var moble_verify = $("#moble_verify").val();
+        var verify = $("#verify").val();
+        $.post("{:U('User/upmoblebyverify')}", {
+            moble: moble,
+            moble_verify: verify
+        }, function (data) {
+            if (data.status == 1) {
+                layer.msg(data.info, {icon: 1});
+                window.location = "{:U('User/moble')}";
+            } else {
+                //刷新验证码
+                $(".reloadverify").click();
+                $("#verify").val('');
+                layer.msg(data.info, {icon: 2});
+                if (data.url) {
+                    window.location = data.url;
+                }
+            }
+        }, "json");
+    }
+	</script>
+</body>
+</html>

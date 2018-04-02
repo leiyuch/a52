@@ -1,0 +1,255 @@
+<include file="Public:header" />
+<div class="content clearfix">
+    <!--左侧菜单-->
+    <include file="User:left" />
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // Store variables
+            var accordion_head = $('.accordion > li > a'),
+                accordion_body = $('.accordion li > .sub-menu');
+            // Open the first tab on load
+            //accordion_head.first().addClass('active').next().slideDown('normal');
+            //accordion_body.eq(2).find('a').eq(2).css('background', ' #efefef');
+            var found = false;
+            for (i = 0; i < accordion_body.length; i++) {
+                item = accordion_body.eq(i).find("[data-id='']");
+                if (item.length > 0) {
+                    accordion_head.eq(i).addClass('active').next().slideDown('normal');
+                    item.css({ 'color': ' #ff5e23', 'border-right-width': '3px', 'border-right-color': '#ff5e23' });
+                    found = true;
+                    break;
+                }
+            }
+            if (found == false)
+                accordion_head.eq(0).addClass('active').next().slideDown('normal');
+            // Click function
+            accordion_head.on('click', function (event) {
+                // Disable header links
+                event.preventDefault();
+                // Show and hide the tabs on click
+                if ($(this).attr('class') != 'active') {
+                    accordion_body.slideUp('normal');
+                    $(this).next().stop(true, true).slideToggle('normal');
+                    accordion_head.removeClass('active');
+                    $(this).addClass('active');
+                }
+            });
+
+            var icoType = '';
+            if (icoType == '') {
+                $("#buyIco").parent("li").remove()
+            }
+
+            $("input").focus(function () {
+                $(".failed").html("")
+            });
+
+            $(".files,.cloud,.mail").find("li").click(function () {
+                $.cookie('nav_index', 2, { path: '/' });
+            });
+            $(".sign").find("li").click(function () {
+                $.cookie('nav_index', 3, { path: '/' });
+            });
+        });
+    </script>
+
+    <!--右侧内容-->
+    <div class="main_content acc-m-con">
+        <div class="right_mcontent">
+            <div class="safe_center clear" style="padding-left: 0px; border-bottom: 2px solid #e55600;">
+                <h1 style="margin-top: 0px; margin-bottom: 15px; line-height: 15px;">{:L('user_bank_card_management')}</h1>
+            </div>
+            <notempty name="prompt_text">
+                <div class="mytips">
+                    <h6 style="color: #ff8000;">{:L('kindly_reminder')}</h6>
+                    {$prompt_text}
+                </div>
+            </notempty>
+            <div class="cnyin_record">
+                <div class="f_body">
+                    <div class="f_body_main">
+                        <div class="f_tab_body">
+                            <div>
+                                <table class="f_table" id="investLog_content">
+                                    <thead>
+                                        <tr>
+                                            <th>{:L('user_note_name')}</th>
+                                            <th>{:L('user_open_bank')}</th>
+                                            <th>{:L('user_open_province')}</th>
+                                            <th>{:L('user_open_city')}</th>
+                                            <th>{:L('user_open_branch')}</th>
+                                            <th>{:L('user_open_name')}</th>
+                                            <th>{:L('user_bank_number')}</th>
+                                            <th>{:L('user_addtime')}</th>
+                                            <th>{:L('operate')}</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <volist name="UserBank" id="vo">
+                                            <tr>
+                                                <td>{$vo.name}</td>
+                                                <td>{$vo.bank}</td>
+                                                <td>{$vo.bankprov}</td>
+                                                <td>{$vo.bankcity}</td>
+                                                <td>{$vo.bankaddr}</td>
+                                                <td>{$truename}</td>
+                                                <td>{$vo.bankcard}</td>
+                                                <td>{$vo.addtime|addtime}</td>
+                                                <td><a class="cancel" href="javascript:void(0)" onclick="UpdateB({$vo['id']})">{:L('delete')}</a></td>
+                                            </tr>
+                                        </volist>
+                                    </tbody>
+                                </table>
+                                <div class="pages">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="demo1" onclick="showA()" style="width:150px; border:1px solid orange; padding:5px 10px; border-radius:5px; color:orange; margin:0 auto; text-align: center;"> {:L('user_add_address')}</div>
+        </div>
+    </div>
+</div>
+
+<div id="withdrawCnyAddress" style="background:rgba(0,0,0,0.5); width:100%; height:100%; position:fixed; float:left; z-index:1000; top:0; left:0; display:none;">
+    <div style="padding: 10px 40px 40px; background:#fff; border-radius:5px; max-width:520px; margin:10% auto;">
+        <h2 style="text-align:center;">{:L('user_add_address')}</h2>
+        <div class="form-group form-material floating">
+            <input type="text" class="form-control empty" name="bank_name" id="bank_name" data-fv-notempty="true" data-fv-message="请输入用户名或邮箱或手机号码" data-fv-field="username" placeholder="备注名称" style="height:40px !important">
+        </div>
+        <div class="form-group form-material floating">
+            <select name="bank" id="bank_bank" style="width: 110px;">
+                <option value="0">--{:L('user_select_bank')}--</option>
+                <volist name="UserBankType" id="vo">
+                    <option value="{$vo['title']}">{$vo['title']}</option>
+                </volist>
+            </select>
+        </div>
+        <div class="form-group form-material floating">
+            <span class="controls" id="city_1">
+                <select class="prov" id="bank_bankprov" name="prov" style="width: 110px;"></select>
+                <select class="city" id="bank_bankcity" name="city" style="width: 110px; display: none;"></select>
+            </span>
+        </div>
+        <div class="form-group form-material floating">
+            <input type="text" id="bank_bankaddr" class="form-control empty" name="username" data-fv-notempty="true" data-fv-message="" data-fv-field="username" placeholder="开户支行" style="height:40px !important">
+        </div>
+        <div class="form-group form-material floating">
+            <input type="text" class="form-control empty" value="{$truename}" name="username" data-fv-notempty="true" data-fv-message="" data-fv-field="username" placeholder="真实姓名" style="height:40px !important">
+        </div>
+        <div class="form-group form-material floating">
+            <input type="text" class="form-control empty" id="bank_bankcard" name="username" data-fv-notempty="true" data-fv-message="" data-fv-field="username" placeholder="银行卡号" style="height:40px !important">
+        </div>
+        <div class="form-group form-material floating">
+            <input type="text" class="form-control empty" id="bank_paypassword" name="username" data-fv-notempty="true" data-fv-message="" data-fv-field="username" placeholder="交易密码" style="height:40px !important">
+        </div>
+        <div id="demo3" style="background:rgb(7, 105, 224); padding:5px 10px; border-radius:5px; color:#fff; text-align:center;" onclick="Update()">{:L('user_add_now')}</div>
+    </div>
+</div>
+
+
+<div id="dialogBoxShadow" style="position: absolute; top: 0px; left: 0px; z-index: 100; background-color: rgb(0, 0, 0); opacity: 0.4; width: 100%; background-position: initial initial; background-repeat: initial initial; display: none;"></div>
+<br>
+<br>
+<script>
+
+
+
+    //$("#city_1").citySelect({nodata:"none",required:false});
+
+    $('#dialogBoxShadow').height($(document).height());
+    function closeAddress(){
+        $("#withdrawCnyAddress").hide();
+        $("#dialogBoxShadow").hide();
+    }
+    function showA(){
+        $("#withdrawCnyAddress").show();
+        $("#dialogBoxShadow").show();
+    }
+
+    function Update(){
+        var name=$('#bank_name').val();
+        var bank=$('#bank_bank option:selected').val();
+        var bankprov=$('#bank_bankprov option:selected').val();
+        var bankcity=$('#bank_bankcity option:selected').val();
+        var bankaddr=$('#bank_bankaddr').val();
+        var bankcard=$('#bank_bankcard').val();
+        var paypassword=$('#bank_paypassword').val();
+        if(name==""||name==null){
+            layer.tips('{:L('user_enter_note_name')}','#bank_name',{tips:3});
+        return false;
+    }
+    if(bankaddr==""||bankaddr==null){
+        layer.tips('{:L('user_enter_open_bank')}','#bank_bankaddr',{tips:3});
+    return false;
+    }
+    if(bankcard==""||bankcard==null){
+        layer.tips('{:L('user_enter_bank_number')}','#bank_bankcard',{tips:3});
+    return false;
+    }
+    if(paypassword==""||paypassword==null){
+        layer.tips('{:L('enter_trade_password')}','#bank_paypassword',{tips:3});
+    return false;
+    }
+
+
+    $.post("{:U('User/upbank')}",{type:1,name:name,bank:bank,bankprov:bankprov,bankcity:bankcity,bankaddr:bankaddr,bankcard:bankcard,paypassword:paypassword},function(data){
+        if(data.status==1){
+            layer.msg(data.info,{icon:1});
+            window.location="{:U('User/bank')}";
+        }else{
+            layer.msg(data.info,{icon:2});
+            if(data.url){
+                window.location=data.url;
+            }
+        }
+    },"json");
+    }
+
+    function UpdateB(id){
+        layer.config({
+            extend: 'extend/layer.ext.js'
+        });
+        layer.ready(function () {
+            //默认prompt
+            layer.prompt({
+                title: '{:L('user_enter_trade_pwd_confirm')}',
+                formType: 1,btn: ['{:L('confirm')}','{:L('cancel')}']},function(val){
+                    if (val) {
+                        //需要执行的方法
+                        $.post("{:U('User/delbank')}",{type:2,id:id,paypassword:val},function(data){
+                            if(data.status==1){
+                                layer.msg(data.info,{icon:1});
+                                window.location="{:U('User/bank')}";
+                            }else{
+                                layer.msg(data.info,{icon:2});
+                                if(data.url){
+                                    window.location=data.url;
+                                }
+                            }
+                        },"json");
+
+
+                    };
+                });
+
+    });
+
+
+    }
+
+</script>
+<script>
+    //菜单高亮
+    $('#user_box').addClass('active');
+    $('#user_bank').addClass('active');
+    $('#user_bank i').attr('class','coin_menu_op_13');
+</script>
+<include file="Public:footer" />
+
+<script type="text/javascript" src="__PUBLIC__/Home/js/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Home1/Scripts/jquery.easing.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Home/js/bootstrap.min.js"></script>    
+<script type="text/javascript" src="__PUBLIC__/Home1/Scripts/cityselect.js"></script>

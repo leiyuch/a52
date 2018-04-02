@@ -1,0 +1,211 @@
+<include file="Public:header" />
+<div class="content clearfix">
+    <!--左侧菜单-->
+    <include file="User:left" />
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // Store variables
+            var accordion_head = $('.accordion > li > a'),
+                accordion_body = $('.accordion li > .sub-menu');
+            // Open the first tab on load
+            //accordion_head.first().addClass('active').next().slideDown('normal');
+            //accordion_body.eq(2).find('a').eq(2).css('background', ' #efefef');
+            var found = false;
+            for (i = 0; i < accordion_body.length; i++) {
+                item = accordion_body.eq(i).find("[data-id='']");
+                if (item.length > 0) {
+                    accordion_head.eq(i).addClass('active').next().slideDown('normal');
+                    item.css({ 'color': ' #ff5e23', 'border-right-width': '3px', 'border-right-color': '#ff5e23' });
+                    found = true;
+                    break;
+                }
+            }
+            if (found == false)
+                accordion_head.eq(0).addClass('active').next().slideDown('normal');
+            // Click function
+            accordion_head.on('click', function (event) {
+                // Disable header links
+                event.preventDefault();
+                // Show and hide the tabs on click
+                if ($(this).attr('class') != 'active') {
+                    accordion_body.slideUp('normal');
+                    $(this).next().stop(true, true).slideToggle('normal');
+                    accordion_head.removeClass('active');
+                    $(this).addClass('active');
+                }
+            });
+
+            var icoType = '';
+            if (icoType == '') {
+                $("#buyIco").parent("li").remove()
+            }
+
+            $("input").focus(function () {
+                $(".failed").html("")
+            });
+
+            $(".files,.cloud,.mail").find("li").click(function () {
+                $.cookie('nav_index', 2, { path: '/' });
+            });
+            $(".sign").find("li").click(function () {
+                $.cookie('nav_index', 3, { path: '/' });
+            });
+        });
+    </script>
+    <!--右侧内容-->
+    <div class="main_content acc-m-con">
+        <div class="right_mcontent">
+  
+                <div class="safe_center clear" style="padding-left: 0px; border-bottom: 2px solid #e55600;">
+                    <h1 style="margin-top: 0px; margin-bottom: 15px; line-height: 15px;">{:L('user_bound_alipay')}</h1>
+                </div>
+            <div class="sj" style="top: 40px; left: 60px;"></div>
+            <br>
+            <div class="sectioncont">
+                <form enctype="application/x-www-form-urlencoded" method="post" action="">
+                    <table id="withdrawtable">
+                        <tbody>
+                            <tr>
+                                <td align="right">{:L('user_alipay_account')}：</td>
+                                <td><input type="text" name="fundpass"  id="alipay" size="20"></td>
+                            </tr>
+                            <tr>
+                                <td align="right">{:L('trade_password')}：</td>
+                                <td>
+                                    <input type="password" id="paypassword" value="" size="10" >
+                                    <!-- <button name="smsbtn" id="smsbtn" type="button">获取短信验证码</button>
+                            <button name="voicebtn" id="voicebtn" type="button">获取电话语音验证码</button> -->
+                                    <input type="hidden" name="smsid" value="3" id="smsid">
+                                </td>
+                            </tr>
+
+                            <!--
+                          <tr>
+                              <td align="right">图片验证码：</td>
+                              <td>
+                              <img id="apiCaptcha" src="/captcha" alt="Captcha" title="看不清？换一张" onclick="document.getElementById('apiCaptcha').src = '/captcha?' + Math.random(); return false"/>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td align="right">请输入上面的验证码：</td><td><input type="text" name="captcha" id="captcha"/></td>
+                          </tr>
+                          -->
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td><input type="button" name="submit" id="submit" onclick="Update()" value="{:L('user_bound_alipay')} " class="sub-btn"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                 
+            </div>
+
+                <!--<notempty name="prompt_text">
+                    <div class="mytips">
+                        <h6 style="color: #ff8000;">{:L('kindly_reminder')}</h6>
+                        {$prompt_text}
+                    </div>
+                </notempty>
+
+                <empty name="user['alipay']">
+                    <div id="msg-box"></div>
+                    <form class="pwtrade mart30">
+                        <dl>
+                            <dt>{:L('user_alipay_account')}：</dt>
+                            <dd>
+                                <input type="text" id="alipay">
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>{:L('trade_password')}：</dt>
+                            <dd>
+                                <input type="password" id="paypassword">
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt></dt>
+                            <dd>
+                                <input type="button" value="{:L('user_bound_alipay')}" id="btn-up" onclick="Update()" />
+                            </dd>
+                        </dl>
+                    </form>
+                    <else />
+                    <div class="sj" style="top: 40px; left: 60px;"></div>
+                    <form id="form-mobilebind" class="pwtrade mart30">
+                        <div class="band_succ" style="margin-bottom: 20px;margin-left: 130px;">
+                            <em></em>{:L('user_already_bound_alipay')}
+                        </div>
+                        <dl>
+                            <dt>{:L('user_alipay_account')}：</dt>
+                            <dd title="联系管理员修改">
+                                <input type="text" value="{$user.alipay}" readonly>
+                            </dd>
+                        </dl>
+                    </form>
+                </empty>-->
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <script>
+        $('input').focus(function () {
+            var t = $(this);
+            if (t.attr('type') == 'text' || t.attr('type') == 'password')
+                t.css({
+                    'box-shadow': '0px 0px 3px #1583fb',
+                    'border': '1px solid #1583fb',
+                    'color': '#333'
+                });
+            if (t.val() == t.attr('placeholder'))
+                t.val('');
+        });
+        $('input').blur(function () {
+            var t = $(this);
+            if (t.attr('type') == 'text' || t.attr('type') == 'password')
+                t.css({
+                    'box-shadow': 'none',
+                    'border': '1px solid #e1e1e1',
+                    'color': '#333'
+                });
+            if (t.attr('type') != 'password' && !t.val())
+                t.val(t.attr('placeholder'));
+        });
+
+
+        function Update() {
+            var alipay = $("#alipay").val();
+            var paypassword = $("#paypassword").val();
+
+
+            if (alipay == "" || alipay == null) {
+                layer.tips('{:L('user_enter_alipay_account')}', '#alipay', {tips: 3});
+            return false;
+        }
+
+        if (paypassword == "" || paypassword == null) {
+            layer.tips('{:L('enter_trade_password')}', '#paypassword', {tips: 3});
+        return false;
+        }
+        $.post("{:U('User/upalipay')}", {
+            alipay: alipay,
+            paypassword: paypassword
+        }, function (data) {
+            if (data.status == 1) {
+                layer.msg(data.info, {icon: 1});
+                window.location = "{:U('User/alipay')}";
+            } else {
+                layer.msg(data.info, {icon: 2});
+                if (data.url) {
+                    window.location = data.url;
+                }
+            }
+        }, "json");
+        }
+    </script>
+    <script>
+        //顶部菜单高亮
+        $('#user_box').addClass('active');
+        $('#user_alipay').addClass('active');
+        $('#user_alipay i').attr('class', 'coin_menu_op_6');
+    </script>
+    <include file="Public:footer" />

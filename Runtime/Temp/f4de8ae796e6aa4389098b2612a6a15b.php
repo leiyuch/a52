@@ -1,0 +1,3 @@
+<?php
+//000000000000a:2:{s:4:"list";a:1:{s:7:"sgc_cny";a:4:{s:4:"name";s:7:"sgc_cny";s:3:"img";s:17:"59aece7179490.png";s:5:"title";s:24:"星瀚全球链(SGC/CNY)";s:9:"new_price";d:1;}}s:4:"info";a:9:{s:3:"img";s:17:"59aece7179490.png";s:5:"title";s:24:"星瀚全球链(SGC/CNY)";s:9:"new_price";d:1;s:9:"max_price";d:1;s:9:"min_price";d:1;s:9:"buy_price";d:7;s:10:"sell_price";d:1;s:6:"volume";d:10;s:6:"change";d:0;}}
+?>

@@ -1,0 +1,305 @@
+<include file="Public:header" />
+<div class="content clearfix">
+    <!--左侧菜单-->
+    <include file="User:left" />
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // Store variables
+            var accordion_head = $('.accordion > li > a'),
+                accordion_body = $('.accordion li > .sub-menu');
+            // Open the first tab on load
+            //accordion_head.first().addClass('active').next().slideDown('normal');
+            //accordion_body.eq(2).find('a').eq(2).css('background', ' #efefef');
+            var found = false;
+            for (i = 0; i < accordion_body.length; i++) {
+                item = accordion_body.eq(i).find("[data-id='id_setup']");
+                if (item.length > 0) {
+                    accordion_head.eq(i).addClass('active').next().slideDown('normal');
+                    item.css({ 'color': ' #ff5e23', 'border-right-width': '3px', 'border-right-color': '#ff5e23' });
+                    found = true;
+                    break;
+                }
+            }
+            if (found == false)
+                accordion_head.eq(2).addClass('active').next().slideDown('normal');
+            // Click function
+            accordion_head.on('click', function (event) {
+                // Disable header links
+                event.preventDefault();
+                // Show and hide the tabs on click
+                if ($(this).attr('class') != 'active') {
+                    accordion_body.slideUp('normal');
+                    $(this).next().stop(true, true).slideToggle('normal');
+                    accordion_head.removeClass('active');
+                    $(this).addClass('active');
+                }
+            });
+
+            var icoType = '';
+            if (icoType == '') {
+                $("#buyIco").parent("li").remove()
+            }
+
+            $("input").focus(function () {
+                $(".failed").html("")
+            });
+
+            $(".files,.cloud,.mail").find("li").click(function () {
+                $.cookie('nav_index', 2, { path: '/' });
+            });
+            $(".sign").find("li").click(function () {
+                $.cookie('nav_index', 3, { path: '/' });
+            });
+        });
+    </script>
+    <div class="main_content acc-m-con">
+        <script>
+            /*
+
+            var mainTop=$('#onne').offset().top;
+
+
+            if (mainTop = 1)
+            {
+              $("#onne").css("border", "1px solid gray");
+
+            }*/
+        </script>
+        <!--右侧内容-->
+        <div class="right_mcontent">
+            <style>
+                .formbox {
+                    width: 80%;
+                    min-height: 200px;
+                    margin: 0 auto;
+                    border: 1px;
+                    min-width: 600px;
+                }
+
+                    .formbox form {
+                        width: 33.33%;
+                        float: left;
+                        margin: 0 0 10px;
+                    }
+
+                    .formbox table {
+                        width: 100%;
+                        border-spacing: 5px;
+                    }
+
+                        .formbox table th {
+                            line-height: 26px;
+                            padding: 10px;
+                            vertical-align: top;
+                            width: 150px;
+                            border: none;
+                            font-size: 16px;
+                            font-weight: normal;
+                            color: #333;
+                        }
+
+                    .formbox .sfz {
+                        position: relative;
+                        overflow: hidden;
+                        text-align: center;
+                        float: left;
+                        padding: 20px;
+                        min-height: 440px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+
+                    .formbox .sfz-img {
+                        overflow: hidden;
+                    }
+
+                        .formbox .sfz-img img {
+                            height: auto;
+                            width: 100%;
+                        }
+
+                    .formbox select {
+                        border: 1px solid rgb(204, 204, 204);
+                        padding: 0px 5px;
+                        border-radius: 3px;
+                        height: 30px;
+                    }
+
+                    .formbox option {
+                        padding: 4px 7px;
+                        border-bottom: 1px dashed #eee;
+                    }
+
+                .myacc-con .sectioncont p {
+                    margin-bottom: 0;
+                }
+
+                .demo1, .demo2, .demo3 {
+                    float: left;
+                    width: 400px;
+                    height: 130px;
+                    overflow: hidden;
+                    background: url(../images/bg41.png) no-repeat;
+                }
+
+                .demo2 {
+                    background: url(../images/bg40.png) no-repeat;
+                }
+
+                .demo3 {
+                    background: url(../images/bg39.png) no-repeat;
+                }
+
+                    .demo1 font.red, .demo2 font.red, .demo3 font.red {
+                        padding-top: 110px;
+                        float: left;
+                        padding-left: 45px;
+                    }
+
+                .formbox .file {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    z-index: 3;
+                    height: 100%;
+                    width: 100%;
+                    overflow: hidden;
+                    line-height: 120px;
+                    filter: alpha(Opacity=1);
+                    -moz-opacity: 0.01;
+                    opacity: 0.01;
+                    cursor: pointer;
+                }
+
+                .formbox tr td {
+                    border: 1px solid #d3dde6;
+                }
+
+                .id-info-table tr td:first-child {
+                    width: 140px;
+                }
+
+                .sfz {
+                    position: relative;
+                }
+
+                    .sfz i {
+                        position: absolute;
+                        right: 0;
+                        bottom: 0;
+                        width: 24px;
+                        height: 24px;
+                        line-height: 24px;
+                        background: #44d5bc;
+                        color: #fff;
+                    }
+
+                    .sfz b {
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                .sfz-cover {
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background: rgba(0,0,0,0.6);
+                    z-index: -1;
+                    opacity: 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                .sfz:hover .sfz-cover {
+                    opacity: 1;
+                    z-index: 2;
+                }
+
+                .sectioncont .upfile-btn {
+                    margin: 0 auto;
+                    background: #0c9c83;
+                }
+
+                .re-btn {
+                    padding: 10px 20px;
+                    border: 1px solid #ddd;
+                }
+
+                #reset-form {
+                    width: 100%;
+                    margin-top: 0;
+                }
+            </style>
+            <div class="safe_center clear" style="padding-left: 0px; border-bottom: 2px solid #e55600;">
+                <h1 style="margin-top: 0px; margin-bottom: 15px; line-height: 15px;">{:L('certification')}</h1>
+            </div>
+            <div class="sj" style="top: 40px; left: 60px;"></div>
+            <notempty name="prompt_text">
+                <div class="mytips">
+                    <h6 style="color: #ff8000;">{:L('kindly_reminder')}</h6>
+                    {$prompt_text}
+                </div>
+            </notempty>
+            <div class="pwtrade">
+                <form id="form-nameauth">
+                    <div class="band_succ" style="padding-left: 116px;">
+                        <em></em>{:L('certification')}
+                    </div>
+                    <br>
+
+                    <div class="set_verify">
+                        <ul>
+                            <li>{:L('user_your_credentials')}</li>
+                            <li>{:L('real_name')}：{$user.truename}</li>
+                            <li>{:L('user_id_type')}：{:L('user_id_card')}</li>
+                            <li>{:L('user_id_number')}：{$user.idcard}</li>
+                            <li>{:L('user_certificated_time')}：{$user['addtime']|addtime}</li>
+                        </ul>
+                    </div>
+                    <div class="set_verify_img">
+                        <div class="sv_title">{:L('user_certificated_flow_path')}</div>
+                        <div class="hide_btn" onclick="$(this).toggleClass('hide_active');$('.sv_text').slideToggle('slow');"></div>
+                        <div class="sv_text">
+                            <p>
+                                <span>1.</span>{:L('user_certificated_flow_path_1')}
+                            </p>
+                            <div class="set_verify_img_pic clear">
+                                <div class="sv_pic">
+                                    <img src="/Public/Home/images/pic.jpg" alt="">
+                                </div>
+                                <span>{:L('user_certificated_flow_path_2')}</span>
+                            </div>
+                            <p>
+                                <span>2.</span>{:L('user_certificated_flow_path_3')}
+                            </p>
+                            <p>
+                                <span>3.</span>{:L('user_certificated_flow_path_4')}
+                            </p>
+                            <p>
+                                {:L('user_certificated_flow_path_5')}<br>
+                                <br> <a class="qqkefu" href="http://wpa.qq.com/msgrd?V=3&amp;uin={:C('contact_qq')[0]}&amp;Site=QQ客服&amp;Menu=yes" target="_blank"></a>
+                            </p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<script>
+	$("title").html("{:C('web_title')} - {:L('security')} - {:L('certification')}");
+	//顶部菜单高亮
+	$('#user_box').addClass('active');
+	$('#user_nameauth').addClass('active');
+	$('#user_nameauth i').attr('class','coin_menu_op_8');
+</script>
+<include file="Public:footer" />

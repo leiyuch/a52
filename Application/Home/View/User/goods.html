@@ -1,0 +1,241 @@
+<include file="Public:header" />
+		
+		<section class="box-content">
+			
+			    <style>
+			            
+			    </style>
+			    <div class="main-content clearfix">
+				    <div class="now"> 
+					    <i class="fa fa-home fa-lg move mr5"></i>
+					    <a href="/" class="movesay">{:L('home')}</a> &gt; 
+					    <a href="{:U('User/index')}" class="movesay">{:L('security')} </a> &gt;  {:L('user_contact_address_management')} 
+				    </div>
+				     
+                    <include file="User:header_left" />  
+                    
+				    <div class="tag-list-content assets_content bg_w"> 
+				     <div class="safe_center clear"> 
+				      	<h1> <span> {:L('user_contact_address_management')} </span> <span> <a class="right" onclick="$('#hints').slideToggle();"> <i class="fa fa-hand-o-right move fz_14 mr5"></i> <span class="fz_12 move">帮助</span> </a> </span> </h1> 
+				     </div> 
+				     
+				     
+				     <div class="f_body">
+	                    <div class="f_body_main">
+	                        <div class="f_tab_body">
+	                            <div>
+	                                <table class="f_table" id="investLog_content">
+	                                    <thead>
+	                                        <tr>
+													<th>{:L('user_note_name')}</th>
+													<th>{:L('user_contact_name')}</th>
+													<th>{:L('user_id_number')}</th>
+													<th>{:L('user_contact_tel')}</th>
+													<th>{:L('user_detailed_address')}</th>
+													<th>{:L('user_addtime')}</th>
+													<th>{:L('operate')}</th>
+	                                        </tr>
+	                                    </thead>
+	                                    <tbody>
+												<volist name="userGoodsList" id="vo">
+														<tr>
+															<td>{$vo.name}</td>
+															<td>{$vo.truename}</td>
+															<td>{$vo.idcard}</td>
+															<td>{$vo.moble}</td>
+															<td>{$vo.addr}</td>
+															<td>{$vo.addtime|addtime}</td>
+															<td><a class="cancel" href="javascript:void(0)" onclick="UpdateB({$vo['id']})">{:L('delete')}</a></td>
+														</tr>
+													</volist> 
+										</tbody>
+	                                </table>
+	                                <div class="pages">
+
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                 </div>
+	                 <div id="demo1" onclick="showA()" style="width:150px; border:1px solid orange; padding:5px 10px; border-radius:5px; color:orange; margin:0 auto; text-align: center;">{:L('user_add_now')}</div>
+				     
+				     
+				     
+				    </div> 
+				</div>
+				<div class="clearfix"></div>
+		</section>
+
+<div id="withdrawCnyAddress" style="background:rgba(0,0,0,0.5); width:100%; height:100%; position:fixed; float:left; z-index:1000; top:0; left:0; display:none;">
+    <div style="padding: 10px 40px 40px; background:#fff; border-radius:5px; max-width:520px; margin:10% auto; position: relative;">
+    	<div class="close2" onclick="closeAddress()" style=" position: absolute;right: 20px;font-size: 20px; cursor:  pointer;">X</div>
+        <h2 style="text-align:center;padding:20px 0;font-weight: bold;">{:L('user_add_one_contact_address')}</h2>
+        <a href="javascript:closeAddress();" class="dialog_closed" title="关闭"></a>
+        <!--<div class="form-group form-material floating">
+            <input type="text" class="form-control empty"  name="username" data-fv-notempty="true" data-fv-message="请输入用户名或邮箱或手机号码" data-fv-field="username" placeholder="备注名称" style="height:40px !important">
+        </div>-->
+		<div class="form-group form-material floating">
+				<input type="text" class="form-control empty" name="username" data-fv-notempty="true" id="goods_name" data-fv-message="" data-fv-field="username" placeholder="联系姓名" style="height:40px !important">
+			</div>
+			<div class="form-group form-material floating">
+				<input type="text" class="form-control empty" name="username" data-fv-notempty="true" id="goods_truename" data-fv-message="" data-fv-field="username" placeholder="真实姓名" style="height:40px !important">
+			</div>
+			<div class="form-group form-material floating">
+				<input type="text" class="form-control empty" name="username" data-fv-notempty="true" id="goods_idcard" data-fv-message="" data-fv-field="username" placeholder="身份证号" style="height:40px !important">
+			</div>
+			<div class="form-group form-material floating">
+				<input type="text" class="form-control empty" name="username" data-fv-notempty="true" id="goods_moble" data-fv-message="" data-fv-field="username" placeholder="联系电话" style="height:40px !important">
+			</div>
+			<div class="form-group form-material floating">
+				<input type="text" class="form-control empty" name="username" data-fv-notempty="true" id="goods_addr" data-fv-message="" data-fv-field="username" placeholder="详细地址" style="height:40px !important">
+			</div>
+			<div class="form-group form-material floating">
+				<input type="password" class="form-control empty" name="username" data-fv-notempty="true" id="goods_paypassword" data-fv-message="" data-fv-field="username" placeholder="交易密码" style="height:40px !important">
+			</div>
+			<div id="demo3" onclick="Update()" style="background:rgb(7, 105, 224); padding:5px 10px; border-radius:5px; color:#fff; text-align:center;">{:L('user_add_now')}</div>
+		</div>
+</div>
+
+
+<div id="dialogBoxShadow" style="position: absolute; top: 0px; left: 0px; z-index: 100; background-color: rgb(0, 0, 0); opacity: 0.4; width: 100%; background-position: initial initial; background-repeat: initial initial; display: none;"></div>
+<br>
+<br>
+
+		
+
+
+		
+
+<include file="Public:footer" />
+	<!-- include jQuery -->
+	<script src="__PUBLIC__/Home3/js/admin/jquery.min.js"></script>
+	<!-- bootstrap -->
+	<script src="__PUBLIC__/Home3/js/bootstrap.min.js"></script>
+	<!-- plugins.js -->
+	<script src="__PUBLIC__/Home3/js/plugins.js"></script>
+	<!-- all parallax -->
+	<script src="__PUBLIC__/Home3/js/parlx.js"></script>
+	<!-- nice-select -->
+	
+	<!-- chart js -->
+	<script src="__PUBLIC__/Home3/js/raphael-min.js"></script>
+	<script src="__PUBLIC__/Home3/js/morris.min.js"></script>
+	 <!-- dscountdown -->
+	<script src="__PUBLIC__/Home3/js/dscountdown.min.js"></script>
+	<!-- custom js -->
+	<script src="__PUBLIC__/Home3/js/custom.js"></script>
+	<script src="__PUBLIC__/Home3/js/sidebar-menu.js"></script>
+	<script src="__PUBLIC__/layer/layer.js"></script>
+	<script>
+		$.sidebarMenu($('.sidebar-menu'))
+	</script>
+
+<script>
+
+		$("#qianbao_type").change(function(){
+			var coin=$("#qianbao_type option:selected").val();
+			window.location='/User/qianbao/coin/'+coin+'.html';
+		});
+	
+	
+		var coin="{$xnb}";
+	
+	
+		$("#city_1").citySelect({nodata:"none",required:false});
+	
+		$('#dialogBoxShadow').height($(document).height());
+		function closeAddress(){
+			$("#withdrawCnyAddress").hide();
+			$("#dialogBoxShadow").hide();
+		}
+		function showA(){
+			$("#withdrawCnyAddress").show();
+			$("#dialogBoxShadow").show();
+		}
+		function Update(){
+			var name=$('#goods_name').val();
+			var truename=$('#goods_truename').val();
+			var idcard=$('#goods_idcard').val();
+			var moble=$('#goods_moble').val();
+			var addr=$('#goods_addr').val();
+			var paypassword=$('#goods_paypassword').val();
+	
+			if(name==""||name==null || name=="联系姓名"){
+				layer.tips('{:L('user_enter_note_name')}','#goods_name',{tips:3});
+			return false;
+		}
+		if(truename==""||truename==null || truename=="真实姓名"){
+			layer.tips('{:L('user_enter_contact_name')}','#goods_truename',{tips:3});
+		return false;
+		}
+		if(idcard==""||idcard==null || idcard=="身份证号"){
+			layer.tips('{:L('user_enter_id_number')}','#goods_idcard',{tips:3});
+		return false;
+		}
+		if(moble==""||moble==null || moble=="联系电话"){
+			layer.tips('{:L('user_enter_contact_tel')}','#goods_moble',{tips:3});
+		return false;
+		}
+	
+	
+		if(addr==""||addr==null || addr=="详细地址"){
+			layer.tips('{:L('user_enter_detailed_address')}','#goods_addr',{tips:3});
+		return false;
+		}
+		if(paypassword==""||paypassword==null || paypassword=="交易密码"){
+			layer.tips('{:L('enter_trade_password')}','#goods_paypassword',{tips:3});
+		return false;
+		}
+	
+	
+		$.post("{:U('User/upgoods')}",{name:name,truename:truename,moble:moble,addr:addr,idcard:idcard,paypassword:paypassword},function(data){
+			if(data.status==1){
+				layer.msg(data.info,{icon:1});
+				window.location="{:U('User/goods')}";
+			}else{
+				layer.msg(data.info,{icon:2});
+				if(data.url){
+					window.location=data.url;
+				}
+			}
+		},"json");
+		}
+	
+		function UpdateB(id){
+			layer.config({
+				extend: 'extend/layer.ext.js'
+			});
+			layer.ready(function () {
+				//默认prompt
+				layer.prompt({
+					title: '{:L('user_enter_trade_pwd_confirm')}',
+					formType: 1,btn: ['{:L('confirm')}','{:L('cancel')}']},function(val){
+						if (val) {
+							//需要执行的方法
+							$.post("{:U('User/delgoods')}",{id:id,paypassword:val},function(data){
+								if(data.status==1){
+									layer.msg(data.info,{icon:1});
+									window.location="{:U('User/goods')}";
+								}else{
+									layer.msg(data.info,{icon:2});
+									if(data.url){
+										window.location=data.url;
+									}
+								}
+							},"json");
+	
+	
+						};
+					});
+	
+		});
+	
+	
+		}
+	
+	
+	</script>
+
+
+</body>
+</html>

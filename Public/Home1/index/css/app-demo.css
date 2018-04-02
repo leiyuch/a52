@@ -1,0 +1,85 @@
+﻿.theme-options
+{
+position: fixed;
+z-index: 9999;
+top: 100px;
+left: -1px;
+
+width: 200px;
+padding: 1.5rem; 
+
+-webkit-transition: all 1s;
+        transition: all 1s;
+
+border: 1px solid #e5e5e5;
+}
+.theme-options:not(.active)
+{
+-webkit-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+        transform: translateX(-100%);
+}
+.theme-options-toggle
+{
+position: absolute;
+top: -1px;
+right: -48px;
+
+width: 48px;
+height: 48px;
+
+border: 1px solid #e5e5e5;
+border-left-color: #fff;
+}
+.theme-options-toggle a
+{
+line-height: 46px;
+
+display: block;
+
+width: 100%;
+height: 100%;
+
+text-align: center;
+letter-spacing: 0;
+
+color: #212121;
+}
+
+.theme-option-title
+{
+margin-bottom: .75rem;
+}
+
+.theme-option-list
+{
+padding-left: 0; 
+
+list-style: none;
+}
+.theme-option-list > li
+{
+display: block;
+
+padding-right: 2px;
+padding-bottom: 4px;
+padding-left: 2px;
+}
+.theme-option-list > li:not(.selected)
+{
+opacity: .5;
+}
+.theme-option-list > li > a
+{
+display: block;
+
+height: 1.5rem;
+}
+.theme-option-list > li > a span
+{
+display: block;
+float: left; 
+
+width: 50%;
+height: 100%;
+}

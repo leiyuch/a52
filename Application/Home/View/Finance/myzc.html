@@ -1,0 +1,228 @@
+﻿
+<include file="Public:header" />
+	
+		<section class="box-content">
+			
+			    <style>
+			            
+			    </style>
+			    <div class="main-content clearfix">
+				    <div class="now"> 
+					    <i class="fa fa-home fa-lg move mr5"></i>
+					    <a href="/" class="movesay">{:L('home')}</a> &gt; 
+					    <a href="{:U('Finance/index')}" class="movesay">{:L('finance_center')}</a> &gt; {:L('finance_i_want_to_send_it')} 
+				    </div>
+				     
+					<include file="Finance:header_left" />
+					
+				    <div class="tag-list-content assets_content bg_w"> 
+				     <div class="safe_center clear"> 
+				      	<h1> <span> {:L('finance_i_want_to_send_it')} </span> <span> <a class="right" onclick="$('#hints').slideToggle();"> <i class="fa fa-hand-o-right move fz_14 mr5"></i> <span class="fz_12 move">帮助</span> </a> </span> </h1> 
+				     </div> 
+				     <div id="hints" class="mytips"> 
+				        <p> </p>
+				        <p> {:L('finance_step_one')}<br /> {:L('finance_explanation_one_data')}<br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{:L('finance_explanation_two_data')} </p> 
+				        <p> <br /> </p> 
+				        <p></p> 
+				     </div> 
+				     
+				     <div class="mytable-body " style="    padding-top: 0px;"> 
+				        <div class="pwtrade  pw  mt50"> 
+				         <dl> 
+				          <dt>
+								{:L('finance_transfer_out')}：
+				          </dt> 
+				          <div class="weituo_bizhong" style="padding-top: 1px;"> 
+				           <div class="bizhong_select" style="    width: 350px;"> 
+				            <div class="bz_btn"> 
+				             <img src="http://moduoio.oss-cn-hongkong.aliyuncs.com/moduoio/1510216983457.png" alt="" style="width:22px;float:left;margin-top: 7px;margin-right: 5px;" /> 
+					             <span id="coin-default">
+										<select name="type" id="myzc_type" style="margin-top: 6px;">
+												<volist name="coin_list" id="vo">
+														<eq name="xnb" value="$key">
+															<option value="{$vo['name']}" selected="selected">{$vo.title} ({$vo['name']|strtoupper})</option>
+															<else />
+															<option value="{$vo['name']}">{$vo.title} ({$vo['name']|strtoupper})</option>
+														</eq>
+													</volist>
+										
+									</select>
+								 </span>
+								 {:L('finance_usable')}:
+				             <font class="coin-balance">{$user_coin[$xnb]|Num}</font> 
+				            </div> 
+				           </div> 
+				          </div> 
+				         </dl> 
+				         <dl> 
+				          <dt>
+								{:L('finance_transfer_out_address')}：
+				          </dt> 
+				          <dd> 
+				           <span> <select id="myzc_addr" class="texts">
+								<!-- <option value="">--选择转出账号--</option> <option value="tianjia">新添加一个转出账号</option>  -->
+								<option value="">--{:L('finance_select_recipient_address')}--</option>
+								<volist name="userQianbaoList" id="vo">
+									<option value="{$vo.addr}">{$vo.name}</option>
+								</volist>
+								<option value="tianjia">{:L('finance_add_recipient_address')}</option>
+							</select> </span> 
+				          </dd> 
+				         </dl> 
+				         <dl> 
+				          <dt>
+								{:L('finance_transfer_in_amount')}：
+				          </dt> 
+				          <dd style="position: relative;"> 
+				           <input type="text" class="cztxinput" id="nums" maxlength="12" value="" /> <em class="move">{:L('finance_transfer_fee')}{$coin_list[$xnb]['zc_fee']}%</em> 
+				          </dd> 
+				         </dl> 
+				         <!-- <dl class="step5"> 
+				          <dt>
+				           邮箱验证码：
+				          </dt> 
+				          <dd class="yuyin"> 
+				           <div class="clear"> 
+				            <input type="button" value="发送邮箱验证码" class="btns" onclick="send_moble_coinout('email')" style="width: 100px;font-size: 12px;" /> 358****976@qq.com(接收验证码) 
+				           </div> 
+				          </dd> 
+				         </dl> 
+				         <dl class="step6" style="display:none;"> 
+				          <dt>
+				           邮箱验证码：
+				          </dt> 
+				          <dd> 
+				           <input type="text" id="cnyout_moble_verify" value="" class="texts" placeholder="请输入邮箱验证码" /> 
+				           <span id="reg_moble_new"></span> 
+				          </dd> 
+				         </dl>  -->
+				         <dl> 
+				          <dt>
+								{:L('trade_password')}：
+				          </dt> 
+				          <dd> 
+				           <input type="password" class="cztxinput" id="paypassword" value="" />
+				           <a href="{:U('Login/findpaypwd')}" class="move ml5">{:L('forget_password')}?</a> 
+				          </dd> 
+				         </dl> 
+				         <dl> 
+				          <dt></dt> 
+				          <dd> 
+				           <input type="button" class="btns2" value="{:L('finance_submit')}" onclick="Update()" /> 
+				          </dd> 
+				         </dl> 
+				        </div> 
+				     </div> 
+				     
+				     
+				     
+				    </div> 
+				</div>
+				<div class="clearfix"></div>
+		</section>
+		
+
+			
+		<include file="Public:footer" />
+
+	<!-- include jQuery -->
+	<script src="__PUBLIC__/Home3/js/admin/jquery.min.js"></script>
+	<!-- bootstrap -->
+	<script src="__PUBLIC__/Home3/js/bootstrap.min.js"></script>
+	<!-- plugins.js -->
+	<script src="__PUBLIC__/Home3/js/plugins.js"></script>
+	<!-- all parallax -->
+	<script src="__PUBLIC__/Home3/js/parlx.js"></script>
+	<!-- nice-select -->
+	
+	<!-- chart js -->
+	<script src="__PUBLIC__/Home3/js/raphael-min.js"></script>
+	<script src="__PUBLIC__/Home3/js/morris.min.js"></script>
+	 <!-- dscountdown -->
+	<script src="__PUBLIC__/Home3/js/dscountdown.min.js"></script>
+	<!-- custom js -->
+	<script src="__PUBLIC__/Home3/js/custom.js"></script>
+	<script src="__PUBLIC__/Home3/js/sidebar-menu.js"></script>
+	<script src="__PUBLIC__/layer/layer.js"></script>	
+	<script>
+		$.sidebarMenu($('.sidebar-menu'))
+	</script>
+
+<script>
+        $("#myzc_type").change(function () {
+            var coin = $("#myzc_type option:selected").val();
+            window.location = '/Finance/myzc/coin/' + coin + '.html';
+        });
+
+        $("#myzc_addr").change(function () {
+            var coin = $("#myzc_type option:selected").val();
+            var type = $("#myzc_addr option:selected").val();
+            if (type == 'tianjia') {
+                window.location = '/User/qianbao?coin=' + coin;
+            }
+        });
+
+        function SendCode() {
+            $('#regBtn').attr("disabled", "disabled");
+            $.post("{:U('Verify/myzc')}", {}, function (data) {
+                if (data.status == 1) {
+                    layer.msg(data.info, {icon: 1});
+                    var obj = $('#regBtn');
+                    var wait = 60;
+                    var interval = setInterval(function () {
+                        obj.css('backgroundColor', '#999B9C');
+                        obj.val(wait + '{:L('second_to_send_again')}');
+                        wait--;
+                        if (wait < 0) {
+                            clearInterval(interval);
+                            obj.val('{:L('get_sms_code')}');
+                            obj.css('backgroundColor', '#0096e0');
+                        }
+                        ;
+                    }, 1000);
+                }
+            }, "json");
+        }
+
+        function Update() {
+
+            var coin = "{$xnb}";
+            var addr = $('#myzc_addr option:selected').val();
+            var num = $("#nums").val();
+            var moble_verify = $("#moble_verify").val();
+            var paypassword = $("#paypassword").val();
+
+            if (addr == "" || addr == null) {
+                layer.tips('{:L('finance_select_wallet')}', '#myzc_addr', {tips: 3});
+            return false;
+        }
+
+        if (num == "" || num == null) {
+            layer.tips('{:L('finance_enter_transfer_out_amount')}', '#nums', {tips: 3});
+        return false;
+        }
+
+        if (paypassword == "" || paypassword == null) {
+            layer.tips('{:L('enter_trade_password')}', '#paypassword', {tips: 3});
+        return false;
+        }
+
+        $.post("{:U('Finance/upmyzc1')}", {
+            coin: coin,
+            addr: addr,
+            num: num,
+            paypassword: paypassword,
+            moble_verify: moble_verify
+        }, function (data) {
+            if (data.status == 1) {
+                layer.msg(data.info, {icon: 1});
+                window.location = "{:U('Finance/myzc')}?coin=" + coin;
+            } else {
+                layer.msg(data.info, {icon: 2});
+            }
+        }, "json");
+
+        }
+</script>
+</body>
+</html>

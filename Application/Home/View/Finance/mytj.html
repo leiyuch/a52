@@ -1,0 +1,178 @@
+﻿
+<script type="text/javascript" src="__PUBLIC__/Home1/Scripts/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/Home1/Scripts/jquery.common.tools.js"></script>
+		<script src="__PUBLIC__/Home/js/jquery.copy.js"></script>
+		<script src="__PUBLIC__/Home/js/qrcode.js"></script>
+		<script src="__PUBLIC__/layer/layer.js"></script>
+
+
+<include file="Public:header" />
+		
+		<section class="box-content">
+			
+			    <style>
+			            
+			    </style>
+			    <div class="main-content clearfix">
+				    <div class="now"> 
+					    <i class="fa fa-home fa-lg move mr5"></i>
+					    <a href="/" class="movesay">{:L('home')}</a> &gt; 
+					    <a href="{:U('Finance/index')}" class="movesay">{:L('finance_center')}</a> &gt;{:L('finance_share')}
+				    </div>
+				     
+						<include file="Finance:header_left" />
+				    <div class="tag-list-content assets_content bg_w"> 
+				     <div class="safe_center clear"> 
+				      	<h1> <span>{:L('finance_share')} </span> <span> <a class="right" onclick="$('#hints').slideToggle();"> <i class="fa fa-hand-o-right move fz_14 mr5"></i> <span class="fz_12 move">帮助</span> </a> </span> </h1> 
+				     </div> 
+				     <div id="hints" class="mytips">
+			            <p>
+			              <span>
+			                <span style="background-color:#FFFFFF;font-size:14px;">通過您的專屬邀請碼，當有人使用您的邀請碼或邀請鏈接註冊時，您會根據規則獲得相應的獎勵。當您邀請的用戶足夠多，甚至會受官方邀請參與官方活動。</span></span>
+			            </p>
+			          </div>
+			          <!-- <div id="qrcode-wallet" style="display: inline-block;margin-top: 60px;float: right;margin-right: 30px;" width="100">
+			            <saon id="codeaa">
+										<img src="__PUBLIC__/Home3/images/code.jpg">
+									</saon>
+			            <p id="qrcode-t" style="font-size: 22px;text-align: center;margin-top: 30px;" class="move">{:L('finance_share_two_code')}</p>
+								</div> -->
+								
+								<div id="qrcode-wallet" style="display: inline-block;margin-top: 60px;float: right;margin-right: 30px;" width="100">
+                    <saon id="codeaa"></saon>
+                    <p id="qrcode-t" style="font-size: 22px;text-align: center;margin-top: 30px;color: red;">{:L('finance_share_two_code')}</p>
+
+                </div>
+
+
+							
+
+			          <div class="quicklink invite-content" style="margin-top: 15px;">
+			            <h4>{:L('finance_share_invite_code')}</h4>
+			            <p class="tip">{:L('finance_share_invite_code_desc')}</p>
+			            <p>
+											<!-- <input type="text" class="area texts" id="invite-input" value="{$user['invit']}" style="width: 100px;vertical-align: bottom;">
+											<input type="button" value="{:L('finance_share_copy')}" data-clipboard-action="copy" data-clipboard-target="invite-input" class="ml20 btn-quick inviteCopyButton btns2" id="copy_button1" style="width:100px;"> -->
+			              <input type="text" class="area texts" id="invite-input" value="{$user['invit']}" style="width: 100px;vertical-align: bottom;">
+										<input type="button" value="{:L('finance_share_copy')}" data-clipboard-action="copy" data-clipboard-target="#invite-input" class="ml20  btn-quick inviteCopyButton  btns2" id="copy_button1" style="width:100px;">
+									</p>
+			          </div>
+			          <div class="quicklink invite-content">
+			            <h4>{:L('finance_share_link')}</h4>
+			            <p class="tip">{:L('finance_share_link_desc')}</p>
+			            <p>
+			              <input type="text" class="area texts" id="invite-inputa" value="http://{$_SERVER['HTTP_HOST']}/?invit={$user['invit']}" style="width: 250px;vertical-align: bottom;">
+			              <input type="button" value="{:L('finance_share_copy')}" data-clipboard-action="copy" data-clipboard-target="#invite-inputa" class="ml20 btn-quick inviteCopyButton btns2" id="copy_button2" style="width:100px;"></p>
+			          </div>
+			          <div class="quicklink invite-content">
+			            <h4>{:L('finance_share_ad')}</h4>
+			            <p class="tip">{:L('finance_share_ad_desc')}</p>
+			            <p>
+			              <textarea type="text" class="area texts" id="invite-textarea" style="width: 350px;height: 100px;line-height: 25px;"><if condition=" (lang_set eq 'en' ) && (!empty($c['invit_text_txt_en']))">{$C['invit_text_txt_en']}<else />{$C['invit_text_txt']}</if> http://{$_SERVER['HTTP_HOST']}/?invit={$user['invit']}</textarea>
+			              <input type="button" value="{:L('finance_share_copy')}" data-clipboard-action="copy" data-clipboard-target="#invite-textarea" class="ml20 btn-quick inviteCopyButton zeroclipboard-is-hover btns2 " id="copy_button3" style="width:100px;"></p>
+								</div>
+								
+								<script type="text/javascript" src="__PUBLIC__/Home/js/jquery.qrcode.min.js"></script>
+                <script type="text/javascript">
+                    $('#codeaa').qrcode({
+                        render: "table", //table方式
+                        size:200,
+                        text: "http://{$_SERVER['HTTP_HOST']}/?invit={$user['invit']}" //任意内容
+                    }); //任意字符串
+								</script>
+								
+			          <div class="quicklink">
+			            <h4>{:L('finance_share_bbs')}</h4>
+			            <div class="reward-share">
+			              <a href="javascript:;" title="{:L('finance_share_sina_desc')}" class="wlb_tsina">
+			                <span class="icon icon-sina"></span>
+			                <i>{:L('finance_share_sina_weibo')}</i>
+			              </a>
+			              <a href="javascript:;" title="{:L('finance_share_douban_desc')}" class="wlb_douban">
+			                <span class="icon icon-douban"></span>
+			                <i>{:L('finance_share_douban')}</i>
+			              </a>
+			              <a href="javascript:;" title="{:L('finance_share_qq_desc')}" class="wlb_qzone">
+			                <span class="icon icon-qzone"></span>
+			                <i>{:L('finance_share_qq')}</i>
+			              </a>
+			            </div>
+			          </div> 
+				     
+				     
+				     
+				    </div> 
+				</div>
+				<div class="clearfix"></div>
+		</section>
+		
+		<include file="Public:footer" />
+		
+
+	
+	<!-- include jQuery -->
+	<script src="__PUBLIC__/Home3/js/admin/jquery.min.js"></script>
+	<!-- bootstrap -->
+	<script src="__PUBLIC__/Home3/js/bootstrap.min.js"></script>
+	<!-- plugins.js -->
+	<script src="__PUBLIC__/Home3/js/plugins.js"></script>
+	<!-- all parallax -->
+	<script src="__PUBLIC__/Home3/js/parlx.js"></script>
+	<!-- nice-select -->
+
+
+	
+	<!-- chart js -->
+	<!-- <script src="__PUBLIC__/Home3/js/raphael-min.js"></script> -->
+	<script src="__PUBLIC__/Home3/js/morris.min.js"></script>
+	 <!-- dscountdown -->
+	<script src="__PUBLIC__/Home3/js/dscountdown.min.js"></script>
+	<!-- custom js -->
+	<script src="__PUBLIC__/Home3/js/custom.js"></script>
+	<script src="__PUBLIC__/Home3/js/sidebar-menu.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/Home/js/ZeroClipboard.min.js"></script>
+	<script>
+			var client=new ZeroClipboard(document.getElementById("copy-button"));
+			client.on("ready",function(readyEvent){
+					client.on("aftercopy",function(event){
+							event.target.style.display="none";
+					});
+			});
+			ZeroClipboard.config({swfPath:'__PUBLIC__/Home/js/ZeroClipboard.swf'});
+			var clip=new ZeroClipboard(document.getElementById("copy"));
+			var _share_title=encodeURI('{:L('finance_share_invite_friends')}');
+			var _share_content=encodeURI("{$C['invit_text_txt']}");
+			var _share_url=encodeURIComponent("http://{$_SERVER['HTTP_HOST']}/?invit={$user['id']}");
+			var _share_pic='/';
+			$(document).ready(function(){
+
+					var clip1=new ZeroClipboard(document.getElementById("copy_button1"));
+					var clip2=new ZeroClipboard(document.getElementById("copy_button2"));
+					var clip3=new ZeroClipboard(document.getElementById("copy_button3"));
+					clip1.on("copy",function(e){
+							layer.msg('{:L('finance_share_copy_success')}',{icon:1});
+					});
+					clip2.on("copy",function(e){
+							layer.msg('{:L('finance_share_copy_success')}',{icon:1});
+					});
+					clip3.on("copy",function(e){
+							layer.msg('{:L('finance_share_copy_success')}',{icon:1});
+					});
+					$(".wlb_tsina").click(function(){
+							window.open("http://v.t.sina.com.cn/share/share.php?url="+_share_url+"&title="+_share_content);
+					});
+					$(".wlb_douban").click(function(){
+							window.open("http://www.douban.com/recommend/?url="+_share_url+"&title="+_share_content);
+					});
+					$(".wlb_qzone").click(function(){
+							window.open("http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url="+_share_url+"&title="+_share_title+"&pics="+_share_pic+"&desc="+_share_content);
+					});
+			});
+	</script>
+
+	
+	<script>
+		$.sidebarMenu($('.sidebar-menu'))
+	</script>
+</body>
+</html>
